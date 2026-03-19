@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useImperativeHandle, forwardRef, useState } from 'react';
-import PropTypes from "prop-types";
 import '../../generated/css/nsHorizontalNavigation.min.css';
 
 import { INSHorizontalNavigationClickFunction, INSHorizontalNavigationMenu, INSHorizontalNavigationCustomClassSetting, INSHorizontalNavigationSetting } from "./interfaces";

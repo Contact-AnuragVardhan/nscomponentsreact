@@ -87,7 +87,7 @@ export class NSDashboardReact extends NSBaseReactComponent<INSDashboardReactSett
             {
                 if(comp && comp.componentRef)
                 {
-                    comp.componentRef.destroy();
+                    comp.componentRef?.destroy();
                 }
             } 
             this.__hasDestroyed = true;

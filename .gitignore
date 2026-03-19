@@ -3,3 +3,4 @@ build/
 storybook-static/
 /*.project
 /package-lock.json
+*.tgz

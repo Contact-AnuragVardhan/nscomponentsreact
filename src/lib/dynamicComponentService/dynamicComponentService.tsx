@@ -203,12 +203,17 @@ export class DynamicComponentService {
         };
 
         const destroyPortal = function (portal: ReactPortal) {
-            instance.portals = instance.portals.filter(curPortal => curPortal !== portal);
-            instance.batchUpdate();
-            const dynamicComponentInstance = this.portalRefs.get(portal);  // Retrieve the instance from the map
-            if (dynamicComponentInstance) {
-                dynamicComponentInstance.destroy();
-                this.portalRefs.delete(portal);
+            try {
+                instance.portals = instance.portals.filter(curPortal => curPortal !== portal);
+                instance.batchUpdate();
+                const dynamicComponentInstance = this.portalRefs?.get(portal);  // Retrieve the instance from the map
+                if (dynamicComponentInstance) {
+                    dynamicComponentInstance.destroy();
+                    this.portalRefs.delete(portal);
+                }
+            }
+            catch(error) {
+                console.error("Error occured in destroying the portal", error);
             }
         };
 
