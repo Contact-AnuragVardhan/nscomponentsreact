@@ -1,0 +1,64 @@
+.nsVirtualScrollElement
+{
+	display: block;
+    position: relative;
+    overflow: auto;
+    transform: translateZ(0);
+}
+
+.nsVirtualScrollContent
+{
+	outline: 0;
+}
+
+.nsVirtualScrollContentHorizontal
+{
+	position: absolute;
+    top: 0;
+    left: 0;
+}
+.nsVirtualScrollContent .nsVirtualExtraItemVertical
+{
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.nsVirtualScrollContent .nsVirtualExtraItemHorizontal
+{
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.nsVirtualScrollLoader
+{
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   -webkit-overflow-scrolling: touch;
+   z-index: 1060;
+   background-color: rgba(0, 0, 0, .01);
+   outline: 0;
+}
+.nsVirtualScrollLoader .nsVirtualScrollLoaderTextCon
+{
+  	position: absolute;
+    left: calc(50% - 75px);
+    top: calc(50% - 25px);
+    padding-left: 37px;
+    padding-top: 15px;
+    display: block;
+    width: 150px;
+    height: 50px;
+    color: #CA2420;
+    background-color: #D5D5D5;
+    border: 1px solid #737373;
+    border-radius: 10px;
+}
+.nsVirtualScrollLoader .nsVirtualScrollLoaderText
+{
+   margin: 0;
+   line-height: 1.42857143;
+}

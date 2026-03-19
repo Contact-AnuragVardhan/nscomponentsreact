@@ -1,0 +1,396 @@
+.nsListOuterContainer
+{
+    position: relative;   
+    overflow-y: auto;
+    width:inherit;
+    height:inherit;
+}
+
+.nsListOuterContainer .nsListParentContainer
+{
+	position: absolute; 
+	height: 100%; 
+	width: 99%; 
+	margin: 0px; 
+	padding: 0px;
+	background-color: #FFFFFF;
+	color: #333;
+}
+
+.nsListOuterContainer .nsListContainer
+{
+	min-height: 42px;
+    padding-left: 0px;
+    
+	display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+    margin:0px;
+}
+.nsListOuterContainer .nsListItem
+{
+	background-color: #fff;
+    border: 1px solid #f4f4f4;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    display: block;
+    margin-bottom: -1px;
+}
+.nsListOuterContainer.nsListOuterContainerHierarchical .nsListItem
+{
+	/*for Virtual Scrolling in Hierarchical List*/
+	min-height:25px;
+}
+.nsListItemHover 
+{  
+  background-color: #3875d7;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #3875d7), color-stop(90%, #2a62bc));
+  background-image: linear-gradient(#3875d7 20%, #2a62bc 90%);
+  color: #fff;
+} 
+.nsListItemAnimated .nsListChild
+{
+	width: 100%; 
+	position: relative; 
+  	z-index: 2;
+  	text-decoration: none;
+  	box-sizing: border-box;  
+  	-moz-box-sizing: border-box;  
+  	-webkit-box-sizing: border-box; 
+}
+.nsListItemAnimated:hover .nsListChild
+{
+	color: #FFFFFF;
+}
+.nsListItemAnimated .nsListChild:after
+{
+  content: "";
+  height: 100%; 
+  left: 0; 
+  top: 0; 
+  width: 0px;  
+  position: absolute; 
+  transition: all 0.2s ease 0s; 
+  -webkit-transition: all 0.2s ease 0s; 
+  z-index: -1;
+}
+.nsListItemAnimated .nsListChild:hover:after
+{ 
+	width: 100%; 
+}
+.nsListItemAnimated .nsListChild:after
+{ 
+	background: #3498db; 
+}
+.nsListOuterContainer .nsListItemSelected 
+{
+	background-color: #CED2CC;
+    color: #000;
+}
+.nsListOuterContainer .nsListNoRecordsFound 
+{
+    text-align: center;
+}
+.nsListContainerDroppable
+{
+	border: 1px solid #a0a0a0;
+}
+.nsListEmpty
+{
+	margin: 0px;
+	padding: 5px;
+}
+.nsListEmptyChild
+{
+	border: 1px dashed #a0a0a0;
+	border-radius: 3px;
+	padding: 3px;
+	cursor: pointer;
+	font-size: 10px;
+	background-color: white;
+}
+.nsListOuterContainer .nsListGroupCell 
+{
+  	position: relative;
+  	overflow: hidden;
+  	min-height: 19px;
+}
+.nsListOuterContainer .nsListGroupCell > * 
+{
+   display: inline-block;
+   padding: 3px;
+}
+.nsListOuterContainer .nsListGroupCellText
+{
+	padding-left: 1.5em;
+}
+.nsListOuterContainer .nsListArrowParent
+{
+	position: absolute;
+    top: 0px;
+    left:0px;
+}
+.nsListOuterContainer .nsListArrow
+{
+	height:15px;
+}
+.nsListOuterContainer .nsListArrowFill 
+{
+	width:16px;
+	height:16px;
+    fill:#000000;
+	/*stroke:#000000;
+	stroke-width:0.5;*/
+} 
+
+.nsListTruncateToFit,.nsListTruncateToFit *
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.nsListDottedRow 
+{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: none; 
+}
+/* line 25, /Users/jonasvonandrian/jquery-sortable/source/css/jquery-sortable.css.sass */
+.nsListDottedRow:before 
+{
+  	position: absolute;
+  	content: "";
+  	width: 0;
+  	height: 0;
+  	margin-top: -5px;
+  	left: -5px;
+  	top: -4px;
+  	border: 5px solid transparent;
+  	border-left-color: red;
+  	border-right: none; 
+}.nsMenu {
+  position: absolute;
+  width: 200px;
+  padding: 2px;
+  margin: 0;
+  background-color: #fefefe;
+  border: solid thin #1e4691;
+  /*background: -webkit-linear-gradient(to bottom, #fff 0%, #e5e5e5 100px, #e5e5e5 100%);
+  background: linear-gradient(to bottom, #fff 0%, #e5e5e5 100px, #e5e5e5 100%);*/
+  z-index: 999;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px rgba(0,0,0,.2);
+  opacity: 0;
+  -webkit-transform: translate(0, 15px) scale(.95);
+  transform: translate(0, 15px) scale(.95);
+  transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+  pointer-events: none;
+}
+
+.nsMenuItem {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.nsMenuButton {
+  background: none;
+  line-height: normal;
+  overflow: visible;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  display: block;
+  width: 100%;
+  color: #444;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 8px;
+  border-radius: 3px;
+}
+ .nsMenuButton::-moz-focus-inner, .nsMenuButton::-moz-focus-inner {
+ border: 0;
+ padding: 0;
+}
+
+.nsMenuText { margin-left: 25px; }
+
+.nsMenuButton .nsMenuAlign{
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.nsMenuItem:hover > .nsMenuButton {
+  color: #fff;
+  /*outline: none;
+  background-color: #2E3940;
+  background: -webkit-linear-gradient(to bottom, #5D6D79, #2E3940);
+  background: linear-gradient(to bottom, #5D6D79, #2E3940);
+  border: 1px solid #2E3940;*/
+  background-color:#00B2EE;
+  border-color:#7D98B8;
+  border-left-width:1px;margin-left:-1px;*left:-1px;
+}
+
+.nsMenuItem.nsDisabled {
+  opacity: .5;
+  pointer-events: none;
+}
+
+.nsMenuItem.nsDisabled .nsMenuButton { cursor: default; }
+
+.nsMenuSeparator {
+  display: block;
+  margin: 7px 5px;
+  height: 1px;
+  border-bottom: 1px solid #fff;
+  background-color: #aaa;
+}
+
+.nsMenuItem.nsSubMenu::after {
+  content: "";
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-left-color: #808080;
+}
+
+.nsMenuItem.nsSubMenu:hover::after 
+{ 
+	border-left-color: #fff; 
+}
+
+.nsMenu .nsMenu,.nsPopUp .nsMenu{
+  top: 4px;
+  left: 99%;
+}
+
+.nsShowMenu {
+  opacity: 1;
+  -webkit-transform: translate(0, 0) scale(1);
+  transform: translate(0, 0) scale(1);
+  pointer-events: auto;
+}
+
+.nsMenuItem:hover > .nsMenu {
+  -webkit-transition-delay: 100ms;
+  transition-delay: 300ms;
+}
+
+.nsHeader
+{
+	background-color: blue;
+	pointer-events: none;
+	list-style-type: none;
+	white-space: nowrap;
+	border-radius: 3px;
+	padding: 5px 7px;
+}
+
+.nsMenuItem.nsHeader .nsMenuButton 
+{ 
+	color: white;
+	cursor: default; 
+	font-weight: bold;
+}
+
+.nsSubMenuContainer::before
+{
+	content: "";
+	border: 4px solid #fefefe;
+	border-color: transparent #1e4691 transparent transparent;
+	position: absolute;
+	top: 12px;
+	left: -9px;
+}
+.nsSubMenuContainer::after
+{
+	content: "";
+	border: 4px solid #fefefe;
+	border-color: transparent #fefefe transparent transparent;
+	position: absolute;
+	top: 12px;
+	left: -8px;
+}
+
+.nsVirtualScrollElement
+{
+	display: block;
+    position: relative;
+    overflow: auto;
+    transform: translateZ(0);
+}
+
+.nsVirtualScrollContent
+{
+	outline: 0;
+}
+
+.nsVirtualScrollContentHorizontal
+{
+	position: absolute;
+    top: 0;
+    left: 0;
+}
+.nsVirtualScrollContent .nsVirtualExtraItemVertical
+{
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.nsVirtualScrollContent .nsVirtualExtraItemHorizontal
+{
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.nsVirtualScrollLoader
+{
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   -webkit-overflow-scrolling: touch;
+   z-index: 1060;
+   background-color: rgba(0, 0, 0, .01);
+   outline: 0;
+}
+.nsVirtualScrollLoader .nsVirtualScrollLoaderTextCon
+{
+  	position: absolute;
+    left: calc(50% - 75px);
+    top: calc(50% - 25px);
+    padding-left: 37px;
+    padding-top: 15px;
+    display: block;
+    width: 150px;
+    height: 50px;
+    color: #CA2420;
+    background-color: #D5D5D5;
+    border: 1px solid #737373;
+    border-radius: 10px;
+}
+.nsVirtualScrollLoader .nsVirtualScrollLoaderText
+{
+   margin: 0;
+   line-height: 1.42857143;
+}

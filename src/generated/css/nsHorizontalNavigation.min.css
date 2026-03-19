@@ -1,0 +1,166 @@
+.nsHorNav {
+    display: flex;
+}
+
+.nsHorNav * {
+	list-style: none;
+}
+
+.nsHorNav.nsHorNavContentCon, .nsHorNav .nsHorNavContentCon, .nsHorNav .nsHorNavItemCon {
+    background-color: inherit !important;
+}
+
+.nsHorNav .nsHorNavNonSubNavItemCon {
+    position: relative;
+    z-index: 1;
+}
+
+.nsHorNav .nsHorNavItem {
+	text-decoration: none;
+	color: inherit;
+}
+
+.nsHorNav .nsHorNavNonSubNavItemCon, .nsHorNav .nsHorNavSubNavCon .nsHorNavSubNavItem {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    transition: background-color 150ms ease-in-out;
+    width: max-content;
+}
+
+.nsHorNav .nsHorNavItemDisabled {
+	opacity: .5;
+  	pointer-events: none;
+}
+
+.nsHorNav .nsHorNavNonSubNavItemCon .nsHorNavItemIconCon, .nsHorNav .nsHorNavSubNavCon .nsHorNavSubNavItem .nsHorNavItemIconCon {
+	margin-right: 10px;
+}
+
+.nsHorNav .nsHorNavSubNavCon {
+  position: relative;
+  display: table;
+}
+
+.nsHorNav .nsHorNavSubNavCon:not(.nsHorNavSubNavCon-0) .nsHorNavSubNavContent {
+  top: 20%;
+  left: 100%;
+}
+
+.nsHorNav .nsHorNavSubNavCon .nsHorNavSubNavItem {
+	display: flex;
+	align-items: center;
+}
+
+.nsHorNav .nsHorNavSubNavContent {
+  display: none;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.nsHorNav .nsHorNavSubNavContent .nsHorNavNonSubNavItemCon {
+  float: left;
+  color: inherit;
+  text-decoration: none;
+}
+
+.nsHorNav .nsHorNavSubNavCon .nsHorNavSubNavContentActive {
+  position: absolute;
+  display: block;
+  width: initial;
+  z-index: 10;
+}
+
+.nsHorNav .nsHorNavSubNavCon:not(.nsHorNavSubNavCon-0)::after {
+	content: '';
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 7px;
+    margin: auto;
+}
+
+.nsHorNav .nsHorNavSubNavCon.nsHorNavSubNavCon-0::after {
+	content: '';
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 1px;
+    margin: auto;
+}
+
+/***************Gray Theme ****************/
+.nsHorNavGray .nsHorNavNonSubNavItemCon .nsHorNavText:hover {
+	color: #03a9f5;
+}
+
+.nsHorNavGray .nsHorNavNonSubNavItemCon:hover, .nsHorNavGray .nsHorNavSubNavItem:hover {
+    background-color: #b0c4de !important;
+    color: #000;
+}
+
+.nsHorNavGray .nsHorNavSubNavCon:not(.nsHorNavSubNavCon-0)::after {
+	border-left-color: #000 !important;
+}
+
+.nsHorNavGray .nsHorNavSubNavCon.nsHorNavSubNavCon-0::after {
+	border-top-color: #000 !important;
+}
+/****************Gray Theme Ends***************/
+
+/****************Blue Theme ****************/
+.nsHorNavBlue .nsHorNavNonSubNavItemCon .nsHorNavText:hover {
+	color: #03a9f5;
+}
+
+.nsHorNavBlue .nsHorNavNonSubNavItemCon:hover, .nsHorNavBlue .nsHorNavSubNavItem:hover {
+    background-color: #b0c4de !important; 
+    color: #000;
+}
+
+.nsHorNavBlue .nsHorNavSubNavCon:not(.nsHorNavSubNavCon-0)::after {
+	border-left-color: #000 !important;
+}
+
+.nsHorNavBlue .nsHorNavSubNavCon.nsHorNavSubNavCon-0::after {
+	border-top-color: #000 !important;
+}
+
+/****************Blue Theme Ends***************/
+
+/****************Black Theme ****************/
+.nsHorNavBlack .nsHorNavNonSubNavItemCon .nsHorNavText:hover {
+	color: #03a9f5;
+}
+
+.nsHorNavBlack .nsHorNavNonSubNavItemCon:hover, .nsHorNavBlack .nsHorNavSubNavItem:hover {
+    background-color: #444 !important;
+    color: #fff;
+}
+
+.nsHorNavBlack .nsHorNavSubNavCon:not(.nsHorNavSubNavCon-0)::after {
+	border-left-color: #fff !important;
+}
+
+.nsHorNavBlack .nsHorNavSubNavCon.nsHorNavSubNavCon-0::after {
+	border-top-color: #fff !important;
+}
+
+/****************Black Theme Ends***************/
+

@@ -1,0 +1,2205 @@
+@font-face {
+   font-family: 'NSComponentFont';
+   src: url("data:application/font-woff;base64,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") format('woff');
+    font-weight: normal;
+  	font-style: normal;
+  font-display: block;
+}
+
+/*@font-face {
+  font-family: 'NSComponentFont';
+  src:
+    url('fonts/NSComponentFont.ttf?lgv4tg') format('truetype'),
+    url('fonts/NSComponentFont.woff?lgv4tg') format('woff'),
+    url('fonts/NSComponentFont.svg?lgv4tg#NSComponentFont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}*/
+.ns-icon {
+    display: inline-block;
+    font: normal normal normal 14px / 1 NSComponentFont;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.ns-icon:before 
+{
+    --webkit-backface-visibility:hidden;-webkit-backface-visibility: hidden;
+    backface-visibility: hidden
+}
+
+.ns-icon .nseRotate90 
+{
+    filter: none;
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.ns-editor-align-center:before {
+  content: "\e900";
+}
+.ns-editor-align-justify:before {
+  content: "\e901";
+}
+.ns-editor-align-left:before {
+  content: "\e902";
+}
+.ns-editor-align-right:before {
+  content: "\e903";
+}
+.ns-editor-angle-double-down:before {
+  content: "\e904";
+}
+.ns-editor-angle-double-up:before {
+  content: "\e905";
+}
+.ns-editor-angle-down:before {
+  content: "\e906";
+}
+.ns-editor-angle-up:before {
+  content: "\e907";
+}
+.ns-editor-background-color:before {
+  content: "\e908";
+}
+.ns-editor-bars:before {
+  content: "\e909";
+}
+.ns-editor-bold:before {
+  content: "\e90a";
+}
+.ns-editor-bookmark:before {
+  content: "\e90b";
+}
+.ns-editor-close-bold:before {
+  content: "\e90c";
+}
+.ns-editor-collapse:before {
+  content: "\e90d";
+}
+.ns-editor-collapse-bold:before {
+  content: "\e90e";
+}
+.ns-editor-decrease-indent:before {
+  content: "\e90f";
+}
+.ns-editor-expand:before {
+  content: "\e910";
+}
+.ns-editor-expand-bold:before {
+  content: "\e911";
+}
+.ns-editor-font:before {
+  content: "\e912";
+}
+.ns-editor-font-color:before {
+  content: "\e913";
+}
+.ns-editor-font-size:before {
+  content: "\e914";
+}
+.ns-editor-header:before {
+  content: "\e915";
+}
+.ns-editor-increase-indent:before {
+  content: "\e916";
+}
+.ns-editor-italics:before {
+  content: "\e917";
+}
+.ns-editor-layout:before {
+  content: "\e918";
+}
+.ns-editor-link:before {
+  content: "\e919";
+}
+.ns-editor-minus:before {
+  content: "\e91a";
+}
+.ns-editor-new-doc:before {
+  content: "\e91b";
+}
+.ns-editor-next:before {
+  content: "\e91c";
+}
+.ns-editor-ordered-list:before {
+  content: "\e91d";
+}
+.ns-editor-paragraph:before {
+  content: "\e91e";
+}
+.ns-editor-prev:before {
+  content: "\e91f";
+}
+.ns-editor-preview:before {
+  content: "\e920";
+}
+.ns-editor-print:before {
+  content: "\e921";
+}
+.ns-editor-redo:before {
+  content: "\e922";
+}
+.ns-editor-search:before {
+  content: "\e923";
+}
+.ns-editor-source:before {
+  content: "\e924";
+}
+.ns-editor-square:before {
+  content: "\e925";
+}
+.ns-editor-strikethrough:before {
+  content: "\e926";
+}
+.ns-editor-subscript:before {
+  content: "\e927";
+}
+.ns-editor-superscript:before {
+  content: "\e928";
+}
+.ns-editor-table:before {
+  content: "\e929";
+}
+.ns-editor-trash:before {
+  content: "\e92a";
+}
+.ns-editor-underline:before {
+  content: "\e92b";
+}
+.ns-editor-undo:before {
+  content: "\e92c";
+}
+.ns-editor-unordered-list:before {
+  content: "\e92d";
+}
+.ns-editor-vertical-dots:before {
+  content: "\e92e";
+}
+
+
+.nsEditor.nsEditorOuterContainer 
+{
+	border: 1px solid #c0c0c0;
+	overflow: hidden;
+	position: relative;
+	background: #FFFFFF;
+}
+
+.nsEditor *,
+.nsEditorToolBarOveflowDropdown,.nsEditorToolBarOveflowDropdown *
+{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.nsEditor .nsEditorToolBarContainer
+{
+	position: relative;
+	width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #222222;
+    background: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 2px;
+    border: 0px;
+    overflow:hidden;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.nsEditor .nsEditorToolBarContainer,
+.nsEditor .nsEditorToolBarContainer *,
+.nsEditorToolBarOveflowDropdown,.nsEditorToolBarOveflowDropdown *
+{
+	border-collapse: collapse;
+    text-align: left;
+    white-space: nowrap;
+    transition: none;
+    word-wrap: break-word;
+    z-index: 2;
+}
+
+.nsEditor .nsEditorToolBarContent
+{
+	display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    flex-grow: 1;
+    flex-wrap: nowrap;
+    margin-right: 5px;
+}
+
+.nsEditor .nsEditorToolBarButton,
+.nsEditorToolBarOveflowDropdown .nsEditorToolBarButton
+{
+	/*position: relative;
+	display: inline-flex;
+	white-space: nowrap;
+	background: transparent;
+    color: #222222;
+    outline: 0;
+    border: 0;
+    line-height: 1;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.2s ease 0s;
+    border-radius: 0;
+    background-clip: padding-box;
+    z-index: 2;
+    box-sizing: border-box;
+    text-decoration: none;
+    -ms-user-select: none;
+    user-select: none;
+    float: left;
+    min-width: 37px;
+    min-height: 38px;
+    padding:4px;
+    justify-content: center;
+    width: 100%;*/
+    
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    -ms-user-select: none;
+    user-select: none;
+    background: transparent;
+    white-space: nowrap;
+    cursor: default;
+    vertical-align: middle;
+    padding: 2.5px;
+    text-align: center;
+    min-width: 30px;
+    min-height: 30px;
+    line-height: 1;
+    font-size: inherit;
+    border: 1px solid transparent;
+    transition: box-shadow .2s ease-in-out,border .2s ease-in-out;
+    -webkit-appearance: none;
+    margin: 4.5px 4.5px 4.5px 0;
+    justify-content: center; 
+}
+
+.nsEditor .nsEditorToolBarButton:hover,
+.nsEditorToolBarOveflowDropdown .nsEditorToolBarButton:hover
+{
+	background: #e6e6e6;
+}
+
+.nsEditor .nsEditorToolBarButton:focus,
+.nsEditorToolBarOveflowDropdown .nsEditorToolBarButton:focus
+{
+	outline: none;
+    border: 1px solid #1f89e5;
+    box-shadow: 0 0 0 3px #bcdefb,0 0;
+}
+
+.nsEditor .nsEditorToolBarButton.nsEditorToolBarItemActive,
+.nsEditorToolBarOveflowDropdown .nsEditorToolBarButton.nsEditorToolBarItemActive
+{
+	background: #d9d9d9;
+    box-shadow: inset 0 2px 2px #bfbfbf;
+}
+
+/*.nsEditor .nsEditorToolBarButton.nsEditorToolBarButtonDropdown,
+.nsEditorToolBarOveflowDropdown .nsEditorToolBarButton.nsEditorToolBarButtonDropdown
+{
+	margin-right: 6px
+}
+
+.nsEditor .nsEditorToolBarButton .fa,
+.nsEditor .nsEditorToolBarButton svg,
+.nsEditorToolBarOveflowDropdown .nsEditorToolBarButton .fa,
+.nsEditorToolBarOveflowDropdown .nsEditorToolBarButton svg,
+{
+	padding-top:9px;
+}
+
+.nsEditor .nsEditorToolBarButton:hover,
+.nsEditor .nsEditorToolBarButton:focus,
+.nsEditorToolBarOveflowDropdown .nsEditorToolBarButton:hover,
+.nsEditorToolBarOveflowDropdown .nsEditorToolBarButton:focus,
+{
+	background: #d6d6d6 !important;
+    color: #222222 !important
+}
+
+.nsEditor .nsEditorToolBarButton.nsEditorToolBarItemActive,
+.nsEditorToolBarOveflowDropdown .nsEditorToolBarButton.nsEditorToolBarItemActive
+{
+	color: #1e88e5;
+    background: #d6d6d6;
+}*/
+
+.nsEditor .nsEditorToolBarVerticalSeparator,
+.nsEditorToolBarOveflowDropdown .nsEditorToolBarVerticalSeparator
+{
+	display: inline-block;
+	align-self: stretch;
+    width: 1px;
+    min-width: 1px;
+    background: #c4c4c4;
+}
+
+.nsEditor .nsEditorToolBarHorizontalSeparator,
+.nsEditorToolBarOveflowDropdown .nsEditorToolBarHorizontalSeparator
+{
+   display: block;	
+	width: calc(100% - 8px);
+    height: 1px;
+    margin: 0 4px;
+    vertical-align: top;
+    float: none;
+    clear: both;
+    background: #ebebeb;
+}
+
+.nsEditor .nsEditorToolBarOveflowCon
+{
+    position: relative;
+    font-size: inherit;
+    margin: 0px 0px;
+    display: inline-block;
+}
+
+.nsEditor .nsEditorToolBarOveflowCon .nse-vertical-dots
+{
+	font-size: 24px;
+}
+
+.nsEditorToolBarOveflowDropdown
+{
+	position: absolute;
+	top: 100%;
+    bottom: auto;
+    right: 0;
+	z-index: 1001;
+	background: #ffffff;
+	min-width: 100%;
+	/*for IE */
+	width: auto;
+	white-space: nowrap;
+	/*end for IE */
+/* 	width: max-content; */
+/* 	max-width: 60vw; */
+    border: 1px solid #c4c4c4;
+	display: none;
+}
+
+.nsEditorToolBarOveflowDropdown.nsEditorToolBarOveflowDropdownVisible
+{
+	display: inline-block;
+}
+
+.nsEditorToolBarOveflowDropdown .nsEditorToolBarOveflowDropdownToolbar
+{
+	moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    background: #fafafa;
+    padding: 0 4px;
+    border: 0;
+    z-index: 1000;
+}
+
+.nsEditorToolBarOveflowDropdown .nsEditorToolBarOveflowDropdownToolbar .nsEditorToolBarOveflowDropdownContent
+{
+	/*display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    flex-grow: 1;*/
+}
+
+.nsEditorPresent input:focus, 
+.nsEditorPresent select:focus, 
+.nsEditorPresent textarea:focus 
+{
+    border: 1px solid #80bdff;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 0.2rem #c7deff;
+    box-shadow: 0 0 0 0.2rem #c7deff;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.nsEditor span,.nsEditorBody span
+{
+    display: inline;
+    vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+}
+
+.nsEditor a,.nsEditorBody a
+{
+   color:#004cff;
+   text-decoration:none 
+}
+
+.nsEditor span[style~="color:"] a,.nsEditorBody span[style~="color:"] a 
+{
+    color: inherit
+}
+
+.nsEditor a:focus,
+.nsEditor a:hover,
+.nsEditorBody a:focus,
+.nsEditorBody a:hover 
+{
+    cursor: pointer;
+    color: #0093ff;
+    text-decoration: underline
+}
+
+
+.nsEditorPresent .nsEditorPrimaryButton
+{
+	display: inline-block;
+    margin: 0 0 10px!important;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    border-radius: 4px;
+}
+
+.nsEditorPresent .nsEditorPrimaryButton 
+{
+    color: #000;
+    background-color: #c7deff;
+    border: 1px solid #80bdff;
+    border-radius: 4px
+}
+
+.nsEditorPresent .nsEditorPrimaryButton:active
+{
+	color: #fff;
+    background-color: #3f9dff;
+    border-color: #4592ff;
+    -webkit-box-shadow: inset 0 3px 5px #4592ff;
+    box-shadow: inset 0 3px 5px #4592ff;
+}
+
+.nsEditorPresent .nsEditorPrimaryButton:focus,
+.nsEditorPresent .nsEditorPrimaryButton:hover
+{
+	color: #000;
+    background-color: #80bdff;
+    border-color: #3f9dff;
+    outline: 0 none;
+}
+
+.nsEditor.nsEditorSticky .nsEditorToolBarContainer
+{
+	position: fixed;
+    top: 0;
+    border: 1px solid #c0c0c0;
+    border-left: 0;
+    border-bottom: solid #888 1px;
+}
+
+.nsEditorStickyToolbar
+{
+	display: none
+}
+
+.nsEditor.nsEditorSticky .nsEditorStickyToolbar
+{
+	display: block;
+}
+
+/*.nsEditor .nsEditorToolBarButtonDropdown::after
+{	
+	position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #222222;
+    right: 2px;
+    top: 17px;
+    content: "";
+}*/
+
+.nsEditor .fa,
+.nsEditor .nsEditorIcon,
+.nsEditorToolBarOveflowDropdown .fa,
+.nsEditorToolBarOveflowDropdown .nsEditorIcon
+{
+	color: inherit;
+    cursor: inherit;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.nsEditor .nsEditorIcon.nsEditorIconArrow,
+.nsEditorToolBarOveflowDropdown .nsEditorIcon.nsEditorIconArrow
+{
+    margin-left: 0px;
+	width: 10px;
+	pointer-events: none;
+    z-index: 1;
+}
+
+.nsEditor .nsEditorToolBarButtonDisabled,
+.nsEditorToolBarOveflowDropdown .nsEditorToolBarButtonDisabled
+{
+	opacity: 0.5;
+    filter: alpha(opacity=50);
+    border: 0px none transparent;
+    cursor: auto;
+    pointer-events: none;
+}
+
+.nsEditorToolBarDropdown
+{
+	display: none;
+    position: absolute;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 4;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+.nsEditorToolBarDropdown .nsEditorToolBarDropdownItem
+{
+	color: inherit;
+    padding: 4px 24px;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.nsEditorToolBarDropdown .nsEditorToolBarDropdownItem:hover
+{
+	background-color: #ddd
+}
+
+.nsEditorToolBarDropdown.nsEditorToolBarDropdownShow
+{
+	display:block;
+}
+
+.nsEditor .nsEditorTabContainer
+{
+	width: 100%;
+	padding: 0;
+	background-color: #CCC9A8;
+    border-top: 1px solid #888;
+    text-align: left;
+    margin: 0;
+    overflow:hidden;
+}
+.nsEditor .nsEditorBodyContainer
+{
+    position: relative;
+    clear: both;
+    overflow: auto;
+    border-top: solid #888 1px;
+    border-bottom: solid #888 1px;
+    /*display: flex;
+    flex-direction: column;*/
+    height: auto;
+    /*height: calc(100% - 60px);/* to show footer */
+}
+
+.nsEditor .nsEditorFooterContainer
+{
+	position: relative;
+	width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #ECE9D8;
+    text-align: center;
+    border-top: 1px solid #d1d1d1;
+    background: #f8f8f8;
+    overflow:hidden;
+}
+
+.nsEditor .nsEditorFooterContainer .nsEditorFooterLeftContainer
+{
+	float: left;
+    outline: none;
+}
+
+.nsEditor .nsEditorFooterContainer .nsEditorFooterRightContainer
+{
+	float: right;
+	outline: none;
+	margin-right: 10px;
+}
+
+.nsEditor .nsEditorTextAreaContainer 
+{
+	position: relative;
+	float: left;
+	padding: 0px;
+	margin: 0px;
+	height: 100%;
+	width: calc(100% - 1px);
+	overflow-x: auto;
+}
+
+.nsEditor.nsEditorWithLineNumber .nsEditorTextAreaContainer 
+{
+	width: calc(100% - 56px);/*(width of line number div + margin right of line number div + 1)*/
+}
+
+.nsEditor.nsEditorWithLineNumber .nsEditorTextAreaGeneric *,
+.nsEditorBody.nsEditorBodyWithLineNumber *
+{
+	font-size: 12px;
+}
+
+.nsEditor.nsEditorWithLineNumber .nsEditorTextAreaGeneric .nsEditorLineElement
+{
+	margin:0;
+	font-size: 12px;
+}
+
+.nsEditor.nsEditorWithLineNumber .nsEditorTextArea .nsEditorLineElement, .nsEditorOuterContainer .nsEditorLineNumberWrapper .nsEditorLineNumber 
+{
+	font-family: monospace;
+	line-height: 15px !important;
+}
+
+.nsEditor .nsEditorTextAreaContainer .nsEditorTextArea 
+{
+	position: relative;
+	padding: 5px;
+	border: 0;
+}
+
+.nsEditor.nsEditorWithLineNumber .nsEditorTextAreaContainer .nsEditorTextArea
+{
+	height:97%;
+	padding:0px;
+	padding-top:5px;
+	padding-right:5px;
+}
+
+.nsEditor .nsEditorTextAreaContainer .nsEditorTextArea:focus
+{
+	outline: none;
+}
+
+.nsEditor .nsEditorTextAreaGeneric .nsEditorLineElement
+{
+	margin: 0 0 10px;
+}
+
+.nsEditor .nsEditorTextAreaContainer .nsEditorTextArea:empty:not(:focus):before 
+{
+  content: attr(data-placeholder);
+}
+
+.nsEditor .nsEditorLineNumberContainer 
+{
+	height:100%;
+	width: 50px;
+	margin-top: 0px;
+	float: left;
+	overflow: hidden;
+	border-right: 1px solid #c0c0c0;
+	margin-right: 5px;
+}
+
+.nsEditor .nsEditorLineNumberWrapper 
+{
+	padding-top: 5px;
+	background: #f0f0f0;
+    color: #333;
+}
+
+.nsEditor .nsEditorLineNumberWrapper .nsEditorLineNumber 
+{
+	padding-right: 8px;
+	padding-top: 0px;
+	text-align: right;
+	white-space: nowrap;
+	font-size: 12px;
+}
+
+.nsEditor .nsEditorComponentHidden
+{
+	display: none !important;
+}
+
+.nsEditor .nsEditorLineNumberWrapper .nsEditorLineNumberSelected 
+{
+	color: red;
+}
+
+.nsEditor .nsEditorTextAreaContainer .nsEditorTextAreaIFrame
+{
+	width: 100%;
+	height: 100%;
+    position: relative;
+    display: block;
+    /*z-index: 2;  (inlinePopUp has issue with z-index) */
+    box-sizing: border-box;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+}
+
+.nsEditor .nsEditorSourceTextArea
+{
+	width: 100%;
+    height: 100%;
+	font-family: 'Courier New', Monospace;
+    font-size: small;
+    background-color: #fff;
+    white-space: pre-wrap;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    resize: none;
+}
+
+.nsEditor .nsEditorPlaceholder
+{
+	position: absolute;
+    font-size: 16px;
+    color: #aaaaaa;
+    z-index: 1;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    line-height: normal;
+    text-align: left;
+    pointer-events: none;
+}
+
+.nsEditor .nsEditorPlaceholderShow
+{
+	display: block;
+}
+
+.nsEditor .nsEditorMediaContainerContainer
+{
+	display: block;
+    padding: 1px;
+    margin: 0 0 10px;
+    outline: 1px dashed #e1e1e1;
+}
+
+.nsEditor .nsEditorMediaContainerContainer .nsEditorMediaContainer
+{
+	display: block;
+    outline: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nsEditor .nsEditorMediaContainer .nsEditorMediaCaption
+{
+	display: block;
+    z-index: 2;
+	padding: 1em .5em;
+    margin: 0;
+    background-color: #f9f9f9;
+    outline: none;
+}
+
+.nsEditor audio, 
+.nsEditor .nsEditorMediaCaption, 
+.nsEditor .nsEditorMediaContainer, 
+.nsEditor img,
+.nsEditor video 
+{
+    position: relative;
+}
+
+
+
+.nsEditorFixedComp
+{
+	position: fixed; 
+	left: 0px; 
+	top: 0px; 
+	width: 0px; 
+	height: 0px;
+/* 	Parent should also have more z-index  */
+	z-index:1000;
+}
+
+.nsEditorPageBreak
+{
+	clear: both !important;
+    width: 100% !important;
+    border-top: #999 1px dotted !important;
+    border-bottom: #999 1px dotted !important;
+    padding: 0 !important;
+    height: 7px !important;
+    cursor: default !important;
+}
+
+.nsEditorTextAreaHidden
+{
+	display: none !important;
+}
+
+.nsEditorHidden
+{
+	position:absolute;
+	right: 999px;
+    top:999px;
+}
+
+.nsEditorPrint
+{
+	position:fixed;
+	left: -9999px;
+    top:0px;
+    height: 100%;
+    width: 0px;
+    overflow: hidden;
+    z-index:100000000;
+    tabIndex: -1;
+}
+
+/*******Prompt CSS *************/
+.nsEditorPromptOvelay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.50);
+    z-index: 999999
+}
+.nsEditorPromptOvelay .nsEditorPrompt {
+	position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 20%;
+    left: 3%;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,.2);
+    border-radius: 3px;
+    overflow: hidden;
+    line-height: 1.2;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .nsEditorPromptOvelay .nsEditorPrompt {
+    margin: 30px auto;
+    width: 70%;
+  }
+}
+@media (min-width: 992px) {
+  .nsEditorPromptOvelay .nsEditorPrompt {
+    margin: 50px auto;
+    width: 600px;
+  }
+}
+
+.nsEditorPromptOvelay .nsEditorPrompt header {
+    padding: 10px 8px;
+    background-color: #f6f7f9;
+    border-bottom: 1px solid #e5e5e5;
+    min-height: 20px;
+}
+.nsEditorPromptOvelay .nsEditorPrompt header h3 {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18px;
+    margin: 0;
+    color: #555;
+    display: inline-block;
+}
+.nsEditorPromptOvelay .nsEditorPrompt header .fa-close {
+    float: right;
+    color: #c4c5c7;
+    cursor: pointer;
+    transition: all .5s ease;
+    padding: 0 2px;
+    border-radius: 1px    
+}
+.nsEditorPromptOvelay .nsEditorPrompt header .fa-close:hover {
+    color: #b9b9b9
+}
+.nsEditorPromptOvelay .nsEditorPrompt header .fa-close:active {
+    box-shadow: 0 0 5px #673AB7;
+    color: #a2a2a2
+}
+.nsEditorPromptOvelay .nsEditorPrompt .nsEditorPromptBody {
+    padding: 12px 10px;
+    overflow-y: auto;
+  	min-height: 80px;
+  	
+}
+.nsEditorPromptOvelay .nsEditorPrompt .nsEditorPromptBody p{
+    margin: 0;
+    font-size: 17px;
+    color: #333
+}
+.nsEditorPromptOvelay .nsEditorPrompt footer {
+    border-top: 1px solid #e5e5e5;
+    padding: 8px 10px
+}
+.nsEditorPromptOvelay .nsEditorPrompt footer .controls {
+    direction: rtl
+}
+.nsEditorPromptOvelay .nsEditorPrompt footer .controls .button {
+    padding: 5px 15px;
+    border-radius: 3px
+}
+.nsEditorPromptOvelay .nsEditorPromptButton {
+  cursor: pointer;
+  height: 36px;
+  padding: 10px;
+  font-size: 16px;
+}
+.nsEditorPromptOvelay .nsEditorPromptButtonDefault {
+    background-color: rgb(248, 248, 248);
+    border: 1px solid rgba(204, 204, 204, 0.5);
+    color: #5D5D5D;
+}
+.nsEditorPromptOvelay .nsEditorPromptButtonDanger {
+    background-color: #f44336;
+    border: 1px solid #d32f2f;
+    color: #f5f5f5
+}
+
+/*********End of Prompt CSS *********/.nsTablePicker
+{
+	
+}
+
+.nsTablePicker .nsTablePickerTblCon
+{
+	min-width: 100px;
+    min-height: 100px;
+    display: table;
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
+
+.nsTablePicker .nsTablePickerTblCon .nsTablePickerTbl
+{
+	
+}
+
+.nsTablePicker .nsTableRowContainer
+{
+	width: 100%;
+/*     min-height: 25px; */
+    display: table-row;
+    vertical-align: top;
+    box-sizing: inherit;
+}
+
+.nsTablePicker .nsTableRowContainer .nsTableRow
+{
+	width: auto;
+    height: auto;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.nsTablePicker .nsTableCellContainer
+{
+/* 	width: 25px; */
+/*     height: 25px; */
+    box-sizing: inherit;
+    display: table-cell;
+    vertical-align: top;
+    word-break: break-all;
+    cursor: pointer;
+    padding: 1px;
+}
+
+.nsTablePicker .nsTableCellContainer .nsTableCell
+{
+	width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.nsTablePicker .nsTablePickerLblCon
+{
+	width:100%;
+	height:23px;
+}
+
+.nsTablePicker .nsTablePickerLblCon .nsTablePickerLbl
+{
+	height: 100%;
+	text-align: center;
+	white-space: nowrap;
+    cursor: auto;
+    float: none;
+    font-family: Helvetica,Arial,Tahoma,Verdana,Sans-Serif; 
+    font-size: 12px; 
+    font-style: normal; 
+    margin-top: 5px;
+}
+
+.nsTablePickerWhite
+{
+	border: 1px solid rgb(217, 217, 217);
+    border-radius: 5px;
+    background: rgb(255, 255, 255);
+}
+
+.nsTablePickerWhite .nsTablePickerTblCon
+{
+	background-color: rgb(255, 255, 255);
+    padding: 5px 5px 0;
+    display: inline-block;
+}
+
+.nsTablePickerWhite .nsTableCellContainer .nsTableCell
+{
+	border: 1px solid rgb(204, 204, 204);
+}
+
+.nsTablePickerWhite .nsTableCellContainer .nsTableCellSelected
+{
+	background-color: rgb(221, 238, 255);
+}
+
+.nsTablePickerWhite .nsTableCellContainer .nsTableCellActive
+{
+	background-color: rgb(221, 238, 255);
+}
+
+.nsTablePickerWhite .nsTablePickerLblCon .nsTablePickerLbl
+{
+	color: #000000;
+}
+
+.nsTablePickerBlack
+{
+	border: 1px solid rgb(217, 217, 217);
+    border-radius: 5px;
+    background-color: rgb(56, 62, 76);
+}
+
+.nsTablePickerBlack .nsTablePickerTblCon
+{
+	background-color: rgb(56, 62, 76);
+    padding: 5px;
+    display: inline-block;
+}
+
+.nsTablePickerBlack .nsTableCellContainer .nsTableCell
+{
+	border: 1px solid rgb(170, 170, 170);
+}
+
+.nsTablePickerBlack .nsTableCellContainer .nsTableCellSelected
+{
+	background-color: rgb(170, 170, 170);
+}
+
+.nsTablePickerBlack .nsTableCellContainer .nsTableCellActive
+{
+	background-color: rgb(238, 238, 238);
+}
+
+.nsTablePickerBlack .nsTablePickerLblCon .nsTablePickerLbl
+{
+	color: #FFFFFF;
+}.nsEditorModal 
+{
+    z-index: 2000;
+    position: absolute;
+}
+
+.nsEditorModal * 
+{
+    box-sizing: border-box;
+    -webkit-user-drag: none;
+    overflow: visible;
+}
+
+.nsEditorModal div
+{
+    width:auto;
+}
+
+.nsEditorModal .nsEditorModalContainerFullScreen
+{
+    margin-right: 0;
+    margin-bottom: 0;
+}
+
+.nsEditorModal .nsEditorModalBody 
+{
+    position: relative;
+    padding: 2px;
+}
+
+.nsEditorModal .nsEditorModalContainerFullScreen .nsEditorModalBody 
+{
+    padding: 0;
+}
+
+.nsEditorModal .nsEditorModalShadow 
+{
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    *border-right-width: 2px;
+    *border-bottom-width: 2px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+
+.nsEditorModal .nsEditorModalTitlebar
+{
+    height: 26px;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #fff;
+    position: relative;
+    cursor: move;
+}
+
+.nsEditorModal .nsEditorModalDragHandle 
+{
+    height: 26px;
+}
+
+.nsEditorModal .nsEditorModalCaption 
+{
+	float: left;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 26px;
+    padding-left: 5px;
+}
+
+.nsEditorModal .nsEditorModalCloseButtonContainer 
+{
+    position: absolute !important;
+    right: 5px;
+    top: 3px;
+    border: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.nsEditorModal .nsEditorModalButton 
+{
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 4px;
+    margin: 1px!important;
+    padding: 0;
+    font-size: 12px;
+    line-height: 27px
+}
+
+.nsEditorModal .nsEditorModalButton:enabled:active
+{
+	background-color: #d1d1d1;
+    border-color: #c1c1c1;
+    -webkit-box-shadow: inset 0 3px 5px #c1c1c1;
+    box-shadow: inset 0 3px 5px #c1c1c1;
+}
+
+.nsEditorModal .nsEditorModalButton:enabled:focus,
+.nsEditorModal .nsEditorModalButton:enabled:hover
+{
+	background-color: #e1e1e1;
+    border-color: #d1d1d1;
+    outline: 0 none;
+}
+
+.nsEditorModal .nsEditorModalCloseButton 
+{
+	width: 20px;
+    height: 20px;
+    float: right;
+    font-weight: 700;
+    text-shadow: 0 1px 0 #fff;
+    -webkit-appearance: none;
+    filter: alpha(opacity=100);
+    opacity: 1;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #111;
+}
+
+.nsEditorModal button * 
+{
+    pointer-events: none;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden
+}
+
+.nsEditorModal button>svg 
+{
+    width: 16px;
+    height: 16px;
+    margin: auto;
+    fill: currentColor;
+    display: block;
+    text-align: center;
+    float: none;
+}
+
+.nsEditorModal .nsEditorModalCloseButton>svg 
+{
+    width: 10px;
+    height: 10px;
+}
+
+.nsEditorModal .nsEditorModalContentContainer 
+{
+    position: relative;
+}
+
+.nsEditorModal .nsEditorModalContentMask 
+{
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: move;
+    visibility: hidden;
+    display: block;
+    opacity: 0;
+    filter: alpha(opacity = 0);
+}
+
+.nsEditorModal .nsEditorModalFooter
+{
+	background-color: white;
+    height: 40px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.nsEditorModalMask 
+{
+	position: absolute;
+    opacity: 0.3;
+    filter: alpha(opacity = 30);
+    background-color: #ccc;
+}
+
+.nsEditorModalDragMask 
+{
+    position: absolute;
+    background-color: transparent;
+    cursor: move;
+}.nsEditorInlinePopup
+{
+	position: absolute;
+	width: auto;
+    overflow: visible;
+    z-index: 6;
+    border: 1px solid rgba(0,0,0,.25);
+    border-radius: 4px;
+    text-align: start;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    letter-spacing: normal;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+    white-space: normal;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    line-break: auto;
+    padding: 0;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 22px;
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale;    
+}
+
+.nsEditorInlinePopup.nsEditorInlinePopupHide
+{
+	display: none;
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupArrow,
+.nsEditorInlinePopup .nsEditorInlinePopupArrow:after 
+{
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border: 11px solid transparent;
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupArrow.nsEditorInlinePopupArrowUp 
+{
+    top: -11px;
+    left: 0px;
+    margin-left: 0px;
+    border-top-width: 0;
+    border-bottom-color: rgba(0,0,0,.25);
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupArrow.nsEditorInlinePopupArrowUp:after 
+{
+    top: 1px;
+    margin-left: -11px;
+    content: " ";
+    border-top-width: 0;
+    border-bottom-color: #fff;
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupContentContainer
+{
+	display: block;
+	padding: 5px;
+	white-space: nowrap;
+    line-height: 0;
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupContentContainer .nsEditorInlinePopupButton
+{
+	position: relative;
+	display: inline-block;
+	background: transparent;
+    color: #333;
+    -moz-outline: 0;
+    outline: none;
+    border: 0;
+    line-height: 1;
+    cursor: pointer;
+    text-align: left;
+    margin: 4px 8px;
+    padding: 0;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    z-index: 2;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-decoration: none;
+    user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    height: 40px;
+    text-transform: none;
+    overflow: visible;
+    font-family: inherit;
+    font-size: inherit;
+    float: none;
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupButton.nsEditorInlinePopupButtonActive
+{
+	background: #d6d6d6;
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupButtonDropdownContainer
+{
+	display: inline-block;
+    position: relative;
+    font-size: inherit;
+    margin-right: 5px;
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupButton.nsEditorInlinePopupButtonDropdown:after
+{
+	position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #333;
+    right: 2px;
+    top: 14px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    content: "";
+}
+
+/*https://stackoverflow.com/questions/20541306/how-to-write-a-css-hack-for-ie-11*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) 
+{
+   .nsEditorInlinePopup .nsEditorInlinePopupButton.nsEditorInlinePopupButtonDropdown:after
+	{
+		top: 18px;
+	}
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupButton.nsEditorInlinePopupButtonDropdown.nsEditorInlinePopupButtonOpen:after
+{
+	border-top-color: #333;
+	border-top: 0;
+    border-bottom: 4px solid #222;
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupContentContainer .nsEditorInlinePopupButton:active
+{
+	color: #333;
+	background: #d6d6d6;
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupContentContainer .nsEditorInlinePopupButton:hover
+{
+	background: #ebebeb;
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupButton i
+.nsEditorInlinePopup .nsEditorInlinePopupButton .fa
+.nsEditorInlinePopup .nsEditorInlinePopupButton .fas
+{
+	font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupButton i,
+.nsEditorInlinePopup .nsEditorInlinePopupButton svg
+{
+	display: block;
+    text-align: center;
+    float: none;
+    margin: 8px 7px;
+    width: 24px;
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupButton .nsEditorInlinePopupButtonTooltip
+{
+	position: absolute;
+	left: 50%;
+    top: 0;
+    bottom: -5px;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    display: block;
+    z-index: 1000;
+    transform: translateY(100%);
+    transition: opacity .2s ease-in-out .2s;
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupButton:hover .nsEditorInlinePopupButtonTooltip 
+{
+    visibility: visible;
+    opacity: 1;
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupButton .nsEditorInlinePopupButtonTooltip .nsEditorInlinePopupButtonTooltipText
+{
+	position: relative;
+	display: inline-block;
+	left: -50%;
+	border-collapse: collapse;
+	text-align: left;
+    white-space: nowrap;
+    cursor: auto;
+    float: none;
+    font-size: .9em;
+    line-height: 1.5;
+    color: #fff;
+    padding: 5px 8px;
+    background: #333;
+    border-radius: 2px;
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupButtonTooltipText:after
+{
+	position: absolute;
+	width: 0;
+    height: 0;
+	left: 50%;
+    top: -4px;
+    pointer-events: none;
+    /* causes submenu to change its position */
+    /*content: "";*/
+    transition: opacity .2s ease-in-out .2s;
+    border-style: solid;
+    transform: translateX(-50%);
+    border-left-color: transparent;
+    border-bottom-color: #333;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    border-left-width: 5px;
+    border-bottom-width: 5px;
+    border-right-width: 5px;
+    border-top-width: 0;
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupDropdownContainer
+{
+	position: absolute;
+	top: 100%;
+    bottom: auto;
+    left: 0;
+	z-index: 1000;
+	border-radius: 2;
+	border-top-left-radius: 0;
+	min-width: 100%;
+	/*box-shadow:0 1px 2px 1px,0 0;*/
+	background: #ffffff;
+	border: 1px solid #c4c4c4;
+	display: none;
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupButtonDropdownContainer .nsEditorInlinePopupDropdownContainer.nsEditorInlinePopupDropdownContainerVisible
+{
+	display: inline-block;
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupButtonDropdown
+{
+	display: flex;
+    flex-direction: column;
+    list-style-type: none;
+	moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: #fff;
+    border-radius:2px;
+    border-top-left-radius: 0;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-left:0px;
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupButtonDropdownItem
+{
+	display: block;
+	cursor: default;
+	min-width: 160px;
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupButtonDropdownItem:hover
+{
+	background: #ebebeb;
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupButtonDropdownItem .nsEditorInlinePopupButtonDropdownItemContent
+{
+	padding: 0 20px;
+    line-height: 200%;
+    display: block;
+    cursor: pointer;
+    white-space: nowrap;
+    color: inherit;
+    text-decoration: none;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+.nsEditorInlinePopup .nsEditorInlinePopupHorizontalSeparator 
+{
+	display: block;	
+	width: calc(100% - 8px);
+    height: 1px;
+    margin: 0 4px;
+    vertical-align: top;
+    float: none;
+    clear: both;
+    background: #ebebeb;
+}
+	.nsEditorFullScreenParent 
+{
+/*     z-index: 100000!important; */
+    position: static!important;
+    overflow: visible!important
+}
+
+html.nsEditorFullScreenParent,body.nsEditorFullScreenParent 
+{
+    height: 0!important;
+    width: 0!important;
+    overflow: initial!important
+}
+
+html.nsEditorFullScreenParent 
+{
+    position: fixed!important
+}
+
+.nsEditorFullScreen 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    max-width: none!important
+}
+.nsEditorFullScreen .nsEditorToolBarContainer,.nsEditorFullScreen .nsEditorTabContainer 
+{
+    width: 100%!important
+}.nsEditor .nsEditorResizer
+{
+	position: absolute;
+	right:0px;
+	width: 0;
+    height: 0;
+    overflow: hidden;
+    border-width: 10px 10px 0 0;
+    border-color: transparent #bcbcbc transparent transparent;
+    border-style: dashed solid dashed dashed;
+    font-size: 0;
+    vertical-align: bottom;
+    margin-top: 6px;
+    margin-bottom: 4px;
+    cursor: se-resize;
+    margin-right: 3px;
+}.nsEditorLinkModalContent
+{
+    width: 500px !important;
+    height: 200px;
+    max-width: 500px;
+}
+
+.nsEditorLinkModalContent .nsEditorLinkModalContentContainer
+{
+	position: relative;
+    padding: 15px;
+}
+
+.nsEditorLinkModalContent .nsEditorLinkModalContentForm
+{
+	margin-bottom: 10px;
+}
+
+.nsEditorLinkModalContent .nsEditorLinkModalContentFormLabel
+{
+	display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.nsEditorLinkModalContent .nsEditorLinkModalContentFormTextBox
+{
+	display: block;
+    width: 100%;
+    height: 34px;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 0 4px;
+}
+
+.nsEditorLinkModalContent .nsEditorLinkModalContentFormLast
+{
+	margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.nsEditorLinkModalContent .nsEditorLinkModalContentFormCheckbox
+{
+	margin-left: 0;
+    margin-right: 4px;
+}
+
+.nsEditorLinkFooterContainer
+{
+	padding: 10px 15px 0;
+    text-align: right;
+}.nsEditor .nsEditorTextArea table,.nsEditorBody table
+{
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    width:100%;
+}
+
+.nsEditor .nsEditorTextArea table tr,.nsEditorBody table tr 
+{
+    user-select: none;
+}
+
+.nsEditor .nsEditorTextArea table tr td,
+.nsEditor .nsEditorTextArea table tr th,
+.nsEditorBody table tr td,
+.nsEditorBody table tr th
+{
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    user-select: text;
+    padding: 5px 10px;
+}
+
+.nsEditor .nsEditorTextArea table .nsEditorHiddenRow,
+.nsEditorBody table .nsEditorHiddenRow
+{
+	height: 0px;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.nsEditor .nsEditorTextArea table .nsEditorHiddenRow td,
+.nsEditorBody table .nsEditorHiddenRow td
+{
+	height: 0;
+    padding: 0;
+    border-top: 0;
+    overflow: hidden;
+    line-height: 0;
+}.nsEditor .nsEditorFooterContainer .nsEditorWordsContainer,
+.nsEditor .nsEditorFooterContainer .nsEditorCharsContainer
+{
+	padding: 10px;
+	color: #999999;
+	font-size: 14px;
+    font-family: sans-serif;
+}
+.nsEditor .nsEditorFooterContainer .nsEditorElementPathContainer
+{
+	margin-left: 5px;
+	color: #999999;
+	font-size: 12px;
+    font-family: sans-serif;
+    white-space: nowrap;
+}
+.nsEditor .nsEditorFooterContainer .nsEditorElementPathContainer .nsEditorElementPath
+{
+	position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.nsEditor .nsEditorFooterContainer .nsEditorElementPathContainer .nsEditorElementPath .nsEditorElementPathItem
+{
+/* 	margin-right: 5px; */
+}
+.nsEditor .nsEditorFooterContainer .nsEditorElementPathContainer .nsEditorElementPath .nsEditorElementPathItem a
+{
+	text-decoration: none;
+    cursor: default;
+    border-radius: 3px;
+    user-select: none;
+    display: inline-block;
+    vertical-align: baseline;
+    text-align: left;
+    white-space: nowrap;
+    padding: 2px 3px;
+    line-height: 10px;
+    outline: 0;
+    border: 0;
+    color: #222;
+}
+.nsEditor .nsEditorFooterContainer .nsEditorElementPathContainer .nsEditorElementPath .nsEditorElementPathItem a:hover
+{
+	background-color: hsla(0,0%,88.2%,.99);
+    text-decoration: none;
+    color: #222;
+}.nsEditor .nsElemEditorResizer
+{
+	position: absolute;
+    border: 1px solid rgba(3,14,82,.92);
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    font-size: 0;
+}
+
+.nsEditor .nsElemEditorResizer .nsEditorResizerComp,
+.nsEditor .nsElemEditorResizer .nsEditorResizerSize
+{
+	position: absolute;
+    display: inline-block;
+}
+
+.nsEditor .nsElemEditorResizer .nsEditorResizerSize
+{
+	left: 50%;
+    top: 50%;
+    height: 24px;
+    width: 70px;
+    max-width: 100%;
+    margin-left: -35px;
+    margin-top: -12px;
+    line-height: 24px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .35);
+    opacity: 0;
+    transition: opacity .2s linear;
+    overflow: visible;
+}
+
+.nsEditor .nsElemEditorResizer .nsEditorResizerComp
+{
+	z-index: 4;
+    pointer-events: all;
+    border: 1px solid rgba(3,14,82,.92);
+    background-color: hsla(0,0%,88.2%,.99);
+    width: 10px;
+    height: 10px;
+}
+
+.nsEditor .nsElemEditorResizer .nsEditorResizerComp.nsEditorResizerTopLeft
+{
+	left: -5px;
+    top: -5px;
+    cursor: nw-resize;
+}
+
+.nsEditor .nsElemEditorResizer .nsEditorResizerComp.nsEditorResizerTopRight
+{
+	right: -5px;
+    top: -5px;
+    cursor: ne-resize;
+}
+
+.nsEditor .nsElemEditorResizer .nsEditorResizerComp.nsEditorResizerBottomLeft
+{
+	left: -5px;
+    bottom: -5px;
+    cursor: sw-resize;
+}
+
+.nsEditor .nsElemEditorResizer .nsEditorResizerComp.nsEditorResizerBottomRight
+{
+	right: -5px;
+    bottom: -5px;
+    cursor: se-resize;
+}.nsEditorTableResizeHandler 
+{
+    cursor: col-resize;
+    position: absolute;
+    z-index: 3;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: -5px;
+}
+.nsEditorTableResizeHandler:after
+{
+  content:"";
+  display:block;
+  height:100%;
+  width:0;
+  border:0;
+}
+.nsEditorTableResizeHandler.nsEditorTableResizeHandlerMoved
+{
+  background-color:#b5d6fd;
+  z-index:2;
+}
+.nsEditorTableResizeHandler.nsEditorTableResizeHandlerMoved:after
+{
+  border-right:1px solid #1e88e5;
+}
+.nsEditorTextArea .nsEditorSelectedCell,
+.nsEditorBody .nsEditorSelectedCell
+{
+	border: 1px double #4592ff !important;
+    background-color: #f1f7ff;
+}.nsEditorSearchWrapper 
+{
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 0;
+	min-width: 300px;
+}
+
+.nsEditorSearchWrapper.nsEditorSearchWrapperSticky 
+{
+	position: fixed;
+}
+
+.nsEditorSearchWrapper.nsEditorSearchVisible 
+{
+	visibility: visible;
+}
+.nsEditorSearchWrapper .nsEditorSearchContainer 
+{
+	width: 325px;
+	max-width: 100vw;
+/* 	display: flex; */
+	position: absolute;
+	right: 0;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid #d9d9d9;
+    border-top: none;
+	padding: 4px;
+}
+
+.nsEditorSearchWrapper .nsEditorSearchContent
+{
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    padding-bottom: 5px;
+}
+
+.nsEditorSearchWrapper .nsEditorSearchContent .nsEditorSearchInputCountWrapper
+{
+	position: relative;
+    display: inline-block;
+    width: 220px;
+    height: 36px;
+}
+
+.nsEditorSearchWrapper .nsEditorSearchContent .nsEditorSearchInputCountOuterContainer
+{
+	background: rgb(255, 255, 255);
+	min-width: 20px;
+	width: 100%;
+	border: 1px solid rgb(218, 220, 224);
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: rgb(60, 64, 67);
+    padding: 1px 8px;
+    font-size: 14px;
+    height: 36px;
+    margin: 0px;
+}
+
+.nsEditorSearchButton .nse
+{
+	font-size: 16px;
+}
+
+.nsEditorSearchWrapper .nsEditorSearchInput
+{
+	font-size: 13px;
+    height: 25px;
+    margin: 0px;
+    width: 100%;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    padding: 1px 0px !important;
+}
+
+.nsEditorSearchWrapper .nsEditorSearchCountContainer
+{
+	max-width: 120px;
+    overflow: hidden;
+    padding: 0px 8px 0px 4px;
+    text-align: right;
+}
+
+.nsEditorSearchWrapper .nsEditorSearchCount
+{
+	color: rgb(204, 204, 204);
+    white-space: nowrap;
+    display: none;
+}
+
+.nsEditorSearchWrapper .nsEditorSearchCount.nsEditorSearchCountVisible
+{
+	display:inline-block;
+}
+
+.nsEditorSearchWrapper .nsEditorSearchButtonContainer
+{
+	flex: 1;
+	padding-left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 30px;
+}
+
+.nsEditorSearchWrapper .nsEditorSearchButtonContainer .nsEditorSearchButton
+{
+	background-image: none;
+    background-color: transparent;
+    border-color: transparent;
+    margin: 0;
+    padding: 1px 0px;
+    min-width: 24px;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.nsEditorSearchWrapper .nsEditorSearchButtonContainer .nsEditorSearchButton:hover,
+.nsEditorSearchWrapper .nsEditorSearchButtonContainer .nsEditorSearchButton:active
+{
+	box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.06);
+    background-image: none;
+    cursor: pointer;
+    border-color: transparent !important;
+}
+
+.nsEditorSearchWrapper .nsEditorSearchButtonContainer .nsEditorSearchButton:active
+{
+	background: rgb(248, 248, 248);
+    color: rgb(17, 17, 17);
+	border: 1px solid rgb(198, 198, 198);
+	border-style: outset;
+}
+
+.nsEditorSearchWrapper .nsEditorSearchButtonContainer .nsEditorSearchButtonNext
+{
+	padding-right:0px;
+}
+
+.nsEditorSearchWrapper .nsEditorSearchButtonContainer .nsEditorSearchButtonPrevious
+{
+	padding-left:0px;
+}
+
+.nsEditorSearchWrapper .nsEditorSearchButtonContainer .ns-editor-expand-bold,
+.nsEditorSearchWrapper .nsEditorSearchButtonContainer .ns-editor-collapse-bold
+{
+	font-size: 24px;
+}
+
+.nsEditorSearchWrapper .nsEditorSearchButtonContainer .nsEditorSearchButtonClose
+{
+	width: 80%;
+}
+
+.nsEditorSearchWrapper .nsEditorReplaceContainer
+{
+	margin: 0;
+    border: 0;
+    vertical-align: baseline;
+    line-height: 1;
+    height: initial;
+    border-radius: 0;
+    font-size: inherit;
+    font-weight: 400;
+    display: none;
+}
+
+.nsEditorSearchWrapper .nsEditorReplaceContainer.nsEditorReplaceContainerVisible
+{
+	display: block;
+}
+
+.nsEditorSearchWrapper .nsEditorReplaceContainer .nsEditorReplaceInput
+{
+	font-size: 13px;
+    height: 25px;
+    margin: 0px;
+    width: 100%;
+    background: transparent !important;
+    border: 1px solid #b8b8b8;
+    box-shadow: none !important;
+    outline: none !important;
+    padding: 1px 8px;
+}
+
+.nsEditorSearchWrapper .nsEditorReplaceContainer .nsEditorReplaceButtonWrapper
+{
+	margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    line-height: 1;
+    height: initial;
+    border-radius: 0;
+    font-size: inherit;
+    font-weight: 400;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    padding-top: .5em;
+}
+
+.nsEditorSearchWrapper .nsEditorReplaceButtonWrapper .nsEditorReplaceButtonContainer
+{
+	display: flex;
+	cursor: pointer;
+    padding: 0px 5px;
+}
+
+.nsEditorSearchWrapper .nsEditorReplaceButtonContainer .nsEditorReplaceButton
+{
+	text-decoration: none; 
+	display: inline-block;
+    border: none; 
+    padding: 4px 16px;
+    font-size: 14px;
+    font-style: normal;
+    cursor: pointer;
+    background-color: #207ab7; 
+    color: #fff; 
+    border-radius: 5px; 
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24); 
+    cursor: pointer; 
+    outline: none; 
+    line-height: 24px;
+    text-align: center;
+    text-transform: capitalize;	
+}
+
+.nsEditorSearchWrapper .nsEditorReplaceButtonContainer .nsEditorReplaceButton:active
+{
+	transform: scale(0.98); 
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24); 
+}

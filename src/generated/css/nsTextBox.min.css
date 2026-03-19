@@ -1,0 +1,355 @@
+.nsListOuterContainer
+{
+    position: relative;   
+    overflow-y: auto;
+    width:inherit;
+    height:inherit;
+}
+
+.nsListOuterContainer .nsListParentContainer
+{
+	position: absolute; 
+	height: 100%; 
+	width: 99%; 
+	margin: 0px; 
+	padding: 0px;
+	background-color: #FFFFFF;
+	color: #333;
+}
+
+.nsListOuterContainer .nsListContainer
+{
+	min-height: 42px;
+    padding-left: 0px;
+    
+	display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+    margin:0px;
+}
+.nsListOuterContainer .nsListItem
+{
+	background-color: #fff;
+    border: 1px solid #f4f4f4;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    display: block;
+    margin-bottom: -1px;
+}
+.nsListOuterContainer.nsListOuterContainerHierarchical .nsListItem
+{
+	/*for Virtual Scrolling in Hierarchical List*/
+	min-height:25px;
+}
+.nsListItemHover 
+{  
+  background-color: #3875d7;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #3875d7), color-stop(90%, #2a62bc));
+  background-image: linear-gradient(#3875d7 20%, #2a62bc 90%);
+  color: #fff;
+} 
+.nsListItemAnimated .nsListChild
+{
+	width: 100%; 
+	position: relative; 
+  	z-index: 2;
+  	text-decoration: none;
+  	box-sizing: border-box;  
+  	-moz-box-sizing: border-box;  
+  	-webkit-box-sizing: border-box; 
+}
+.nsListItemAnimated:hover .nsListChild
+{
+	color: #FFFFFF;
+}
+.nsListItemAnimated .nsListChild:after
+{
+  content: "";
+  height: 100%; 
+  left: 0; 
+  top: 0; 
+  width: 0px;  
+  position: absolute; 
+  transition: all 0.2s ease 0s; 
+  -webkit-transition: all 0.2s ease 0s; 
+  z-index: -1;
+}
+.nsListItemAnimated .nsListChild:hover:after
+{ 
+	width: 100%; 
+}
+.nsListItemAnimated .nsListChild:after
+{ 
+	background: #3498db; 
+}
+.nsListOuterContainer .nsListItemSelected 
+{
+	background-color: #CED2CC;
+    color: #000;
+}
+.nsListOuterContainer .nsListNoRecordsFound 
+{
+    text-align: center;
+}
+.nsListContainerDroppable
+{
+	border: 1px solid #a0a0a0;
+}
+.nsListEmpty
+{
+	margin: 0px;
+	padding: 5px;
+}
+.nsListEmptyChild
+{
+	border: 1px dashed #a0a0a0;
+	border-radius: 3px;
+	padding: 3px;
+	cursor: pointer;
+	font-size: 10px;
+	background-color: white;
+}
+.nsListOuterContainer .nsListGroupCell 
+{
+  	position: relative;
+  	overflow: hidden;
+  	min-height: 19px;
+}
+.nsListOuterContainer .nsListGroupCell > * 
+{
+   display: inline-block;
+   padding: 3px;
+}
+.nsListOuterContainer .nsListGroupCellText
+{
+	padding-left: 1.5em;
+}
+.nsListOuterContainer .nsListArrowParent
+{
+	position: absolute;
+    top: 0px;
+    left:0px;
+}
+.nsListOuterContainer .nsListArrow
+{
+	height:15px;
+}
+.nsListOuterContainer .nsListArrowFill 
+{
+	width:16px;
+	height:16px;
+    fill:#000000;
+	/*stroke:#000000;
+	stroke-width:0.5;*/
+} 
+
+.nsListTruncateToFit,.nsListTruncateToFit *
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.nsListDottedRow 
+{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: none; 
+}
+/* line 25, /Users/jonasvonandrian/jquery-sortable/source/css/jquery-sortable.css.sass */
+.nsListDottedRow:before 
+{
+  	position: absolute;
+  	content: "";
+  	width: 0;
+  	height: 0;
+  	margin-top: -5px;
+  	left: -5px;
+  	top: -4px;
+  	border: 5px solid transparent;
+  	border-left-color: red;
+  	border-right: none; 
+}.nsTextBoxContainer
+{
+	position: relative;
+}
+.nsTextBox 
+{
+    outline: 0;
+    border-color: #ECECEC;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #ffffff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 2px;
+    /*margin-bottom: 5px;*/
+    width: 100%;
+}	
+
+/*.nsTextBoxList {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    z-index: 1000;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}*/
+
+.nsTextBoxList
+{
+	position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    border-color: #ececec;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+    padding: 6px;
+    cursor: pointer;
+    z-index: 9999;
+    margin-top: -6px;
+    background-color: #ffffff;
+    border-size:1px;
+	border-style:solid;
+}
+.nsTextHighlight 
+{
+  color: #FF0000;
+  font-weight: bold;
+  font-size: 105%;
+}
+.nsTextBoxMultiSelectContainer
+{
+    z-index: 1;
+    display: inline-block;
+    width: 100%;
+    padding: 5px 8px 2px;
+/*     overflow: hidden; */
+    border: 1px solid #d0d0d0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: text;
+    background: #ffffff;
+    line-height: 18px;
+    color: #303030;
+}
+.nsTextBoxMultiSelect
+{
+	width: 4px;
+    opacity: 1;
+    position: relative;
+    left: 0px;
+   	max-width: 100% !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 1px !important;
+    line-height: inherit !important;
+    text-indent: 0 !important;
+    background: none !important;
+    border: 0 none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    -webkit-user-select: auto !important;
+    font-size: 13px;
+    -webkit-font-smoothing: inherit;
+    line-height: 18px;
+    color: #303030;
+}
+.nsTextBoxMultiSelectTag 
+{
+     position: relative;
+     display: inline-block;
+     padding: .25em 1.5em .25em .5em;
+     border: 1px solid #bdbdbd;
+     border-radius: .2em;
+     margin: 0 .2em .2em 0;
+     line-height: 1;
+     vertical-align: middle;
+ }
+ .nsTextBoxMultiSelectTag:last-child 
+ {
+     margin-right: 0;
+ }
+ .nsTextBoxMultiSelectTag:hover 
+ {
+     background: #efefef;
+ }
+ .nsTextBoxMultiSelectTagText
+ {
+     min-height: 1em;
+ }
+ .nsTextBoxMultiSelectTagClose 
+ {
+     position: absolute;
+     top: .25em;
+     right: .25em;
+     width: 1em;
+     height: 1em;
+     opacity: 0.3;
+     cursor: pointer; 
+     cursor: hand;
+ }
+ .nsTextBoxMultiSelectTagClose:hover 
+ {
+     opacity: 1;
+ }
+ .nsTextBoxMultiSelectTagClose:before,
+ .nsTextBoxMultiSelectTagClose:after 
+ {
+     content: "";
+     position: absolute;
+     left: .5em;
+     width: 2px;
+     height: 1em;
+     background-color: #333;
+ }
+ .nsTextBoxMultiSelectTagClose:before 
+ {
+     transform: rotate(45deg);
+ }
+ .nsTextBoxMultiSelectTagClose:after 
+ {
+     transform: rotate(-45deg);
+ }
+ .nsTextBoxTest
+ {
+ 	position:absolute;
+	top: -99999;
+	left: -99999;
+	width: auto;
+	padding: 0;
+	whiteSpace:pre;
+ }
+  /*temporary removing close button from textBox in autocomplete mode as I am not listening to that event for now  */
+ .nsTextBoxAutoComplete::-ms-clear
+ {
+ 	width : 0;
+ 	height: 0;
+ }

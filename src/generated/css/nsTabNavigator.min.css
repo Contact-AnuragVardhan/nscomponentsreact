@@ -1,0 +1,413 @@
+.nsCarousel
+{
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nsCarousel .nsCarouselSlideContainer
+{
+	/*becuase of this the button disappears */
+	/*position: relative;*/
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+}
+
+.nsCarousel.nsCarouselVertical .nsCarouselSlideContainer
+{
+	flex-direction: column;
+}
+
+.nsCarousel .nsCarouselSlide
+{
+	display: flex;
+	flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    align-items: center;
+}
+
+.nsCarousel .nsCarouselSlide > *
+{
+	width: 100%;
+    height: 100%;
+}
+
+.nsCarousel .nsCarouselButtonCon
+{
+	position: absolute;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    background-color: rgba(0,0,0,0);
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+
+.nsCarousel.nsCarouselHorizontal .nsCarouselButtonCon
+{
+	top: 0;
+	width: 15%;
+    max-width: 50px;
+    height:100%;
+}
+
+.nsCarousel.nsCarouselVertical .nsCarouselButtonCon
+{
+	left:0;
+	width: 100%;
+	height: 15%;
+    max-height: 50px;
+}
+
+.nsCarousel .nsCarouselButtonCon.nsCarouselPrevCon
+{
+	background-image: linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+	background-repeat: repeat-x;
+}
+
+.nsCarousel .nsCarouselButtonCon.nsCarouselNextCon
+{
+	background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+	background-repeat: repeat-x;
+}
+
+.nsCarousel.nsCarouselHorizontal .nsCarouselPrevCon
+{
+	left: 0;
+}
+
+.nsCarousel.nsCarouselHorizontal .nsCarouselNextCon
+{
+	right: 0;
+}
+
+.nsCarousel.nsCarouselVertical .nsCarouselPrevCon
+{
+	top:0;
+}
+
+.nsCarousel.nsCarouselVertical .nsCarouselNextCon
+{
+	bottom:0;
+}
+
+.nsCarousel .nsCarouselButton
+{
+	position: absolute;
+}
+
+.nsCarousel.nsCarouselHorizontal .nsCarouselButtonPrev
+{
+}
+
+.nsCarousel.nsCarouselHorizontal .nsCarouselButtonNext
+{
+}
+
+.nsCarousel.nsCarouselVertical .nsCarouselButtonPrev
+{
+}
+
+.nsCarousel.nsCarouselVertical .nsCarouselButtonNext
+{
+}
+
+.nsCarousel .nsCarouselButton.nsCarouselButtonNav
+{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    z-index: 5;
+    border: solid black;
+  	border-width: 0 3px 3px 0;
+    padding: 3px;
+}
+
+.nsCarousel.nsCarouselHorizontal .nsCarouselPrev
+{
+	top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+    transform: rotate(135deg);
+}
+
+.nsCarousel.nsCarouselHorizontal .nsCarouselNext
+{
+	top: 50%;
+    right: 50%;
+    margin-top: -10px;
+    margin-right: -10px;
+    transform: rotate(-45deg);
+}
+
+.nsCarousel.nsCarouselVertical .nsCarouselPrev
+{
+	top: 50%;
+    left: 50%;
+    margin-top: -5px;
+    margin-left: -10px;
+    transform: rotate(-135deg);
+}
+
+.nsCarousel.nsCarouselVertical .nsCarouselNext
+{
+	top: 50%;
+    right: 50%;
+    margin-top: -15px;
+    margin-right: -10px;
+    transform: rotate(45deg);
+}
+
+.nsCarousel .nsCarouselPageCon
+{
+	position: absolute;
+    text-align: center;
+    transition: 300ms opacity;
+    transform: translate3d(0, 0, 0);
+    z-index: 10;
+}
+
+.nsCarousel.nsCarouselHorizontal .nsCarouselPageCon
+{
+	width: 100%;
+    bottom: 10px;
+    left: 0;
+}
+
+.nsCarousel.nsCarouselVertical .nsCarouselPageCon
+{
+	right: 10px;
+    top: 50%;
+    transform: translate3d(0px,-50%,0);
+}
+
+.nsCarousel .nsCarouselPage
+{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #C0C0C0;
+    cursor: pointer;
+    transition: transform .2s,background-color .5s;
+    transform-origin: 50% 50%;
+}
+
+.nsCarousel .nsCarouselPage:hover
+{
+	transform: scale(1.5);
+}
+
+.nsCarousel.nsCarouselHorizontal .nsCarouselPageHorizontal
+{
+	display: inline-block;
+	margin-right: 4px;
+}
+
+.nsCarousel.nsCarouselVertical .nsCarouselPageVertical
+{
+	display: block;
+	margin-top: 4px;
+}
+
+.nsCarousel .nsCarouselPageActive
+{
+	background-color: #007aff;
+}.nsTabNavigator
+{
+	margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+.nsTabNavigatorParentParent
+{
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    padding: 0px;
+    display: flex;
+}
+.nsTabNavigator .nsTabContainer
+{
+    display: inline-block;
+    margin: -2px;
+    list-style: none;
+    position: relative;
+    cursor: pointer;
+}
+.nsTabNavigator .nsTabContainer.nsTabContainerHidden
+{
+	display: none;
+}
+.nsTabNavigator .nsTabContainer.nsTabContainerDisabled
+{
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+.nsTabNavigator .nsTab
+{
+    display: inline-block;
+    padding: 4px 12px;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.nsTabNavigatorLeft
+{
+}
+.nsTabNavigatorParent
+{
+	text-align: left;
+  	width: 100%;
+	overflow: hidden;
+}
+.nsTabNavigatorRight
+{
+}
+
+.nsTabNav 
+{
+	height:100%;
+	width:35px;
+	cursor: pointer;
+	text-align: center;
+}
+.nsTabLeftArrow
+{
+}
+.nsTabRightArrow
+{
+}
+.nsTabNav.nsTabNavDisabled
+{
+	opacity: .5;
+    pointer-events: none;
+    touch-action: none;
+    background: inherit;
+}
+
+.nsTabNavigator .nsTabContainer.nsTabWithClose
+{
+	
+}
+.nsTabNavigator .nsTabContainer .nsTabClose
+{
+	display: inline-block;
+  	float: right;
+  	margin: 0px;
+  	margin-right: 3px;
+    cursor: pointer;
+  	text-align: center;
+}
+.nsTabContentParent
+{
+    text-align: left;
+    padding: 5px 15px;
+}
+.nsTabContent
+{
+/* 	padding: 15px; */
+    display: none;
+    text-align: left;
+}
+.nsTabContent.nsTabContentActive
+{
+	display: block;
+}
+.nsTabContent.nsTabContentHidden
+{
+	display: none;
+}
+.nsTabIndicator
+{
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100px;
+    background-color: transparent;
+    transform-origin: 0 0;
+    transition: transform .2s ease-in-out, background-color .2s ease-in-out, -webkit-transform .2s ease-in-out;
+}
+
+.nsTabNavigatorParentParentWhite
+{
+	background-color: white;
+	border-bottom: 1px solid #eee;
+}
+
+.nsTabNavigatorWhite .nsTabContainer
+{
+	border: 1px solid #c8c8c8;
+    background-color: #f4f4f4;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+.nsTabNavigatorWhite .nsTabContainerActive
+{
+    background-color: #007ad9;
+    border: 1px solid #007ad9;
+}
+.nsTabNavigatorWhite .nsTab
+{
+    font-size: 14px;
+    font-weight: 700;
+    color: #333333;
+    
+}
+.nsTabNavigatorWhite .nsTabContainerActive .nsTab
+{
+	color: #ffffff;
+	text-shadow: none;
+}
+.nsTabNavigatorWhite .nsTabContainer .nsTabClose
+{
+	font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+}
+.nsTabNavigatorWhite .nsTabContainerActive .nsTabClose
+{
+	color: #ffffff;
+}
+.nsTabNavigatorWhite .nsTabContainer .nsTabClose:focus,.nsTabNavigatorWhite .nsTabContainer .nsTabClose:hover
+{
+	color: #000000;
+	text-decoration: none;
+    cursor: pointer;
+    opacity: 0.4;
+}
+.nsTabContentParentWhite
+{
+	background-color: white;
+    border: 1px solid #eee;
+    border-top: 0px;
+}
+.nsTabContentWhite
+{
+    background-color: white;
+}
+.nsTabNavWhite
+{
+   border: 1px solid #d9d9d9;
+   border-bottom: 0;
+   border-radius: 4px 4px 0 0;
+   background: #f9f9f9;
+}
+.nsTabIndicatorWhite
+{
+	background: #e3165b;
+}

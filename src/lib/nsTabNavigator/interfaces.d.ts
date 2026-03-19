@@ -1,0 +1,22 @@
+export interface INSTabNavigatorSetting {
+    context?: any,
+    enableCreateTabs?: boolean,
+    arrTabs?: any[],
+    tabParentElement?: string,
+    tabElement?: string,
+    tabAttribute?: string,
+    contentParent?: any,
+    event?: string,
+    tabTemplateCallback?: any,
+    enableHashChange?: boolean,
+    enableClose?: boolean,
+    enableAnimation?: boolean,
+    animationType?: string,
+    enableOverflow?: boolean,
+    extraLeftButtons?: boolean,
+    extraRightButtons?: boolean,
+    overflowScrollDistance?: number,
+    overflowScrollDuration?: number,
+    enableIndicator?: boolean,
+    [propName: string]: any;
+}

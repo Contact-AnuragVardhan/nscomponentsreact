@@ -1,0 +1,203 @@
+.nsCalendar
+{
+	width: 240px;
+	min-width: 240px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.nsCalendar .nsCalendarContainer
+{
+}
+.nsCalendar .nsCalendarHeader
+{
+	display: flex;
+    height: 32px;
+    line-height: 30px;
+}
+.nsCalendar .nsCalendarButton
+{
+	background: none;
+    border: 0;
+    outline: none;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-appearance: button;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+}
+.nsCalendar .nsCalendarHeaderNav
+{
+	width: 100%;
+    text-align: center;
+}
+.nsCalendar .nsCalendarSelect
+{
+    line-height: 1.25;
+    height: inherit;
+    width: 49%;
+    display: inline-block;
+    max-width: 100%;
+}
+.nsCalendar .nsCalendarWeekContainer
+{
+	display: flex;
+    flex-wrap: wrap;
+}
+.nsCalendar .nsCalendarWeek
+{
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+}
+.nsCalendar .nsCalendarDayContainer
+{
+	display: flex!important;
+	padding-bottom: 4px!important;
+	padding-left: 4px!important;
+	padding-right: 4px!important;
+}
+.nsCalendar .nsCalendarDayContainerBody 
+{	
+}
+.nsCalendar .nsCalendarDayContainerRow 
+{
+	display: flex!important;
+}
+.nsCalendar .nsCalendarDayContainerCell
+{
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+}
+.nsCalendar .nsCalendarDayDisabled
+{
+	opacity: 0.35;
+    background-image: none;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    pointer-events: none;
+    cursor: default;
+}
+.nsCalendar .nsCalendarFooterContainer
+{
+}
+.nsCalendar .nsCalendarTimeContainer {
+    display: flex;
+    flex-direction: row;
+    /*padding-bottom: 4px;*/
+    padding-left: 4px;
+    padding-right: 4px;
+    justify-content: space-between;
+}
+
+.nsCalendar .nsCalendarTimeInput {
+    border-radius: 4px;
+    height: 24px;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    width: 40px;
+    font-size: 10px;
+}
+
+.nsCalendar .nsCalendarTimeSaveContainer {
+    padding: 2px;
+    padding-bottom: 0px;
+}
+
+.nsCalendar .nsCalendarIconButton {
+    background: transparent;
+    border: none;
+    padding: 0px;
+}
+.nsCalendar .nsCalendarIconTime {
+    width: 24px;
+    height: 24px;
+}
+
+.nsCalendar .nsCalendarIconTime.nsCalendarIconTimeSmall {
+    width: 20px;
+    height: 20px;
+}
+
+.nsCalendar .nsCalendarIconTime.nsCalendarIconTimeSave{
+    color: green;
+}
+
+.nsCalendar .nsCalendarIconTime.nsCalendarIconTimeCancel{
+    color: red;
+}
+
+.nsCalendarWhite
+{
+	background-color: #fff;
+	box-shadow: 0 4px 22px 0 rgba(0, 0, 0, 0.05);
+    border: solid 1px #e7e9ed;
+}
+.nsCalendarWhite .nsCalendarHeaderButtonSvg 
+{
+    fill: #0A9297;
+}
+.nsCalendarWhite .nsCalendarSelect
+{
+	color: #495057;
+	background: #fff;
+	border: 1px solid rgba(0,0,0,.15);
+	vertical-align: middle;
+    background-size: 8px 10px;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 14px;
+}
+.nsCalendarWhite .nsCalendarWeekContainer
+{
+	background-color: #E7E9ED;
+}
+.nsCalendarWhite .nsCalendarWeek
+{
+	background-color: #E7E9ED;
+	color: #17a2b8;
+    font-style: italic;
+    font-size: 80%;
+    font-weight: 400;
+}
+.nsCalendarWhite .nsCalendarWeek
+{
+	background: transparent;
+    color: #111;
+    border-color: #f8f9fa;
+}
+.nsCalendarWhite .nsCalendarOtherMonth
+{
+	background-color: #e2e6ea;
+    background-image: none;
+    border-color: #dae0e5;
+    color: #868e96!important;
+    opacity: 0.5;
+    border-radius: 0;
+}
+.nsCalendarWhite .nsCalendarToday
+{
+    background: #fffa90;
+    color: #777620;
+}
+.nsCalendarWhite .nsCalendarSelected
+{
+	background-color: #007bff;
+	color: #fff;
+}
+.nsCalendarWhite .nsCalendarFooterContainer
+{
+	border-top: 1px solid #e9e9e9;
+	padding: 0 12px;
+	line-height: 38px;
+}

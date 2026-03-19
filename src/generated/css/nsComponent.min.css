@@ -1,0 +1,1200 @@
+/************Util Classes ***************/
+.nsContainer
+{
+	display:block;
+}
+/* used to measure the scrollbar width on a temporal element */
+.nsGetScrollBar 
+{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: -9999px;
+  overflow: auto;
+  top:-100px;
+  left:-100px
+}
+
+.nsGetDPI 
+{
+  height: 1in;
+  left: -100%;
+  position: absolute;
+  top: -100%;
+  width: 1in;
+}
+
+*.nsUnselectable 
+{
+   -webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.nsGhostElement
+{
+    background:#D8D8D8;
+    padding: 20px; 
+    width: 200px;
+    height: 150px;   
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    z-index: 98;
+}
+
+.nsMoveOnClick
+{
+	left:0px;
+	top:0px;
+	transition: left .5s cubic-bezier(.42,-0.3,.78,1.25), 
+				top .5s cubic-bezier(.42,-0.3,.78,1.25);
+}
+/************End of Util Classes ***************/
+
+/***********For NSToolTip ***************/
+.nsTooltip 
+{	
+	position: relative;
+}
+.nsTooltip span 
+{
+	color: #000000; 
+	margin-left: -999em;
+	position: absolute;
+	outline: none;
+	text-decoration: none;
+}
+.nsTooltip:hover span 
+{
+	border-radius: 5px 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; 
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+	font-family: Calibri, Tahoma, Geneva, sans-serif;
+	position: absolute; left: 1em; top: 2em; z-index: 99;
+	margin-left: 0; width: 250px;
+}
+.nsTooltip:hover em 
+{
+	font-family: Candara, Tahoma, Geneva, sans-serif; font-size: 1.2em; font-weight: bold;
+	display: block; padding: 0.2em 0 0.6em 0;
+}
+.nsTooltipClassic 
+{ 
+	padding: 0.8em 1em; 
+}
+.nsTooltipCustom 
+{ 
+	padding: 0.5em 0.8em 0.8em 2em; 
+}
+.nsTooltipClassic 
+{
+	background: #FFFFAA; border: 1px solid #FFAD33; 
+}
+.nsTooltipCritical 
+{ 
+	background: #FFCCAA; border: 1px solid #FF3334;	
+}
+.nsTooltipHelp 
+{ 
+	background: #9FDAEE; border: 1px solid #2BB0D7;	
+}
+.nsTooltipInfo 
+{ 
+	background: #9FDAEE; border: 1px solid #2BB0D7;	
+}
+.nsTooltipWarning 
+{ 
+	background: #FFFFAA; border: 1px solid #FFAD33; 
+}
+
+/***********End of NSToolTip ***************/
+/***********For NSCheckBox ****************/
+/*.checkbox ,.radioButton
+{
+  display:block;
+  margin:4px 0 0 0;
+  padding:0;
+  width:13px;
+  height:13px;
+}*/
+
+.label
+{
+  cursor:pointer; /* iPad Label Click Fix */
+}
+/***********End of NSCheckBox ****************/
+
+/***********For NSDividerBox ***************/
+.nsHorizontalResizerContainer
+{
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.nsResizerAnimation
+{
+  	-webkit-transition: all 0.6s ease-in-out;
+  	-moz-transition: all 0.6s ease-in-out;
+  	-o-transition: all 0.6s ease-in-out;
+  	transition: all 0.6s ease-in-out;
+}
+.nsHorizontalResizerChild 
+{
+	position: absolute;
+	left: 0;
+	right: 0;
+	width:100%;
+	overflow:auto;
+}
+.nsVerticalResizerContainer
+{
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.nsVerticalResizerChild 
+{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	height:100%;
+	overflow:auto;
+}
+.nsDivider
+{	background: #d9d9d9;
+    border-color: #b3b3b3;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}
+.nsDivider:hover
+{
+	border-color:#222; 
+	background-color:#888888; 
+	color: #fff;
+}
+
+.nsDivider:hover > .nsResizerLines
+{
+	border-color:#d9d9d9; 
+	background-color:#b3b3b3; 
+}
+.nsVerticalResizer 
+{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	cursor: col-resize;
+}
+.nsHorizontalResizer 
+{
+	position: absolute;
+	left: 0;
+	right: 0;
+	cursor: row-resize;
+}
+.nsVerticalResizerLines 
+{
+  position: absolute;
+  border-color: #999;;
+  background-color: #999;;
+  cursor: pointer;
+  left:0;
+  top: 50%;
+  height: 40px;
+  width: 100%;
+}
+.nsHorizontalResizerLines
+{
+  position: absolute;
+  border-color: #999;;
+  background-color: #999;;
+  cursor: pointer;
+  top:0;
+  left: 50%;
+  width: 40px;
+  height: 100%;
+}
+.nsResizerCollapser 
+{
+	 position: absolute;
+    background-color: #999;
+    cursor: pointer;
+    display: inline-block;
+   
+}
+.nsVerticalResizerCollapser
+{
+    height: 20px;
+    left: 0;
+    margin-top: -10px;
+    top: 5%;
+    width: inherit;
+}
+.nsHorizontalResizerCollapser {
+    height: inherit;
+    top: 0;
+    left: 5%;
+    margin-left: -10px;
+    width: 20px;
+}
+/************End of NSDividerBox******************/
+
+/***********For NSBanner ***************/
+.nsInfoBanner
+ {
+  border-bottom:1px solid black;
+  background:#E5ECEF;
+  padding: 3px 0;
+  text-indent: 5px;
+  font: normal 11px Verdana;
+ }
+ 
+ .nsWarningBanner
+ {
+  border-bottom:1px solid black;
+  background:#FFFF99;
+  padding: 3px 0;
+  text-indent: 5px;
+  font: normal 11px Verdana;
+ }
+ 
+ .nsErrorBanner
+ {
+  border-bottom:1px solid black;
+  background:#FACDCA;
+  padding: 3px 0;
+  text-indent: 5px;
+  font: normal 11px Verdana;
+ }
+ 
+ .nsCloseBannerButton
+{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: small;
+    font-weight: bold;
+    color : #000000;
+}
+
+.nsCloseBannerButton_hover
+{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: small;
+    font-weight: bold;
+    color : #FC1D00;
+}
+
+.nsFixedElement
+{
+ position:fixed;
+}
+/************End of NSBanner******************/
+/************Start of nsScroller************/
+.gm-scrollbar-container {
+  position: relative;
+  overflow: hidden!important;
+  width: 100%;
+  height: 100%;
+}
+.gm-scrollbar-container .gm-scroll-view {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* @option: autoshow */
+.gm-scrollbar-container.gm-autoshow .gm-scrollbar {
+  opacity: 0;
+  transition: opacity 120ms ease-out;
+}
+.gm-scrollbar-container.gm-autoshow:hover .gm-scrollbar,
+.gm-scrollbar-container.gm-autoshow:focus .gm-scrollbar {
+  opacity: 1;
+  transition: opacity 340ms ease-out;
+}
+.gm-prevented .gm-scrollbar {
+  display: none;
+}
+.gm-scrollbar {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  z-index: 1;
+  border-radius: 3px;
+}
+
+.gm-scrollbar.-vertical {
+  width: 6px;
+  top: 2px;
+}
+
+.gm-scrollbar.-horizontal {
+  height: 6px;
+  left: 2px;
+}
+
+.gm-scrollbar .thumb {
+  position: relative;
+  width: 0;
+  height: 0;
+  cursor: pointer;
+  border-radius: inherit;
+  background-color: rgba(0,0,0,.2);
+}
+
+.gm-scrollbar .thumb:hover,
+.gm-scrollbar .thumb:active {
+  background-color: rgba(0,0,0,.3);
+}
+
+.gm-scrollbar.-vertical .thumb {
+  width: 100%;
+}
+
+.gm-scrollbar.-horizontal .thumb {
+  height: 100%;
+}
+
+.gm-scrollbar-disable-selection {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.gm-prevented {
+  -webkit-overflow-scrolling: touch;
+}
+
+.nsScrollerBackground 
+{
+	background-color:rgba(0,0,0,0.15);
+ 	box-shadow:inset 0 1px 3px rgba(0,0,0,0.5),inset 0 0 2px rgba(0,0,0,0.2),0 0 0 1px rgba(255,255,255,0.5);
+}
+/************End of nsScroller************/
+/************Start of Loader******************/
+.nsLoaderOverlay {
+  position: absolute;
+  z-index: 999;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background:#333;/*#FFFFFF;*/
+  opacity:0.8;
+}
+
+.nsLoaderContainerParent {
+	position:absolute;
+	z-index: 1000;
+	display: inline-block;
+	background-color:#fff;
+	width:300px;
+	height:140px;
+	border:1px solid black;
+	-webkit-box-shadow: rgba(50, 50, 50, 0.74902) 0px 10px 5px 0px; 
+	box-shadow: rgba(50, 50, 50, 0.74902) 0px 10px 5px 0px;
+}
+			
+.nsLoaderContainer {
+	vertical-align:center;
+	position:relative;
+	text-align:center;
+}
+
+.nsLoaderText {
+	padding-top:10px;
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-weight: bold;
+}
+
+/* loading dots */
+.nsLoaderText:after {
+  content: ' ...';
+  -webkit-animation: dots 1s steps(5, end) infinite;
+  animation: dots 1s steps(5, end) infinite;
+}
+/************End of Loader******************/
+.nsListRenderer 
+{
+	overflow:hidden;
+	text-align: left;
+}
+
+/************For making an element resizable and draggable ***********/
+.nsHiddenDiv {
+    background: #999;
+    opacity: 0;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    z-index: 98;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+
+.nsTextHighlight{
+    color:#CA2420;
+    font-weight:bold;
+    font-size:105%;
+}
+
+/************For making an row of table Draggable ***********/
+.nsDraggableRow{
+}
+.nsDraggableRow.nsDraggableRowDrag
+{
+	cursor: move;	
+}
+.nsDraggableCloneRow{
+    background: #FFF;
+    position: absolute;
+}
+.nsDraggableCloneRow > table {
+	border-collapse: collapse;
+}
+
+.nsDraggableCloneRow > table,.nsDraggableCloneRow > th,.nsDraggableCloneRow > td {
+	border: 1px solid black;
+}
+.nsDraggingRow {
+    box-shadow:3px 5px 6px -4px rgba(0,0,0,0.8);
+}
+.nsDraggingRow > td {
+     position:relative;
+     z-index: 9999;
+}
+.nsDraggingRow > td:first-child::before {
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+}
+.nsDraggingRow > td:last-child::before {
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+}
+.nsDraggingRow > td::before {
+   	background-color:white;
+   	box-shadow:3px 5px 6px -4px rgba(0,0,0,0.8);
+    display:block;
+    padding:0 9px 0 0;
+    content:'';
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:-1;
+    width:100%;
+    height:100%;
+}
+.nsDottedRow > td:first-child 
+{
+    border-left: 2px dotted red!important;
+}
+.nsDottedRow > td
+{
+    border-top: 2px dotted red!important;
+    border-bottom: 2px dotted red!important;
+}
+.nsDottedRow > td:last-child 
+{
+    border-right: 2px dotted red!important;
+}
+.nsTableRowMoverGhost {
+    background: #e5e5e5;
+    border: 1px solid black;
+    cursor: move;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    overflow: hidden;
+    padding: 3px;
+    position: absolute;
+    text-overflow: ellipsis;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: white;
+    border-radius: 2px;
+    box-shadow: none;
+    padding: 4px;
+    border: 1px solid #BDC3C7;
+    color: rgba(0, 0, 0, 0.54);
+    font-weight: 600;
+    font-size: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    height: 32px !important;
+    line-height: 32px;
+    margin: 0;
+    padding: 0 8px;
+    transform: translateY(8px);
+    z-index: 10000;
+}
+.nsTableRowMoverAnimation {
+	position: absolute;
+    -webkit-transition: top 0.4s, height 0.4s, background-color 0.1s, opacity 0.2s, -webkit-transform 0.4s;
+    transition: top 0.4s, height 0.4s, background-color 0.1s, opacity 0.2s, -webkit-transform 0.4s;
+    transition: transform 0.4s, top 0.4s, height 0.4s, background-color 0.1s, opacity 0.2s;
+    transition: transform 0.4s, top 0.4s, height 0.4s, background-color 0.1s, opacity 0.2s, -webkit-transform 0.4s;
+}
+
+/*********************NSPopUp CSS **********************/
+.nsPopUp {
+  position: absolute;
+  width: 200px;
+  padding: 2px;
+  margin: 0;
+  background-color: #fefefe;
+  border: solid thin #1e4691;
+  z-index: 999;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px rgba(0,0,0,.2);
+  opacity: 0;
+  -webkit-transform: translate(0, 15px) scale(.95);
+  transform: translate(0, 15px) scale(.95);
+  transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+  pointer-events: none;
+  display: none;
+}
+
+.nsPopUp.nsShowPopUp {
+  opacity: 1!important;
+  -webkit-transform: translate(0, 0) scale(1);
+  transform: translate(0, 0) scale(1)!important;
+  pointer-events: auto!important;
+  display: block;
+}
+
+.nsPopUp .nsPopUpHeader
+{
+	outline: none;
+	border-bottom: 1px solid rgb(218, 222, 224);
+	width: 100%;
+}
+
+.nsPopUp .nsPopUpHeaderContainer
+{
+    padding: 0;
+	white-space: nowrap;
+	width: 100%;
+	min-height:30px;
+	box-sizing: content-box;
+	background: transparent;
+    -webkit-font-smoothing: antialiased;
+    cursor: default;
+    background-color: rgb(255, 255, 255);
+    white-space: normal;
+    -webkit-appearance: none;
+    overflow: hidden;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(218, 222, 224);
+    border-image: initial;
+}
+
+.nsPopUp .nsPopUpTitleContainer
+{
+	height:calc(100% - 1px);
+	width:calc(100% - 40px);
+	display: inline-block;
+    vertical-align: top;
+    border-width: 0px;
+    margin-top: 0px;
+    box-sizing: content-box;
+    letter-spacing: 0px;
+}
+
+.nsPopUp .nsPopUpTitle
+{
+	font-weight: bold;
+	padding-top: 0px;
+    padding-bottom: 0px;
+	padding-left: 12px;
+	height: 100%;
+    box-sizing: border-box;
+    padding: 4px 12px;
+}
+
+.nsPopUp .nsPopUpCloseContainer
+{
+	display: inline-block;
+    vertical-align: top;
+	box-sizing: border-box;
+    height:calc(100% - 1px);
+    width:40px;
+    padding: 3px 2px;
+    overflow: hidden;
+	text-align: center;
+    position: relative;
+    cursor: pointer;
+    padding: 0px;
+    margin: 0px auto;
+    overflow: visible;
+}
+
+.nsPopUp .nsPopUpBtnClose
+{
+	height: 100%;
+    width: 100%;
+    border-width: 0px;
+    position: relative;
+    z-index: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    vertical-align: middle;
+    padding: 0px;
+}
+
+.nsPopUp .nsPopUpBtnClose::before
+{
+	content: "";
+    opacity: 0;
+    position: absolute;
+    transition-duration: 0.15s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    transform: scale(0);
+    transition-property: transform, opacity;
+    border-radius: 50%;
+}
+
+.nsPopUp .nsPopUpClose
+{
+	font-size: 20px;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    text-align: center;
+    color: rgb(148, 161, 179);
+}
+
+.nsPopUp .nsPopUpClose::before
+{
+	display: inline-block;
+  	content: "\00d7";
+  	font-weight: 300;
+  	font-family: Arial, sans-serif;
+}
+
+
+
+/************For adding tooltip to an element ***********/
+.nsElementTooltipContainer
+{
+	min-width: 100px; 
+	padding: 10px 12px; 
+	opacity: 0; 
+	display:none;
+	z-index: 99999; 
+	position: absolute; 
+	margin-left: 0px;
+	margin-top: 30px; 
+	font-size: 12px; 
+	font-style: normal; 
+	-webkit-border-radius: 3px; 
+	-moz-border-radius: 3px; -o-border-radius: 3px; 
+	border-radius: 3px; 
+	-webkit-box-shadow: 4px 4px 4px #d9b3c3; 
+	-moz-box-shadow: 4px 4px 4px #d9b3c3; 
+	box-shadow: 4px 4px 4px #d9b3c3; 
+	color: #000000; 
+	background: #f4f4f4; 
+	background: -moz-linear-gradient(top, #FBF5E6 0%, #FFFFFF 100%); 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FBF5E6), color-stop(100%,#FFFFFF)); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FBF5E6', endColorstr='#FFFFFF',GradientType=0 ); 
+	border: 1px solid #8c8c8c; 
+} 
+
+
+.nsElementTooltipContainerVisible
+{ 
+	display: inline; 
+	border: 1px solid #8c8c8c; 
+	background: #f4f4f4;
+	opacity: 1; 
+	text-decoration:none;
+	overflow: visible; 
+}
+
+.nsElementTooltipContainer .nsElementTooltipTipArrow
+{ 	
+	width: 15px; 
+	height: 15px; 
+	margin-left: 5%; 
+	margin-top: -19px; 
+	display: block; 
+	position: absolute; 
+	-webkit-transform: rotate(-45deg); 
+	-moz-transform: rotate(-45deg); 
+	-o-transform: rotate(-45deg); 
+	transform: rotate(-45deg); 
+	-webkit-box-shadow: inset -1px 1px 0 #fff; 
+	-moz-box-shadow: inset 0 1px 0 #fff; -o-box-shadow: inset 0 1px 0 #fff; 
+	box-shadow: inset 0 1px 0 #fff; 
+	background: #f4f4f4; 
+	border-top: 1px solid #8c8c8c; 
+	border-right: 1px solid #8c8c8c; 	 
+}
+
+/************************ Custom Buttons ********************************/
+.nsButton {
+background-color: #4CAF50;
+border: none;
+color: #FFFFFF;
+padding: 15px 15px;
+text-align: center;	
+-webkit-transition-duration: 0.4s; /* Safari */
+transition-duration: 0.4s;
+margin: 2px;
+text-decoration: none;
+font-size:16px;
+}
+.nsButtonGreen{border-radius:3px;background-color:#4CAF50;color:white;border: 2px solid #4CAF50;}
+.nsButtonBlue{border-radius:3px;background-color:#008CBA;color:white;border:2px solid #008CBA;}
+.nsButtonRed {border-radius:3px;background-color:#f44336;color:white;border:2px solid #f44336;}
+.nsButtonGrey {border-radius:3px;background-color:#A9A9A9;border:2px solid #A9A9A9;}
+.nsButtonOrange {border-radius:3px;background-color:#f0ad4e;border:2px solid #f0ad4e;}
+
+.nsButtonGreen:hover {background-color:white;color:black;border:2px solid #4CAF50;}
+.nsButtonBlue:hover {background-color:white;color:black;border:2px solid #008CBA;}
+.nsButtonRed:hover {background-color:white;color:black;border:2px solid #f44336;}
+.nsButtonGrey:hover {background-color:white;color:black;border:2px solid #e7e7e7;}
+.nsButtonOrange:hover {background-color:white;color:black;border:2px solid #f0ad4e;}
+
+.nsButtonShadow:hover{box-shadow:0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19) !important;}
+.nsButtonDisabled{cursor: not-allowed;opacity: 0.6;}
+
+.nsButtonFont10 {font-size:10px;padding: 4px 4px;}
+.nsButtonFont12 {font-size:12px;padding: 6px 6px;}
+.nsButtonFont14 {font-size:14px;padding: 8px 8px;}
+.nsButtonFont16 {font-size:16px;padding: 8px 8px;}
+.nsButtonFont18 {font-size:18px;padding: 9px 9px;}
+.nsButtonFont20 {font-size:20px;padding: 10px 10px;}
+.nsButtonFont24 {font-size:24px;padding: 10px 10px;}
+
+/************************ SearchTextBox ********************************/
+.nsSearchTextBoxWrapper {
+    display: block;
+    float: left;
+    margin-bottom: 5px;
+    border-width: 1px;
+    border-style: solid;
+	border-color: #989898;
+}
+.nsSearchTextBoxWrapper .nsSearchInput {
+    float: left;
+    height: 20px;
+    width: calc(100% - 20px);
+    border: 1px none;
+    padding: 0;
+    text-indent: 2px;
+}
+.nsSearchTextBoxWrapper .nsSearchIconWrapper,.nsSearchTextBoxWrapper .nsSearchIconWrapper:hover {
+    float: right;
+    height: 20px;
+    width: 11%;
+    display: block;
+    border-width: 0 0 0 1px;
+    border-style: solid;
+}
+.nsSearchTextBoxWrapper .nsSearchIconWrapper {
+    border-color: #989898;
+    background-color: #e6e6e6;
+    width:20px;
+	max-width:20px;
+}
+.nsSearchTextBoxWrapper .nsSearchIconWrapper:hover {
+     border-color: black;
+     background-color: #d3d3d3;
+     width:20px;
+	 max-width:20px;
+}
+.nsSearchTextBoxWrapper .nsSearchIconParent > * {
+    padding:1px;
+}
+.nsSearchTextBoxWrapper .nsSearchIcon
+{
+ 	width:14px;
+ 	height:14px;
+}
+.nsSearchTextBoxWrapper .nsSearchIcon:hover
+{
+	fill:red;
+}
+
+.nsSearchInlineTextBox 
+{
+    background: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDYxNS41MiA2MTUuNTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDYxNS41MiA2MTUuNTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8Zz4KCQk8ZyBpZD0iU2VhcmNoX194MjhfYW5kX3Rob3Vfc2hhbGxfZmluZF94MjlfIj4KCQkJPGc+CgkJCQk8cGF0aCBkPSJNNjAyLjUzMSw1NDkuNzM2bC0xODQuMzEtMTg1LjM2OGMyNi42NzktMzcuNzIsNDIuNTI4LTgzLjcyOSw0Mi41MjgtMTMzLjU0OEM0NjAuNzUsMTAzLjM1LDM1Ny45OTcsMCwyMzEuMjU4LDAgICAgICBDMTA0LjUxOCwwLDEuNzY1LDEwMy4zNSwxLjc2NSwyMzAuODJjMCwxMjcuNDcsMTAyLjc1MywyMzAuODIsMjI5LjQ5MywyMzAuODJjNDkuNTMsMCw5NS4yNzEtMTUuOTQ0LDEzMi43OC00Mi43NzcgICAgICBsMTg0LjMxLDE4NS4zNjZjNy40ODIsNy41MjEsMTcuMjkyLDExLjI5MSwyNy4xMDIsMTEuMjkxYzkuODEyLDAsMTkuNjItMy43NywyNy4wODMtMTEuMjkxICAgICAgQzYxNy40OTYsNTg5LjE4OCw2MTcuNDk2LDU2NC43NzcsNjAyLjUzMSw1NDkuNzM2eiBNMzU1LjksMzE5Ljc2M2wtMTUuMDQyLDIxLjI3M0wzMTkuNywzNTYuMTc0ICAgICAgYy0yNi4wODMsMTguNjU4LTU2LjY2NywyOC41MjYtODguNDQyLDI4LjUyNmMtODQuMzY1LDAtMTUyLjk5NS02OS4wMzUtMTUyLjk5NS0xNTMuODhjMC04NC44NDYsNjguNjMtMTUzLjg4LDE1Mi45OTUtMTUzLjg4ICAgICAgczE1Mi45OTYsNjkuMDM0LDE1Mi45OTYsMTUzLjg4QzM4NC4yNzEsMjYyLjc2OSwzNzQuNDYyLDI5My41MjYsMzU1LjksMzE5Ljc2M3oiIGZpbGw9IiMwMDAwMDAiLz4KCQkJPC9nPgoJCTwvZz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K) no-repeat 4px 2px #FFF;
+    min-height: 20px !important;
+    border: 1px solid #848484;
+	border-radius:2px;
+	padding-left:24px !important;
+	-webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    width:100%;
+}
+.nsSearchInlineTextBox:focus {
+    background-color: yellow;
+	 color: #414848;
+    outline: 0;
+	-moz-box-shadow: 0 0 5px #51cbee;
+	-webkit-box-shadow: 0 0 5px #51cbee;
+	box-shadow: 0 0 5px #51cbee;
+}
+/************************End of SearchTextBox ********************************/
+
+
+.nsNodeDragEnabled:hover
+{
+	cursor:pointer;
+}
+.nsDraggableCloneItem
+{
+    position: absolute;
+    zIndex: 999;
+}
+.nsDraggablePlaceholder
+{
+	border:1px dashed darkgrey;
+	box-sizing:border-box;
+	background-color:#dbdbdb!important;
+}
+.nsNodeDragHover
+{
+	background-color:red!important;
+}
+.nsNodeDraggingClass
+{
+	opacity:0.5;
+}
+
+.nsAnimateGhost
+{
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+/************************Start of Table Cell Selector********************************/
+.nsSelectionTable tr.nsArea-top > td.nsArea{
+  border-top: 2px solid #5292F7;
+}
+.nsSelectionTable tr.nsArea-bottom > td.nsArea{
+  border-bottom: 2px solid #5292F7;
+}
+.nsSelectionTable td.nsArea.nsArea-left{
+  border-left: 2px solid #5292F7;
+}
+.nsSelectionTable td.nsArea.nsArea-right{
+  border-right: 2px solid #5292F7;
+}
+.nsSelectionTable td.nsArea.nsCell,
+.nsSelectionTable td.nsCell{
+  border-right: 2px solid #5292F7;
+  background: #FAFAFF;
+}
+.nsSelectionTable.focus td.nsArea.nsCell,
+.nsSelectionTable.focus td.nsCell{
+  background: #FAFAFF;
+  border-right: 2px solid #5292F7;
+}
+.nsSelectionTable td.nsArea{
+	background: #ECF3FF;
+}
+
+.nsTextAreaEditor
+{
+	z-index:10000;
+	position:absolute;
+	background:white;
+	padding:5px;
+	border:3px solid gray; 
+	-moz-border-radius:10px; 
+	border-radius:10px;
+}
+.nsTextAreaEditor .nsTextArea
+{
+	backround:white;
+	width:250px;
+	height:80px;
+	border:0;
+	outline:0;
+}
+
+.nsTextEditor 
+{
+    width: 100%;
+    height: 100%;
+    /*border: 0;
+    margin: 0;
+    background: transparent;
+    outline: 0;
+    padding: 0;*/
+    line-height: normal;
+    border: 1px solid #95a5a6;
+}
+/************************End of Table Cell Selector********************************/
+/************************Start of Mobile Webkit scrollbar css********************************/
+.nsContainerMobile:not(.nsContainerMobileBlack) ::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+}
+
+.nsContainerMobile:not(.nsContainerMobileBlack) ::-webkit-scrollbar-thumb {
+    background-color: #c2c2c2;
+    border-radius: 10px;
+    background-clip: content-box;
+}
+
+.nsContainerMobile:not(.nsContainerMobileBlack) ::-webkit-scrollbar-thumb:hover {
+    background-color: #7d7d7d;
+    border-radius: 10px;
+    background-clip: content-box;
+}
+
+.nsContainerMobile:not(.nsContainerMobileBlack) ::-webkit-scrollbar-thumb:vertical,.nsContainerMobile:not(.nsContainerMobileBlack) ::-webkit-scrollbar-thumb:vertical:hover {
+    border: 3px solid transparent;
+    border-left-width: 4px;
+}
+
+.nsContainerMobile:not(.nsContainerMobileBlack) ::-webkit-scrollbar-thumb:horizontal,.nsContainerMobile:not(.nsContainerMobileBlack) ::-webkit-scrollbar-thumb:horizontal:hover {
+    border: 3px solid transparent;
+    border-top: 4px solid transparent;
+}
+
+.nsContainerMobile:not(.nsContainerMobileBlack) ::-webkit-scrollbar-track {
+    background-color: #fafafa;
+}
+
+.nsContainerMobile:not(.nsContainerMobileBlack) ::-webkit-scrollbar-track:vertical {
+    border-left: 1px solid #e8e8e8;
+}
+
+.nsContainerMobile:not(.nsContainerMobileBlack) ::-webkit-scrollbar-track:horizontal {
+    border-top: 1px solid #e8e8e8;
+}
+
+.nsContainerMobile:not(.nsContainerMobileBlack) ::-webkit-scrollbar-corner {
+    background-color: #fafafa;
+}
+
+.nsContainerMobile.nsContainerMobileBlack ::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+}
+
+.nsContainerMobile.nsContainerMobileBlack ::-webkit-scrollbar-thumb {
+    background-color: #6b6b6b;
+    border-radius: 10px;
+    background-clip: content-box;
+}
+
+.nsContainerMobile.nsContainerMobileBlack ::-webkit-scrollbar-thumb:hover {
+    background-color: #959595;
+    border-radius: 10px;
+    background-clip: content-box;
+}
+
+.nsContainerMobile.nsContainerMobileBlack ::-webkit-scrollbar-thumb:vertical,.nsContainerMobile.nsContainerMobileBlack ::-webkit-scrollbar-thumb:vertical:hover {
+    border: 3px solid transparent;
+    border-left-width: 4px;
+}
+
+.nsContainerMobile.nsContainerMobileBlack ::-webkit-scrollbar-thumb:horizontal,.nsContainerMobile.nsContainerMobileBlack ::-webkit-scrollbar-thumb:horizontal:hover {
+    border: 3px solid transparent;
+    border-top: 4px solid transparent;
+}
+
+.nsContainerMobile.nsContainerMobileBlack ::-webkit-scrollbar-track {
+    background-color: #1c1f20;
+}
+
+.nsContainerMobile.nsContainerMobileBlack ::-webkit-scrollbar-track:vertical {
+    border-left: 1px solid #424242;
+}
+
+.nsContainerMobile.nsContainerMobileBlack ::-webkit-scrollbar-track:horizontal {
+    border-top: 1px solid #424242;
+}
+
+.nsContainerMobile.nsContainerMobileBlack ::-webkit-scrollbar-corner {
+    background-color: #1c1f20;
+}
+/************************end of Mobile Webkit scrollbar css********************************/
+
+.nsAnimateSpin {
+    animation: nsAnimateSpin 2s infinite linear;
+}
+
+@keyframes nsAnimateSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+.nsAnimateFading {
+    animation: nsAnimateFading 10s infinite;
+}
+
+@keyframes nsAnimateFading {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.nsAnimateOpacity {
+    animation: nsAnimateOpacity 0.8s;
+}
+
+@keyframes nsAnimateOpacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.nsAnimateTop {
+    position: relative;
+    animation: nsAnimateTop 0.4s;
+}
+
+@keyframes nsAnimateTop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.nsAnimateLeft {
+    position: relative;
+    animation: nsAnimateLeft 0.4s;
+}
+
+@keyframes nsAnimateLeft {
+    from {
+        left: -300px;
+        opacity: 0;
+    }
+
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+.nsAnimateRight {
+    position: relative;
+    animation: nsAnimateRight 0.4s
+}
+
+@keyframes nsAnimateRight {
+    from {
+        right: -300px;
+        opacity: 0;
+    }
+
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+.nsAnimateBottom {
+    position: relative;
+    animation: nsAnimateBottom 0.4s;
+}
+
+@keyframes nsAnimateBottom {
+    from {
+        bottom: -300px;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+.nsAnimateZoom {
+    animation: nsAnimateZoom 0.6s;
+}
+
+@keyframes nsAnimateZoom {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+/******For nsResizableTable *******/
+.nsResizableTable .nsResizableTableColumn
+{
+	position: relative;;
+}
+.nsResizableTable .nsColumnResizer
+{
+	position: absolute;
+	top: 0;
+  	right: 0;
+  	width: 5px;
+  	cursor: col-resize;
+  	-webkit-user-select: none; /* Safari */
+  	-ms-user-select: none; /* IE 10 and IE 11 */
+  	user-select: none; 
+}
+.nsResizableTable .nsColumnResizer.nsColumnResizerMoving
+{
+	border-right: 2px solid #0000ff;
+}
+
+
+/******end of nsResizableTable *******/

@@ -1,0 +1,79 @@
+{
+  "name": "nscomponentsreact",
+  "version": "0.6.1",
+  "main": "build/index.js",
+  "module": "build/index.esm.js",
+  "files": [
+    "build"
+  ],
+  "types": "build/index.d.ts",
+  "description": "React Wrapper Components for NSComponents",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nscomponents/nscomponentsreact.git"
+  },
+  "homepage": "https://nscomponent.com/",
+  "bugs": {
+    "url": "https://github.com/nscomponents/nscomponentsreact/issues"
+  },
+  "scripts": {
+    "clean": "rimraf build",
+    "build": "npm run clean && rollup -c && xcopy /s /i src\\generated build\\generated",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json,md}'",
+    "prepublishOnly": "npm run build",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [
+    "React",
+    "Component",
+    "Library",
+    "UI",
+    "Reusable",
+    "Customizable",
+    "NSComponents",
+    "Rollup",
+    "Typescript"
+  ],
+  "author": "NSComponents",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0",
+    "react-router-dom": "^6.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.0",
+    "@rollup/plugin-commonjs": "^23.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.86",
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
+    "babel-loader": "^8.2.3",
+    "babel-preset-react-app": "^10.0.0",
+    "eslint": "^8.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^28.1.3",
+    "prettier": "^2.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-scripts": "5.0.1",
+    "rimraf": "^3.0.0",
+    "rollup": "^2.70.1",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.1",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "sass-loader": "^12.6.0",
+    "ts-jest": "^28.0.7",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "tslib": "^2.6.2"
+  }
+}

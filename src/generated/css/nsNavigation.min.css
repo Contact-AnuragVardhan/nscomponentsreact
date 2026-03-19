@@ -1,0 +1,725 @@
+/*Concept from https://codepen.io/chriscoyier/pen/CiflJ*/
+.nsFloatingLabel 
+{
+	/*width: 100%;*/
+	overflow: hidden;
+	text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.nsFloatingLabel .nsFloatingLabelConatiner 
+{
+	position: relative;
+	overflow: hidden;
+}
+.nsFloatingLabel .nsFloatingLabelControl
+{
+	background: none;
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	padding: 6px 12px;
+	outline: 0;
+}
+.nsFloatingLabel.nsFloatingLabelActive .nsFloatingLabelLabel
+{
+	opacity: 1;
+    visibility: visible;
+	font-size: 70%;
+	padding: 1px 6px;
+	z-index: 2;
+}
+.nsFloatingLabel .nsFloatingLabelLabel
+{
+	opacity: 0;
+    visibility: hidden;
+	box-sizing: border-box;
+	transition: all 0.2s ease-in-out;
+	position: absolute;
+	padding: 7px 6px;
+	cursor: pointer;
+}
+.nsFloatingLabel .nsFloatingLabelTextArea 
+{
+	display: block;
+	resize: vertical;
+}
+/**top css starts **/
+.nsFloatingLabel.nsFloatingLabelTop
+{
+	overflow: visible;/* default value for overflow*/
+}
+.nsFloatingLabel.nsFloatingLabelTop .nsFloatingLabelConatiner 
+{
+	overflow: visible;/* default value for overflow*/
+}
+.nsFloatingLabel.nsFloatingLabelTop .nsFloatingLabelControl 
+{
+	width: calc(100% - 28px);/*12 * 2(padding) + 2 * 2(margin)*/
+}
+.nsFloatingLabel.nsFloatingLabelTop.nsFloatingLabelTopTop .nsFloatingLabelControl 
+{
+}
+.nsFloatingLabel.nsFloatingLabelTop.nsFloatingLabelTopMiddle .nsFloatingLabelControl 
+{
+  	padding: 6px 12px;
+}
+.nsFloatingLabel.nsFloatingLabelTop.nsFloatingLabelTopBottom .nsFloatingLabelControl 
+{
+	padding: 18px 12px 6px;
+}
+.nsFloatingLabel.nsFloatingLabelTop .nsFloatingLabelLabel 
+{
+	font-size: 12px;
+    line-height: 1;
+}
+.nsFloatingLabel.nsFloatingLabelTop.nsFloatingLabelTopTop .nsFloatingLabelLabel
+{
+	top: -14px;
+    left: 0;
+}
+.nsFloatingLabel.nsFloatingLabelTop.nsFloatingLabelTopMiddle .nsFloatingLabelLabel:before
+{
+	content: '';
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    right: 0;
+    height: 2px;/*border size */
+    z-index: -1;
+}
+.nsFloatingLabel.nsFloatingLabelTop.nsFloatingLabelTopMiddle .nsFloatingLabelLabel 
+{
+	top: -9px;
+  	left: 10px;
+    background-color: transparent;
+    padding: 3px;
+}
+.nsFloatingLabel.nsFloatingLabelTop.nsFloatingLabelTopBottom .nsFloatingLabelLabel 
+{
+	top: 1px;
+    left: 10px;
+    padding: 6px 3px 3px;
+}
+
+/**top css ends **/
+/**Bottom css starts **/
+.nsFloatingLabel.nsFloatingLabelBottom .nsFloatingLabelControl 
+{
+	width: calc(100% - 16px);/*6 * 2(padding) + 2 * 2(margin)*/
+  	padding: 12px 6px 12px 6px;
+}
+.nsFloatingLabel.nsFloatingLabelBottom .nsFloatingLabelLabel 
+{
+  	top: 0;
+  	bottom: 0;
+  	left: 0;
+  	width: calc(100% - 4px);
+}
+.nsFloatingLabel.nsFloatingLabelBottom.nsFloatingLabelActive .nsFloatingLabelControl
+{
+  	padding: 4px 6px 20px 6px;
+}
+.nsFloatingLabel.nsFloatingLabelBottom.nsFloatingLabelActive .nsFloatingLabelLabel
+{
+  	top: 100%;
+  	margin: -16px 2px 0px 2px;
+}
+/**Bottom css ends **/
+/**Right css starts **/
+.nsFloatingLabel.nsFloatingLabelRight .nsFloatingLabelControl
+{
+	width: calc(100% - 28px);/*12 * 2(padding) + 2 * 4(margin)*/
+}
+
+.nsFloatingLabel.nsFloatingLabelRight .nsFloatingLabelLabel 
+{
+  	top: 2px;
+  	right: 100%;
+  	width: 100%;
+  	margin-right: -100%;
+  	bottom: 2px;
+}
+.nsFloatingLabel.nsFloatingLabelRight.nsFloatingLabelActive .nsFloatingLabelLabel
+{
+  	right: 0;
+  	margin-right: 0;
+  	width: 25%;
+  	padding-top: 5px;
+  	margin-right: 2px;
+}
+/**Right css ends **/
+
+.nsFloatingLabelWhite .nsFloatingLabelControl 
+{
+	border: 2px solid #dfdfdf;
+}
+.nsFloatingLabelWhite.nsFloatingLabelBottom.nsFloatingLabelActive .nsFloatingLabelLabel,
+.nsFloatingLabelWhite.nsFloatingLabelRight.nsFloatingLabelActive .nsFloatingLabelLabel
+{
+	background: #1976D2;
+	color: white;
+}
+.nsFloatingLabelWhite .nsFloatingLabelLabel
+{
+	color: #999;
+}
+.nsFloatingLabelWhite.nsFloatingLabelFocus .nsFloatingLabelControl
+{
+	border-color: #1976D2;
+}
+.nsFloatingLabelWhite.nsFloatingLabelTop.nsFloatingLabelTopMiddle .nsFloatingLabelLabel:before
+{
+	background-color: #fff;
+}
+.nsFloatingLabelWhite.nsFloatingLabelFocus.nsFloatingLabelTop .nsFloatingLabelLabel
+{
+	color: #1976D2;
+}
+
+.nsFloatingLabelBlack .nsFloatingLabelControl
+{
+	border: 2px solid #dfdfdf;
+	color: white;
+}
+.nsFloatingLabelBlack.nsFloatingLabelBottom.nsFloatingLabelActive .nsFloatingLabelLabel,
+.nsFloatingLabelBlack.nsFloatingLabelRight.nsFloatingLabelActive .nsFloatingLabelLabel
+{
+	background: #1976D2;
+	color: white;
+}
+.nsFloatingLabelBlack .nsFloatingLabelLabel
+{
+	color: #FFFFFF;
+}
+.nsFloatingLabelBlack.nsFloatingLabelFocus .nsFloatingLabelControl
+{
+	border-color: #1976D2;
+}
+.nsFloatingLabelBlack.nsFloatingLabelTop.nsFloatingLabelTopMiddle .nsFloatingLabelLabel:before
+{
+	background-color: #000000;
+}
+.nsFloatingLabelBlack.nsFloatingLabelFocus.nsFloatingLabelTop .nsFloatingLabelLabel
+{
+	color: darkturquoise
+}
+
+.nsFloatingLabelBlack .nsFloatingLabelControl::placeholder
+{
+  	color: white;
+  	opacity: 1; /* Firefox */
+}
+/* Internet Explorer 10-11 */
+.nsFloatingLabelBlack .nsFloatingLabelControl:-ms-input-placeholder
+{ 
+ 	color: white;
+}
+/* Microsoft Edge */
+.nsFloatingLabelBlack .nsFloatingLabelControl::-ms-input-placeholder
+{ 
+ 	color: white;
+}@font-face {
+   font-family: 'NSComponentFont';
+   src: url("data:application/font-woff;base64,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") format('woff');
+    font-weight: normal;
+  	font-style: normal;
+  font-display: block;
+}
+.ns-icon {
+    display: inline-block;
+    font-size: inherit;
+    font-family: NSComponentFont;
+    line-height: 1;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.ns-navigation-arrow-down:before {
+  content: "\e92f";
+}
+.ns-navigation-arrow-left:before {
+  content: "\e930";
+}
+.ns-navigation-arrow-right:before {
+  content: "\e931";
+}
+.ns-navigation-arrow-up:before {
+  content: "\e932";
+}
+
+
+.nsNavMainContainerAbsolute
+{
+	position: absolute;
+    top: 0;
+    left: 0;
+}
+.nsNavMainContainer 
+{
+	/* causes issue of scrollbar in applications */
+    /*min-height: 100%;*/
+    position: absolute;
+	top: 0;
+	right: 0;
+	left:0;
+	bottom:0;
+	display: flex;
+   	flex-direction: column;
+   	flex: 0 0 auto;
+    width: 230px;
+    z-index: 810;
+    text-shadow: rgb(255, 255, 255) 0px 0px 5px;
+    -webkit-transition: -webkit-transform .3s ease-in-out,width .3s ease-in-out;
+    -moz-transition: -moz-transform .3s ease-in-out,width .3s ease-in-out;
+    -o-transition: -o-transform .3s ease-in-out,width .3s ease-in-out;
+    transition: transform .3s ease-in-out,width .3s ease-in-out;
+}
+@media (max-width: 767px) 
+{
+    .nsNavMainContainer 
+    {
+        -webkit-transform:translate(-0px, 0);
+        -ms-transform: translate(-0px, 0);
+        -o-transform: translate(-0px, 0);
+        transform: translate(-0px, 0);
+    }
+    .nsNavCollapsed .nsNavMainContainer 
+    {
+        -webkit-transform:translate(-230px, 0);
+        -ms-transform: translate(-230px, 0);
+        -o-transform: translate(-230px, 0);
+        transform: translate(-230px, 0);
+    }
+}
+.nsNavContainerParent
+{
+	height: 100%;
+	flex: 1 1 auto;
+	position: relative;
+	overflow-x:hidden;
+	overflow-y:auto;	
+}
+.nsNavContainer,.nsNavHeader
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.nsNavContainer>li,.nsNavHeader>li
+{
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+.nsNavContainer>li>a,.nsNavHeader>li>a 
+{
+    padding: 12px 5px 12px 15px;
+    display: block;
+}
+.nsNavContainer>li>a>span>.ns-icon,.nsNavContainer>li>a>span>.glyphicon,.nsNavContainer>li>a>span>.ion,
+.nsNavHeader>li>a>span>.ns-icon,.nsNavHeader>li>a>span>.glyphicon,.nsNavHeader>li>a>span>.ion 
+{
+    width: 20px;
+}
+.nsNavHeader li.nsNavTitle 
+{
+    padding: 10px 25px 10px 15px;
+    font-size: 12px;
+}
+.nsNavHeader .nsNavSearchContainer
+{
+	padding: 0px 10px;
+	padding-bottom: 3px;
+}
+
+.nsNavCollapsed .nsNavSearchContainer
+{
+	display: none;	
+}
+
+/*.nsNavContainer .nsPlaceHolder input, .nsNavContainer .nsPlaceHolder textarea
+{
+	width: calc(100% - 30px);
+}
+
+.nsNavContainer .nsPlaceHolder.nsPlaceHolderBottom label
+{
+	left: 15px;
+	width: calc(100% - 30px);
+}
+
+.nsNavContainer .nsPlaceHolder.nsPlaceHolderRight label 
+{
+	right: calc(100% - 30px);
+}*/
+
+.nsNavContainer li>a>.fa-angle-left,.nsNavContainer li>a>.nsNavContainerPullRight>.fa-angle-left 
+{
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin-right: 10px;
+    -webkit-transition: transform .5s ease;
+    -o-transition: transform .5s ease;
+    transition: transform .5s ease;
+}
+.nsNavContainer li>a>.fa-angle-left 
+{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -8px;
+}
+/*.nsNavContainer .nsNavItemOpen>a>.fa-angle-left,.nsNavContainer .nsNavItemOpen>a>.nsNavContainerPullRight>.fa-angle-left 
+{
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}*/
+.nsNavContainer .nsNavItemActive>.nsNavSubNavContainer 
+{
+    display: block;
+}
+@media (min-width: 768px) 
+{
+    .nsNavCollapsed .nsNavMainContainer {
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0);
+        width: 50px !important;
+        z-index: 850;
+    }
+    .nsNavCollapsed .nsNavContainer>li {
+        position: relative;
+    }
+    .nsNavCollapsed .nsNavContainer>li>a {
+        margin-right: 0;
+    }
+    .nsNavCollapsed .nsNavContainer>li>a>span {
+        border-top-right-radius: 4px;
+    }
+    .nsNavCollapsed .nsNavContainer>li:not(.nsNavItemParent)>a>span {
+        border-bottom-right-radius: 4px;
+    }
+    .nsNavCollapsed .nsNavContainer>li>.nsNavSubNavContainer {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-bottom-right-radius: 4px;
+    }
+}
+.nsNavCollapsed .nsNavParentHover>a>span,
+.nsNavCollapsed .nsNavParentHover .nsNavSubNavContainer 
+{
+    display: block !important;
+    position: absolute;
+    width: 180px;
+    left: 50px
+}
+.nsNavCollapsed .nsNavParentHover span 
+{
+    top: 0;
+    margin-left: -3px;
+    padding: 12px 5px 12px 20px;
+    background-color: inherit;
+}
+.nsNavCollapsed .nsNavParentHover .nsNavContainerPullRight 
+{
+    position: relative !important;
+    float: right;
+    width: auto !important;
+    left: 180px !important;
+    top: -22px !important;
+    z-index: 900;
+}
+.nsNavCollapsed .nsNavParentHover .nsNavSubNavContainer
+{
+	top: 44px;
+    margin-left: 0;
+}
+.nsNavContainer,.nsNavMainContainer .user-panel,.nsNavHeader>li.nsNavTitle 
+{
+    white-space: nowrap;
+    overflow: hidden;
+}
+.nsNavContainer:hover 
+{
+    overflow: visible;
+}
+.nsNavContainer li>a 
+{
+    position: relative;
+}
+.nsNavContainer li>a>.nsNavContainerPullRight 
+{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -7px;
+}
+.nsNavContainer .nsNavSubNavContainer 
+{
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 5px;
+    position: relative;
+}
+.nsNavContainer .nsNavSubNavContainerVisible
+{
+	 display: block;
+}
+.nsNavSubNavContainer .nsNavSubNavContainer 
+{
+    padding-left: 20px;
+}
+.nsNavContainer.nsNavContainerIconLeft .nsNavSubNavContainer 
+{
+	/*32px if we have line on left side*/
+	padding-left: 20px;
+}
+/*for left line on left side*/
+/*.nsNavContainer.nsNavContainerIconLeft .nsNavSubNavContainer:before {
+    content: '';
+    height: 100%;
+    opacity: 1;
+    width: 3px;
+    background: black;
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 1px;
+}*/
+.nsNavSubNavContainer>li 
+{
+    margin: 0;
+}
+.nsNavSubNavContainer>li>a 
+{
+    padding: 5px 5px 5px 15px;
+    display: block;
+    font-size: 14px;
+}
+.nsNavSubNavContainer>li>a>span>.ns-icon,.nsNavSubNavContainer>li>a>span>.glyphicon,.nsNavSubNavContainer>li>a>span>.ion 
+{
+    width: 20px;
+}
+.nsNavSubNavContainer>li>a>.nsNavContainerPullRight>.fa-angle-left,.nsNavSubNavContainer>li>a>.nsNavContainerPullRight>.fa-angle-down,.nsNavSubNavContainer>li>a>.fa-angle-left,.nsNavSubNavContainer>li>a>.fa-angle-down 
+{
+    width: auto;
+}
+.nsNavCollapsed .nsNavNonVisibleIcon 
+{
+    display: none !important;
+    -webkit-transform: translateZ(0);
+}
+.nsNavDynamicContainer
+{
+	position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden; 
+    text-align: center;
+    width:250px;
+    z-index: 900;
+}
+.nsNavDynamicContainer>.nsNavDynamicMenuText
+{
+    padding: 5px 5px 5px 15px;
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: left;
+    padding-left: 80px;
+}
+.nsNavDynamicContainer>.nsNavDynamicSubMenuCont
+{
+	list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 5px;
+    text-align: left;
+}
+.nsNavDynamicSubMenuCont a 
+{
+    padding: 5px 5px 5px 15px;
+    display: block;
+    font-size: 14px;
+}
+.nsNavDynamicSubMenuCont a 
+{
+    position: relative;
+}
+.nsNavSelectedMenu > a 
+{
+    font-weight: bold;
+}
+.nsNavigationItemDisabled
+{
+	pointer-events:none; 
+    opacity:0.4;
+}
+.nsNavigationItemDisabled > a
+{
+	color: #777;
+}
+.nsNavHeaderFooter
+{
+	min-height: 30px;
+	padding: 5px 10px;
+}
+
+/*************************Themes ******************************************/
+.nsNavMainContainerWhite
+{
+	background-color: #ffffff;
+}
+.nsNavMainContainerWhite .nsNavMainContainer
+{
+    color: #333;
+}
+.nsNavMainContainerWhite .nsNavContainer>li:hover>a, .nsNavMainContainerWhite .nsNavContainer>li.nsNavItemActive>a, .nsNavMainContainerWhite .nsNavContainer>li.nsNavItemOpen>a 
+{
+    color: black;
+    background: #ffffff;
+}
+
+.nsNavMainContainerWhite .nsNavHeader>li.nsNavTitle 
+{
+    color: black;
+    background: #ffffff;
+}
+.nsNavMainContainerWhite .nsNavigationItem
+{
+	border-bottom: 1px solid rgb(0 0 0 / 10%);
+}
+.nsNavMainContainerWhite .nsNavItemParent.nsNavParentSelectedMenu
+{
+	border-right: 5px solid #2bb0d7;
+}
+.nsNavMainContainerWhite .nsNavigationItem > a 
+{
+    color: #2b444f;
+    background: #ffffff;
+    text-decoration: none;
+}
+.nsNavMainContainerWhite .nsNavSelectedMenu > a 
+{
+    color: #CA2420;
+    background: #E5E5E5;
+    border-left-color: #E5E5E5;
+}
+.nsNavMainContainerWhite .nsNavDynamicContainer
+{
+	background: #ffffff;
+	color: #2b444f;
+}
+.nsNavMainContainerWhite .nsNavDynamicSubMenuCont a 
+{
+    color: #2b444f;
+    text-decoration: none;
+}
+.nsNavMainContainerWhite .nsNavDynamicMenuItem.nsNavSelectedMenu>a 
+{
+    color: #CA2420;
+}
+.nsNavMainContainerWhite .nsNavDynamicContainer>.nsNavDynamicMenuText
+{
+	color: #4b646f;
+	border-top: 1px solid #D5D5D5;
+    border-right: 1px solid #D5D5D5;
+    border-bottom: 1px solid #D5D5D5;
+}
+.nsNavMainContainerWhite .nsNavDynamicContainer>.nsNavDynamicSubMenuCont
+{
+	border-top: 1px solid #D5D5D5;
+    border-right: 1px solid #D5D5D5;
+    border-bottom: 1px solid #D5D5D5;
+}
+.nsNavMainContainerWhite .nsNavHeaderFooter
+{
+	background-color: #ffffff;
+	border-top: 1px solid #D5D5D5;
+}
+
+.nsNavMainContainerBlack
+{
+	background-color: #222d32;
+}
+.nsNavMainContainerBlack .nsNavMainContainer 
+{
+    color: #333;
+}
+.nsNavMainContainerBlack .nsNavContainer>li:hover>a, .nsNavMainContainerBlack .nsNavContainer>li.nsNavItemActive>a, .nsNavMainContainerBlack .nsNavContainer>li.nsNavItemOpen>a 
+{
+    color: #fff;
+    background: #1e282c;
+}
+.nsNavMainContainerBlack .nsNavHeader>li.nsNavTitle 
+{
+    color: #fff;
+    background: #1a2226;
+}
+.nsNavMainContainerBlack .nsNavigationItem
+{
+	border-bottom: 1px solid rgb(255 255 255 / 20%);
+}
+.nsNavMainContainerBlack .nsNavItemParent.nsNavParentSelectedMenu
+{
+	border-right: 5px solid #1ABB9C;
+}
+.nsNavMainContainerBlack .nsNavigationItem > a 
+{
+    color: #fff;
+    background: #1e282c;
+    text-decoration: none;
+}
+.nsNavMainContainerBlack .nsNavSelectedMenu > a 
+{
+    color: #CA2420;
+    background: #E5E5E5;
+    border-left-color: #E5E5E5;
+}
+.nsNavMainContainerBlack .nsNavDynamicContainer
+{
+	background-color:black;
+	color:white;
+}
+.nsNavMainContainerBlack .nsNavDynamicSubMenuCont a 
+{
+    color: #fff;
+    background: #1e282c;
+    text-decoration: none;
+}
+.nsNavMainContainerBlack .nsNavDynamicMenuItem.nsNavSelectedMenu>a 
+{
+    color: #CA2420;
+}
+.nsNavMainContainerBlack .nsNavDynamicContainer>.nsNavDynamicMenuText
+{
+	color: #fff;
+    background: #1e282c;
+    border-top: 1px solid #D5D5D5;
+    border-right: 1px solid #D5D5D5;
+    border-bottom: 1px solid #D5D5D5;
+}
+.nsNavMainContainerBlack .nsNavDynamicContainer>.nsNavDynamicSubMenuCont
+{
+	border-top: 1px solid #D5D5D5;
+    border-right: 1px solid #D5D5D5;
+    border-bottom: 1px solid #D5D5D5;
+}
+.nsNavMainContainerBlack .nsNavHeaderFooter
+{
+	background-color: #293e40;
+	border-top: 1px solid #000000;
+}

@@ -1,0 +1,240 @@
+.nsPinTip
+{
+	left: 0;
+	padding: 5px;
+	position: absolute;
+	top: 0;
+	z-index: 1000;
+}
+.nsPinTip .nsPinTip-content
+{
+	border-radius: 3px;
+	moz-border-radius: 3px;
+	padding: 8px 10px 7px 10px;
+	webkit-border-radius: 3px;
+	overflow: auto;
+	max-height: 500px;
+}
+.nsPinTip .nsPinTip-arrow
+{
+	height: 0;
+	line-height: 0;
+	position: absolute;
+	width: 0;
+}
+.nsPinTip.nsPinTip-top .nsPinTip-arrow,
+.nsPinTip.nsPinTip-top-left .nsPinTip-arrow,
+.nsPinTip.nsPinTip-top-right .nsPinTip-arrow
+{
+	border-bottom: none;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	border-top-style: solid;
+	bottom: 0;
+	left: 50%;
+	margin-left: -5px;
+}
+.nsPinTip.nsPinTip-top-left .nsPinTip-arrow,
+.nsPinTip.nsPinTip-top-right .nsPinTip-arrow
+{
+	margin-left: -8px;
+}
+.nsPinTip.nsPinTip-bottom .nsPinTip-arrow,
+.nsPinTip.nsPinTip-bottom-left .nsPinTip-arrow,
+.nsPinTip.nsPinTip-bottom-right .nsPinTip-arrow
+{
+	border-bottom-style: solid;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	border-top: none;
+	left: 50%;
+	margin-left: -5px;
+	top: 0px;
+}
+.nsPinTip.nsPinTip-bottom-left .nsPinTip-arrow,
+.nsPinTip.nsPinTip-bottom-right .nsPinTip-arrow
+{
+	margin-left: -8px;
+}
+.nsPinTip.nsPinTip-left .nsPinTip-arrow
+{
+	border-bottom-color: transparent;
+	border-left-style: solid;
+	border-right: none;
+	border-top-color: transparent;
+	margin-top: -5px;
+	right: 0;
+	top: 50%;
+}
+.nsPinTip.nsPinTip-right .nsPinTip-arrow
+{
+	border-bottom-color: transparent;
+	border-left: none;
+	border-right-style: solid;
+	border-top-color: transparent;
+	left: 0;
+	margin-top: -5px;
+	top: 50%;
+}
+.nsPinTip.nsPinTip-top-left .nsPinTip-arrow,
+.nsPinTip.nsPinTip-bottom-left .nsPinTip-arrow
+{
+	left: 85%;
+}
+.nsPinTip.nsPinTip-top-right .nsPinTip-arrow,
+.nsPinTip.nsPinTip-bottom-right .nsPinTip-arrow
+{
+	left: 15px;
+}
+.nsPinTip.nsPinTip-small
+{
+	font-size: 12px;
+}
+.nsPinTip.nsPinTip-medium
+{
+	font-size: 13px;
+}
+.nsPinTip.nsPinTip-large
+{
+	font-size: 14px;
+}
+.nsPinTip.nsPinTip-hide
+{
+	opacity: 0;
+}
+
+.nsPinTip .nsPopUpHeader
+{
+	outline: none;
+	border-bottom: 1px solid rgb(218, 222, 224);
+	width: 100%;
+}
+
+.nsPinTip .nsPopUpHeaderContainer
+{
+    padding: 0;
+	white-space: nowrap;
+	width: 100%;
+	min-height:30px;
+	box-sizing: content-box;
+	background: transparent;
+    -webkit-font-smoothing: antialiased;
+    cursor: default;
+    background-color: rgb(255, 255, 255);
+    white-space: normal;
+    -webkit-appearance: none;
+    overflow: hidden;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(218, 222, 224);
+    border-image: initial;
+}
+
+.nsPinTip .nsPopUpTitleContainer
+{
+	height:calc(100% - 1px);
+	width:calc(100% - 40px);
+	display: inline-block;
+    vertical-align: top;
+    border-width: 0px;
+    margin-top: 0px;
+    box-sizing: content-box;
+    letter-spacing: 0px;
+}
+
+.nsPinTip .nsPopUpTitle
+{
+	font-weight: bold;
+	padding-top: 0px;
+    padding-bottom: 0px;
+	padding-left: 12px;
+	height: 100%;
+    box-sizing: border-box;
+    padding: 4px 12px;
+}
+
+.nsPinTip .nsPopUpCloseContainer
+{
+	display: inline-block;
+    vertical-align: top;
+	box-sizing: border-box;
+    height:calc(100% - 1px);
+    width:40px;
+    padding: 3px 2px;
+    overflow: hidden;
+	text-align: center;
+    position: relative;
+    cursor: pointer;
+    padding: 0px;
+    margin: 0px auto;
+    overflow: visible;
+}
+
+.nsPinTip .nsPopUpBtnClose
+{
+	height: 100%;
+    width: 100%;
+    border-width: 0px;
+    position: relative;
+    z-index: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    vertical-align: middle;
+    padding: 0px;
+}
+
+.nsPinTip .nsPopUpBtnClose::before
+{
+	content: "";
+    opacity: 0;
+    position: absolute;
+    transition-duration: 0.15s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    transform: scale(0);
+    transition-property: transform, opacity;
+    border-radius: 50%;
+}
+
+.nsPinTip .nsPopUpClose
+{
+	font-size: 20px;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    text-align: center;
+    color: rgb(148, 161, 179);
+}
+
+.nsPinTip .nsPopUpClose::before
+{
+	display: inline-block;
+  	content: "\00d7";
+  	font-weight: 300;
+  	font-family: Arial, sans-serif;
+}
+
+.nsPinTipWhite .nsPinTip-content
+{
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.nsPinTipWhite .nsPinTip-arrow
+{
+	border: 5px dashed #FFFFFF;
+}
+
+.nsPinTipBlack .nsPinTip-content
+{
+	background-color: #000000;
+	color: #FFFFFF;
+}
+.nsPinTipBlack .nsPinTip-arrow
+{
+	border: 5px dashed #000000;
+}

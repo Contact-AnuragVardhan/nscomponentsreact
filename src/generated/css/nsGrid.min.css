@@ -1,0 +1,1759 @@
+.nsDataGridContainer
+{
+	width:100%;
+	height:100%;
+	position: relative;
+    border-radius: 2px;
+    /* donot add it as the footer is not visible when overflow is hidden*/
+    /*overflow: hidden!important;*/
+}
+.nsDataGridContainer .nsDataGridTable
+{
+    width: 100%;
+    border: 0px;
+	margin: 0px;
+	padding: 0px;
+	border-collapse: separate;
+	border-spacing: 0px;
+    table-layout: fixed;
+}
+.nsDataGridContainer .nsDataGridTitleBar
+{
+   position: relative;
+   overflow: hidden;
+   border-top-left-radius: 2px;
+   border-top-right-radius: 2px;
+   border-collapse: separate;
+}
+.nsDataGridContainer .nsDataGridExport
+{
+	float: right;
+}
+.nsDataGridContainer .nsTableWrapper
+{
+    position: relative;
+}
+.nsDataGridContainer .nsGridHeaderContainer
+{
+	position: relative;
+}
+
+.nsDataGridContainer .nsGridFooterContainer
+{
+	position: relative;
+}
+.nsDataGridContainer .nsHeaderBarCorner 
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 16px;
+    height: 100%;
+    z-index: 2;
+}
+.nsDataGridContainer .nsFooterBarCorner 
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 16px;
+    height: calc(100% - 16px);
+    z-index: 2;
+}
+.nsDataGridContainer .nsDataGridHeaderContainer
+{
+	overflow: hidden; 
+}
+.nsDataGridContainer .nsDataGridFooterContainer
+{
+	overflow-y: hidden; 
+	overflow-x: auto;
+}
+.nsDataGridHeader
+{
+  height: 0px;
+  margin: 0px;
+  overflow:hidden;
+  padding-right: 0px;
+}
+.nsDataGridFooter
+{
+  margin: 0px;
+  overflow:hidden;
+}
+.nsDataGridContainer .nsDataGridHeaderRenderer
+{
+  margin: 0px;
+  overflow:hidden;
+}
+.nsDataGridHeaderCellContainer
+{
+  position:relative;
+  overflow:hidden;
+  align:center;
+  display: -webkit-box;           /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;              /* OLD - Firefox 19- (doesn't work very well) */
+  display: -ms-flexbox;           /* TWEENER - IE 10 */
+  display: -webkit-flex;          /* NEW - Chrome */
+  display: flex;               /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  align-items:center;
+  vertical-align:middle;
+  height: 100%;
+  min-height: 100%;
+}
+.nsDataGridHeaderCellContainer > *
+{
+	padding:5px 0px 5px 5px;
+	vertical-align:middle;
+}
+.nsGhostHeader
+{
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.nsHeaderMove
+{
+	cursor:move;
+}
+.nsHeaderText
+{
+	text-align:center;
+	word-break: break-all;
+}
+.nsHeaderSortContainer
+{
+	text-align:center;
+	word-break: break-all;
+	font-weight: bold;
+}
+.nsSortAsc 
+{
+	width: 0; 
+	height: 0; 
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid black;
+}
+.nsSortAsc:hover
+{
+	border-bottom: 5px solid red;
+}
+.nsSortSpacer
+{
+	margin-top:2px;
+}
+.nsSortDesc 
+{
+	width: 0; 
+	height: 0; 
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid black;
+}
+.nsSortDesc:hover
+{
+	border-top: 5px solid red;
+}
+.nsMenuArrowSVG
+{
+    width:16px;
+	height:16px;
+}
+.nsDataGridContainer .nsFilterContainer
+{
+  padding: 3px 5px;
+  overflow:hidden;
+  align:center;
+  display: -webkit-box;           /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;              /* OLD - Firefox 19- (doesn't work very well) */
+  display: -ms-flexbox;           /* TWEENER - IE 10 */
+  display: -webkit-flex;          /* NEW - Chrome */
+  display: flex;               /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  align-items:center;
+  vertical-align:middle;
+  display: inline-block;
+  width: 96%;
+  padding-top: 0px;
+}
+.nsDataGridContainer .nsAdvancedFilterParentContainer .nsFilterContainer
+{
+	width: calc(100% - 26px);
+}
+.nsDataGridContainer .nsFilter
+{
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 5px;
+  margin-right: 2px;
+  width: 100%;
+}
+.nsDataGridContainer .nsFilterIconContainer
+{
+	display: inline-block;
+	vertical-align:top;
+	padding-top:3px;
+	cursor:pointer;
+}
+.nsDataGridContainer .nsCenterContainer 
+{
+    position: relative;
+    overflow: hidden;
+    top:0;
+    left:0;
+}
+.nsDataGridContainer .nsDataGridBodyContainer
+{
+	overflow:auto;
+	-webkit-overflow-scrolling: touch;
+}
+.nsDataGridContainer .nsDataGridBodyContainerWithFooter
+{
+	overflow-x:hidden !important;
+}
+/*.nsDataGridContainer .nsDataGridBodyContainerVirtual
+{
+	float:left;
+	overflow-y:hidden;
+	width:97%;
+	width: -webkit-calc(100% - 18px);
+	width: -moz-calc(100% - 18px);
+	width: -o-calc(100% - 18px);
+	width: calc(100% - 18px);
+}*/
+.nsDataGridContainer .nsBodyDataGridCell
+{
+    cursor : default;
+    padding:0px;
+    word-break: break-all;
+}
+.nsDataGridContainer .nsFixedDataGridCell
+{
+	/*position: relative;
+	z-index: 1;*/
+	position: -webkit-sticky !important;
+    position: sticky !important;
+    z-index: 2;
+    background-color: rgb(251, 251, 251);
+}
+.nsDataGridContainer .nsFixedLeftLastCell
+{
+	border-right: 1px solid !important;
+}
+.nsDataGridContainer .nsFixedRightFirstCell
+{
+	border-left: 1px solid !important;
+}
+.nsDataGridContainer .nsFixedDataGridCellAnimate
+{
+	-webkit-transition: left 0.2s, right 0.2s;
+	-moz-transition: left 0.2s, right 0.2s;
+	-ms-transition: left 0.2s, right 0.2s;
+	-o-transition: left 0.2s, right 0.2s;
+	transition: left 0.2s, right 0.2s;
+}
+.nsDataGridContainer .nsCellChild 
+{
+  	width:100%;
+  	height: calc(100% - 0px);
+}
+.nsDataGridContainer .nsGroupCell 
+{
+  position: relative;
+  overflow: hidden;
+  min-height: 19px;
+}
+.nsDataGridContainer .nsMasterDetailGridContainer
+{
+  padding: 20px;
+}
+.nsGroupCell > * 
+{
+    display: inline-block;
+}
+.nsDataGridContainer .nsArrowParent
+{
+	position: absolute;
+    top: 5px;
+    left:5px;
+    cursor:pointer;
+}
+.nsDataGridContainer .nsGroupCellText
+{
+	padding-left: 2em;
+}
+.nsResizeHandleActive
+{
+	/*cursor: e-resize;*/
+}
+.nsDataGridContainer .nsColumnResizeIndicator
+{
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    display: block;
+    cursor: col-resize;
+  	z-index: 5;
+  	user-select: none;
+}
+.nsResizeHandle 
+{
+	cursor: col-resize;
+	width: 2px;
+	position:absolute;
+	top:0;
+	left:0;
+/* 	background-color: transparent!important; */
+	z-index: 1000;
+}
+.nsDataGridContainer .nsGridArrowFill 
+{
+	width:16px;
+	height:16px;
+}
+.nsDataGridContainer .nsGridGroupSVG
+{
+    width:16px;
+	height:16px;
+}
+.nsDataGridContainer .nsExportIcon
+{
+ 	width:16px;
+	height:16px;
+}
+.nsDataGridContainer .nsColumnSetting
+{
+ 	width:16px;
+	height:16px;
+}
+.nsMoveIcon
+{
+ 	width:16px;
+	height:16px;
+}
+.nsDataGridContainer .nsNoRecordsFound 
+{
+    text-align: center;
+}
+.nsDataGridContainer .nsTruncateToFit,.nsDataGridContainer .nsTruncateToFit *
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.nsDataGridContainer .nsAnimateLeftToRight 
+{
+	  -webkit-animation-name: nsAnimateLeftToRight;
+	  -moz-animation-name: nsAnimateLeftToRight;
+	  -o-animation-name: nsAnimateLeftToRight;
+	  -ms-animation-name: nsAnimateLeftToRight;
+	  animation-name: nsAnimateLeftToRight;
+	  -webkit-animation-duration: 0.2s;
+	  -moz-animation-duration: 0.2s;
+	  -o-animation-duration: 0.2s;
+	  -ms-animation-duration: 0.2s;
+	  animation-duration: 0.2s;
+	  -webkit-animation-iteration-count: infinite;
+	  -moz-animation-iteration-count: infinite;
+	  -o-animation-iteration-count: infinite;
+	  -ms-animation-iteration-count: infinite;
+	  animation-iteration-count: infinite;
+	  -webkit-animation-direction: alternate;
+	  -moz-animation-direction: alternate;
+	  -o-animation-direction: alternate;
+	  -ms-animation-direction: alternate;
+	  animation-direction: alternate;
+ } 
+.nsDataGridContainer .nsGridScrollerCauseParent
+{
+	overflow-x:hidden;
+	overflow-y:scroll;
+	-webkit-overflow-scrolling: touch;
+	width:18px;
+	max-width:18px;
+}
+.nsDataGridContainer .nsFilterSelect
+{
+    margin: 4px 4px 0px 4px;
+    width: 96%;
+}
+.nsDataGridContainer .nsSearchTextBoxWrapper
+{
+	margin: 4px;
+}
+.nsDataGridContainer .nsFilterButtonDiv
+{
+  padding: 2px;
+  text-align: center;
+}
+.nsDataGridContainer .nsFilterIconSVG
+{
+    width:16px;
+	height:16px;
+}
+.nsDataGridContainer .nsFilterIconSVG:hover
+{
+    fill:red;
+	cursor: hand;
+}
+
+.nsDataGridContainer .nsFilterLineContainer 
+{
+}
+
+.nsDataGridContainer .nsFilterList
+{
+	width:99%;
+    height:180px;
+}
+
+.nsDataGridContainer .nsFilterListRenderer
+{
+	-o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.nsDataGridContainer .nsFilterListRendererCheckBox
+{
+	position: relative;
+    top: 2px;
+    left: 2px;
+}
+
+.nsDataGridContainer .nsFilterListRendererText
+{
+	margin-left: 4px;
+}
+
+.nsDataGridContainer .nsFilterSearchTextBox
+{
+	width:96%;
+}
+
+.nsDataGridContainer .nsGridPagination
+{
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.nsArrow
+{
+	height:15px;
+}
+
+.nsDataGridHeaderDrag
+{
+	position: absolute;
+	z-index: 2;
+}
+
+.nsGridEditorPopUp
+{
+	z-index:10000;
+	position:absolute;
+	background:white;
+	padding:5px;
+	border:3px solid gray; 
+	-moz-border-radius:10px; 
+	border-radius:10px;
+}
+.nsGridTextAreaEditor .nsGridTextArea
+{
+	backround:white;
+	width:250px;
+	height:80px;
+	border:0;
+	outline:0;
+}
+.nsGridFilterFirstSelect
+{
+	margin: 4px;
+	margin-left: 0px;
+    width: calc(100% - 10%);
+}
+.nsGridFilterOptOption
+{
+	margin: 4px;
+	margin-left: 0px;
+    width: calc(100% - 10%);
+}
+.nsGridFilterSecondSelect
+{
+	margin: 4px;
+	margin-left: 0px;
+    width: calc(100% - 10%);
+}
+ @-moz-keyframes nsAnimateLeftToRight 
+{
+	from 
+	{
+		padding-left: 6px;    
+		padding-right: 2px;  
+	}  
+	to 
+	{    
+		padding-left: 2px;    
+		padding-right: 6px;  
+	}
+}
+
+@-webkit-keyframes nsAnimateLeftToRight 
+{
+	from 
+	{
+		padding-left: 6px;
+		padding-right: 2px;  
+	}  
+	to 
+	{    
+		padding-left: 2px;    
+		padding-right: 6px;  
+	}
+}
+
+@-o-keyframes nsAnimateLeftToRight 
+{
+	from 
+	{
+		padding-left: 6px;
+		padding-right: 2px;  
+	}  
+	to 
+	{    
+		padding-left: 2px;    
+		padding-right: 6px;  
+	}
+}
+
+@keyframes nsAnimateLeftToRight 
+{
+	from 
+	{
+		padding-left: 6px;
+		padding-right: 2px;  
+	}  
+	to 
+	{    
+		padding-left: 2px;    
+		padding-right: 6px;  
+	}
+}
+
+	/* Force table to not be like tables anymore */
+.nsMobileStackGrid table,.nsMobileStackGrid thead,.nsMobileStackGrid tbody,.nsMobileStackGrid th,.nsMobileStackGrid td,.nsMobileStackGrid tr {
+	display: block;
+}
+
+/* Hide table headers (but not display: none;, for accessibility) */
+.nsMobileStackGrid thead tr {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+
+.nsMobileStackGrid .nsDataGridHeader,.nsMobileStackGrid .nsArrow{
+	display:none;
+}
+.nsMobileStackGrid .nsDataGridFooter,.nsMobileStackGrid .nsArrow{
+	display:none;
+}
+
+.nsMobileStackGrid .nsDataGridHeaderRenderer{
+	display:none;
+}
+
+.nsMobileStackGrid tr { 
+	border: 1px solid #ccc;
+}
+
+.nsMobileStackGrid td {
+	/* Behave  like a "row" */
+	border: none;
+	border-bottom: 1px solid #eee;
+	position: relative;
+	padding-left: 50%;
+	min-height: 20px; 
+	
+}
+
+.nsMobileStackGrid .nsBodyDataGridCell
+{
+	text-align:center;
+	padding-left:0px!important;
+}
+
+.nsMobileStackGrid td:before {
+	/* Now like a table header */
+	position: absolute;
+	/* Top/left values mimic padding */
+	/*top: 6px;*/
+	left: 6px;
+	width: 45%;
+	padding-right: 10px;
+	white-space: nowrap;
+	vertical-align:middle;
+}
+
+.nsMobileStackGrid td:nth-of-type(n):before {	
+	font-weight: bold;
+}
+
+.nsMobileColumnToggleGrid320 th.column-priority-6, .nsMobileColumnToggleGrid320 td.column-priority-6, 
+.nsMobileColumnToggleGrid320 th.column-priority-5, .nsMobileColumnToggleGrid320 td.column-priority-5, 
+.nsMobileColumnToggleGrid320 th.column-priority-4, .nsMobileColumnToggleGrid320 td.column-priority-4, 
+.nsMobileColumnToggleGrid320 th.column-priority-3, .nsMobileColumnToggleGrid320 td.column-priority-3, 
+.nsMobileColumnToggleGrid320 th.column-priority-2, .nsMobileColumnToggleGrid320 td.column-priority-2 {
+    display: none;
+}
+
+.nsMobileColumnToggleGrid480 th.column-priority-6, .nsMobileColumnToggleGrid480 td.column-priority-6, 
+.nsMobileColumnToggleGrid480 th.column-priority-5, .nsMobileColumnToggleGrid480 td.column-priority-5, 
+.nsMobileColumnToggleGrid480 th.column-priority-4, .nsMobileColumnToggleGrid480 td.column-priority-4, 
+.nsMobileColumnToggleGrid480 th.column-priority-3, .nsMobileColumnToggleGrid480 td.column-priority-3 {
+    display: none;
+}
+
+.nsMobileColumnToggleGrid640 th.column-priority-6, .nsMobileColumnToggleGrid640 td.column-priority-6, 
+.nsMobileColumnToggleGrid640 th.column-priority-5, .nsMobileColumnToggleGrid640 td.column-priority-5, 
+.nsMobileColumnToggleGrid640 th.column-priority-4, .nsMobileColumnToggleGrid640 td.column-priority-4 {
+    display: none;
+}
+
+.nsMobileColumnToggleGrid800 th.column-priority-6, .nsMobileColumnToggleGrid800 td.column-priority-6, 
+.nsMobileColumnToggleGrid800 th.column-priority-5, .nsMobileColumnToggleGrid800 td.column-priority-5 {
+    display: none;
+}
+
+.nsMobileColumnToggleGrid960 th.column-priority-6, .nsMobileColumnToggleGrid960 td.column-priority-6 {
+    display: none;
+}
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: searchfield-cancel-button;
+}
+
+.nsGridScrollTipContainer 
+{
+	  pointer-events: none;
+	  position: absolute;
+	  opacity: 0;
+	  z-index: 1000;
+}
+.nsGridScrollTipContainer .nsGridScrollTipText 
+{
+	  border-radius: 5px;
+	  color: white;
+	  float: left;
+	  font-family: sans-serif;
+	  font-size: 12px;
+	  font-weight: bold;
+	  line-height: 48px;
+	  text-align: center;
+}
+.nsGridScrollTipContainer .nsGridScrollTipTriangle 
+{
+	  border-bottom: 6px solid transparent;
+	  border-left: 8px solid black;
+	  border-top: 6px solid transparent;
+	  display: inline;
+	  float: left;
+	  height: 0;
+	  margin-top: 18px;
+	  width: 0;
+}
+
+.nsDataGridContainerWhite
+{
+	background-color: #FFFFFF;
+	border: 1px solid silver;
+}
+.nsDataGridContainerWhite .nsDataGridTitleBarTheme
+{
+   background: #848484; 
+   color: #ffffff;
+   font-size: 12px; 
+   padding: .3em .2em .2em .3em; 
+   font-weight: bold;
+   border-bottom: 1px solid #848484!important;
+}
+
+.nsDataGridContainerWhite .nsDataGridTableTheme
+{  
+	font-size:13px;
+	background-color: #F6F6F6;
+    border-color: grey;
+}
+.nsDataGridContainerWhite .nsDataGridHeaderTheme
+{
+  border-top : 1px solid #D4C7C7;
+  border-right : 1px solid #D4C7C7;
+  background-color: #EEEEEE;
+  color: black;
+}
+.nsDataGridHeaderDragWhite.nsDataGridHeaderDrag
+{
+  border-top : 1px solid #D4C7C7;
+  border-right : 1px solid #D4C7C7;
+  background-color: #EEEEEE;
+  color: black;
+}
+.nsDataGridContainerWhite .nsDataGridHeaderTheme:hover
+{
+	background-color: #acacac!important;	
+}
+.nsDataGridContainerWhite .nsHeaderBarCorner
+{
+	background-color: #EEEEEE;
+} 
+.nsDataGridContainerWhite .nsDataGridHeaderRendererTheme
+{
+	background-color: #EEEEEE;
+	border-top : 1px solid #D4C7C7;
+  	border-right : 1px solid #D4C7C7;
+}
+.nsHeaderTextTheme
+{
+	font-weight: bold;
+	font-size: 13.5px;
+}
+/*.nsHeaderTextTheme:hover
+{
+	color: red;
+}*/
+.nsDataGridContainerWhite .nsDataGridOddRow
+{
+    background-color: #FFFFFF;
+	color: black;
+}
+.nsDataGridContainerWhite .nsDataGridEvenRow 
+{
+    background-color: #fbfbfb;
+	color: black; 
+}
+.nsDataGridContainerWhite .nsRowHover
+{
+	background: #CCCCCC;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.nsDataGridContainerWhite .nsMenuUse
+{
+	fill:black;
+}
+.nsDataGridContainerWhite .nsMenuUse:hover
+{
+	fill: red;
+}
+.nsMenuArrow
+{
+	fill:white;
+}
+.nsDataGridContainerWhite .nsBodyDataGridCellTheme
+{
+    border-top : 1px solid #D5D5D5;
+    border-right : 1px solid #D5D5D5;
+    font-weight:normal;
+    vertical-align:middle;
+    color:#000000;
+}
+.nsDataGridContainerWhite .nsDataGridSelection > td
+{
+    background-color: #b0bed9!important;
+}
+.nsDataGridContainerWhite .nsGridCellHover 
+{ 
+	background-color: #CCCCCC!important; 
+}
+.nsCellFocus
+{
+	/*box-shadow: inset 0 0 3px #000;*/
+	background: #FAFAFF;
+    border: 2px solid #4285F4;
+}
+.nsDataGridContainerWhite .nsCellFocus
+{
+	/*box-shadow: inset 0 0 3px #000;*/
+	background: #FAFAFF;
+    border: 2px solid #4285F4;
+}
+.nsDataGridContainerWhite .nsDottedCell
+{
+    border: 2px dotted red!important;
+}
+.nsDataGridContainerWhite .nsColumnResizeIndicatorTheme:hover,
+.nsDataGridContainerWhite .nsColumnResizeIndicatorTheme.active
+{
+  	background-color: #1e90ff;
+}
+.nsResizeHandleWhite
+{
+/* 	background-color: #666; */
+	background-color: #2684ff;
+}
+.nsDataGridContainerWhite .nsGridArrowFillTheme 
+{
+    fill:#000000;
+}
+.nsDataGridContainerWhite .nsGridGroupIconTheme
+{
+	fill:#000000;
+}
+.nsDataGridContainerWhite .nsExportIconTheme
+{
+	fill:#FFFFFF;
+}
+.nsDataGridContainerWhite .nsExportIconTheme:hover
+{
+	fill:red;
+}
+.nsDataGridContainerWhite .nsColumnSettingTheme
+{
+	fill:#FFFFFF;
+}
+.nsDataGridContainerWhite .nsColumnSettingTheme:hover
+{
+	fill:red;
+}
+.nsMoveIconTheme:hover
+{
+	fill:red;
+}
+.nsDataGridContainerWhite .nsFilterButtonDivTheme
+{
+  border-top: 1px solid #d3d3d3;
+}
+.nsDataGridContainerWhite .nsFilterLineContainerTheme
+{
+    border-bottom: 1px solid #d3d3d3;
+}
+.nsGridScrollTipContainer .nsGridScrollTipText 
+{
+	background-color: black;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+.nsGridScrollTipContainer .nsGridScrollTipTriangle 
+{
+	border-left: 8px solid black;
+}
+
+.nsDataGridContainerBlack
+{
+	background-color: #1E1E1E;
+	border: 1px solid silver;
+}
+.nsDataGridContainerBlack .nsDataGridTitleBarTheme
+{
+   background: black; 
+   color: #ffffff;
+   font-size: 12px; 
+   padding: .3em .2em .2em .3em; 
+   font-weight: bold;
+   border-bottom: 1px solid #848484!important;
+}
+
+.nsDataGridContainerBlack .nsDataGridTableTheme
+{  
+	background-color: #FFFF00; 
+    color: #FF00FF;
+    font-size: 13px; 
+    border-color: #565656;
+}
+.nsDataGridContainerBlack .nsDataGridHeaderTheme
+{
+  border-top : 1px solid #565656;
+  border-right : 1px solid #565656;
+  background-color: #565656;
+  color: White;
+}
+.nsDataGridHeaderDragBlack.nsDataGridHeaderDrag
+{
+  border-top : 1px solid #D4C7C7;
+  border-right : 1px solid #D4C7C7;
+  background-color: #EEEEEE;
+  color: black;
+}
+.nsDataGridContainerBlack .nsDataGridHeaderTheme:hover
+{
+	background-color: #EA610D!important;	
+}
+.nsDataGridContainerBlack .nsHeaderBarCorner
+{
+	background-color: #282828;
+}
+.nsDataGridContainerBlack .nsDataGridHeaderRendererTheme
+{
+	background-color: #282828;
+	border-top : 1px solid #565656;
+  	border-right : 1px solid #565656;
+}
+.nsHeaderTextTheme
+{
+	font-weight: bold;
+	font-size: 13.5px;
+}
+/*.nsHeaderTextTheme:hover
+{
+	color: red;
+}*/
+.nsDataGridContainerBlack .nsDataGridOddRow
+{
+    background-color: #1E1E1E;
+	color: white;
+}
+.nsDataGridContainerBlack .nsDataGridEvenRow 
+{
+    background-color: #282828;
+	color: white; 
+}
+.nsDataGridContainerBlack .nsMenuUse
+{
+	fill:black;
+}
+.nsDataGridContainerBlack .nsMenuUse:hover
+{
+	fill: red;
+}
+.nsMenuArrow
+{
+	fill:white;
+}
+.nsDataGridContainerBlack .nsBodyDataGridCellTheme
+{
+    border-top : 1px solid #565656;
+    border-right : 1px solid #565656;
+    font-weight:normal;
+    vertical-align:middle;
+    color:white;
+}
+.nsDataGridContainerBlack .nsDataGridSelection > td
+{
+    background-color: #38210B!important;
+}
+.nsDataGridContainerBlack .nsGridCellHover 
+{ 
+	background-color: #464646!important; 
+}
+.nsDataGridContainerBlack .nsCellFocus
+{
+	/*box-shadow: inset 0 0 3px #000;*/
+	background: #FAFAFF;
+    border: 1px solid #4285F4;
+}
+.nsDataGridContainerBlack .nsDottedCell
+{
+    border: 2px dotted red!important;
+}
+.nsResizeHandleBlack
+{
+	background-color: #2684ff;
+}
+.nsDataGridContainerBlack .nsGridArrowFillTheme 
+{
+    fill:#FFFFFF;
+}
+.nsDataGridContainerBlack .nsGridGroupIconTheme
+{
+	fill:#FFFFFF;
+}
+.nsDataGridContainerBlack .nsExportIconTheme
+{
+	fill:#FFFFFF;
+}
+.nsDataGridContainerBlack .nsExportIconTheme:hover
+{
+	fill:red;
+}
+.nsMoveIconTheme:hover
+{
+	fill:red;
+}
+.nsDataGridContainerBlack .nsFilterButtonDivTheme
+{
+  	border-top: 1px solid #565656;
+}
+.nsDataGridContainerBlack .nsFilterLineContainerTheme
+{
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.nsDataGridContainerBlack .nsFilterIconSVG
+{
+   fill: #ffffff;
+}
+
+.nsDataGridContainerBlack .nsSortAsc
+{
+	border-bottom: 5px solid white;
+}
+
+.nsDataGridContainerBlack .nsSortDesc
+{
+	border-top: 5px solid white;
+}
+
+.nsDataGridContainerRed
+{
+	background-color: Red;
+	border: 1px solid silver;
+}
+.nsDataGridContainerRed .nsDataGridTitleBarTheme
+{
+   background: Red; 
+   color: #ffffff;
+   font-size: 12px; 
+   padding: .3em .2em .2em .3em; 
+   font-weight: bold;
+   border-bottom: 1px solid #848484!important;
+ }
+.nsDataGridContainerRed .nsDataGridTableTheme
+{  
+	background-color:Red; 
+    color: #FF00FF;
+    font-size: 16px; 
+    font-weight: bold;
+    font-family: "Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+    border-color: #565656;
+}
+.nsDataGridContainerRed .nsDataGridHeaderTheme
+{
+  border-top : 1px solid #565656;
+  border-right : 1px solid #565656;
+  background-color: #565656;
+  color: White;
+}
+.nsDataGridHeaderDragRed.nsDataGridHeaderDrag
+{
+  border-top : 1px solid #D4C7C7;
+  border-right : 1px solid #D4C7C7;
+  background-color: #EEEEEE;
+  color: Red;
+}
+.nsDataGridContainerRed .nsDataGridHeaderTheme:hover
+{
+	background-color: #EA610D!important;	
+}
+.nsDataGridContainerRed .nsHeaderBarCorner
+{
+	background-color: #282828;
+}
+.nsDataGridContainerRed .nsDataGridHeaderRendererTheme
+{
+	background-color: #282828;
+	border-top : 1px solid #565656;
+  	border-right : 1px solid #565656;
+}
+.nsHeaderTextTheme
+{
+	font-weight: bold;
+	font-size: 13.5px;
+}
+/*.nsHeaderTextTheme:hover
+{
+	color: red;
+}*/
+.nsDataGridContainerRed .nsDataGridOddRow
+{
+    background-color:Red;
+	color: white;
+}
+.nsDataGridContainerRed .nsDataGridEvenRow 
+{
+    background-color: #282828;
+	color: white; 
+}
+.nsDataGridContainerRed .nsMenuUse
+{
+	fill:Red;
+}
+.nsDataGridContainerRed .nsMenuUse:hover
+{
+	fill: red;
+}
+.nsMenuArrow
+{
+	fill:white;
+}
+.nsDataGridContainerRed .nsBodyDataGridCellTheme
+{
+    border-top : 1px solid #565656;
+    border-right : 1px solid #565656;
+    font-weight:normal;
+    vertical-align:middle;
+    color:white;
+}
+.nsDataGridContainerRed .nsDataGridSelection > td
+{
+    background-color: #38210B!important;
+}
+.nsDataGridContainerRed .nsGridCellHover 
+{ 
+	background-color: #464646!important; 
+}
+.nsDataGridContainerRed .nsCellFocus
+{
+	/*box-shadow: inset 0 0 3px #000;*/
+	background: #FAFAFF;
+    border: 1px solid #4285F4;
+}
+.nsDataGridContainerRed .nsDottedCell
+{
+    border: 2px dotted red!important;
+}
+.nsResizeHandleRed
+{
+	background-color: #2684ff;
+}
+.nsDataGridContainerRed .nsGridArrowFillTheme 
+{
+    fill:#000000;
+}
+.nsGridGroupIconTheme
+{
+	stroke:#000000;
+}
+.nsDataGridContainerRed .nsExportIconTheme
+{
+	fill:#FFFFFF;
+}
+.nsDataGridContainerRed .nsExportIconTheme:hover
+{
+	fill:red;
+}
+.nsMoveIconTheme:hover
+{
+	fill:red;
+}
+.nsDataGridContainerRed .nsFilterButtonDivTheme
+{
+  	border-top: 1px solid #565656;
+}
+.nsDataGridContainerRed .nsFilterLineContainerTheme
+{
+    border-bottom: 1px solid #d3d3d3;
+}
+.nsDataGridContainerBlue
+{
+	background-color: Blue;
+	border: 1px solid silver;
+}
+.nsDataGridContainerBlue .nsDataGridTitleBarTheme
+{
+   background: Blue; 
+   color: #ffffff;
+   font-size: 12px; 
+   padding: .3em .2em .2em .3em; 
+   font-weight: bold;
+   border-bottom: 1px solid #848484!important;
+}
+.nsDataGridContainerBlue .nsDataGridTableTheme
+{  
+	background-color:Blue; 
+    color: #FF00FF;
+    font-size: 16px; 
+    font-weight: bold;
+    font-family: "Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+    border-color: #565656;
+}
+.nsDataGridContainerBlue .nsDataGridHeaderTheme
+{
+  border-top : 1px solid #565656;
+  border-right : 1px solid #565656;
+  background-color: #565656;
+  color: White;
+}
+.nsDataGridHeaderDragBlue.nsDataGridHeaderDrag
+{
+  border-top : 1px solid #D4C7C7;
+  border-right : 1px solid #D4C7C7;
+  background-color: #EEEEEE;
+  color: Blue;
+}
+.nsDataGridContainerBlue .nsDataGridHeaderTheme:hover
+{
+	background-color: #EA610D!important;	
+}
+.nsDataGridContainerBlue .nsHeaderBarCorner
+{
+	background-color: #282828;
+}
+.nsDataGridContainerBlue .nsDataGridHeaderRendererTheme
+{
+	background-color: #282828;
+	border-top : 1px solid #565656;
+  	border-right : 1px solid #565656;
+}
+.nsHeaderTextTheme
+{
+	font-weight: bold;
+	font-size: 13.5px;
+}
+/*.nsHeaderTextTheme:hover
+{
+	color: Blue;
+}*/
+.nsDataGridContainerBlue .nsDataGridOddRow
+{
+    background-color:Blue;
+	color: white;
+}
+.nsDataGridContainerBlue .nsDataGridEvenRow 
+{
+    background-color: #282828;
+	color: white; 
+}
+.nsDataGridContainerBlue .nsMenuUse
+{
+	fill:Blue;
+}
+.nsDataGridContainerBlue .nsMenuUse:hover
+{
+	fill: Blue;
+}
+.nsMenuArrow
+{
+	fill:white;
+}
+.nsDataGridContainerBlue .nsBodyDataGridCellTheme
+{
+    border-top : 1px solid #565656;
+    border-right : 1px solid #565656;
+    font-weight:normal;
+    vertical-align:middle;
+    color:white;
+}
+.nsDataGridContainerBlue .nsDataGridSelection > td
+{
+    background-color: #38210B!important;
+}
+.nsDataGridContainerBlue .nsGridCellHover 
+{ 
+	background-color: #464646!important; 
+}
+.nsDataGridContainerBlue .nsCellFocus
+{
+	/*box-shadow: inset 0 0 3px #000;*/
+	background: #FAFAFF;
+    border: 1px solid #4285F4;
+}
+.nsDataGridContainerBlue .nsDottedCell
+{
+    border: 2px dotted Blue!important;
+}
+.nsResizeHandleBlue
+{
+	background-color: #2684ff;
+}
+.nsDataGridContainerBlue .nsGridArrowFillTheme 
+{
+    fill:#000000;
+}
+.nsGridGroupIconTheme
+{
+	stroke:#000000;
+}
+.nsDataGridContainerBlue .nsExportIconTheme
+{
+	fill:#FFFFFF;
+}
+.nsDataGridContainerBlue .nsExportIconTheme:hover
+{
+	fill:Blue;
+}
+.nsMoveIconTheme:hover
+{
+	fill:Blue;
+}
+.nsDataGridContainerBlue .nsFilterButtonDivTheme
+{
+  	border-top: 1px solid #565656;
+}
+.nsDataGridContainerBlue .nsFilterLineContainerTheme
+{
+    border-bottom: 1px solid #d3d3d3;
+}.nsMenu {
+  position: absolute;
+  width: 200px;
+  padding: 2px;
+  margin: 0;
+  background-color: #fefefe;
+  border: solid thin #1e4691;
+  /*background: -webkit-linear-gradient(to bottom, #fff 0%, #e5e5e5 100px, #e5e5e5 100%);
+  background: linear-gradient(to bottom, #fff 0%, #e5e5e5 100px, #e5e5e5 100%);*/
+  z-index: 999;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px rgba(0,0,0,.2);
+  opacity: 0;
+  -webkit-transform: translate(0, 15px) scale(.95);
+  transform: translate(0, 15px) scale(.95);
+  transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+  pointer-events: none;
+}
+
+.nsMenuItem {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.nsMenuButton {
+  background: none;
+  line-height: normal;
+  overflow: visible;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  display: block;
+  width: 100%;
+  color: #444;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 8px;
+  border-radius: 3px;
+}
+ .nsMenuButton::-moz-focus-inner, .nsMenuButton::-moz-focus-inner {
+ border: 0;
+ padding: 0;
+}
+
+.nsMenuText { margin-left: 25px; }
+
+.nsMenuButton .nsMenuAlign{
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.nsMenuItem:hover > .nsMenuButton {
+  color: #fff;
+  /*outline: none;
+  background-color: #2E3940;
+  background: -webkit-linear-gradient(to bottom, #5D6D79, #2E3940);
+  background: linear-gradient(to bottom, #5D6D79, #2E3940);
+  border: 1px solid #2E3940;*/
+  background-color:#00B2EE;
+  border-color:#7D98B8;
+  border-left-width:1px;margin-left:-1px;*left:-1px;
+}
+
+.nsMenuItem.nsDisabled {
+  opacity: .5;
+  pointer-events: none;
+}
+
+.nsMenuItem.nsDisabled .nsMenuButton { cursor: default; }
+
+.nsMenuSeparator {
+  display: block;
+  margin: 7px 5px;
+  height: 1px;
+  border-bottom: 1px solid #fff;
+  background-color: #aaa;
+}
+
+.nsMenuItem.nsSubMenu::after {
+  content: "";
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-left-color: #808080;
+}
+
+.nsMenuItem.nsSubMenu:hover::after 
+{ 
+	border-left-color: #fff; 
+}
+
+.nsMenu .nsMenu,.nsPopUp .nsMenu{
+  top: 4px;
+  left: 99%;
+}
+
+.nsShowMenu {
+  opacity: 1;
+  -webkit-transform: translate(0, 0) scale(1);
+  transform: translate(0, 0) scale(1);
+  pointer-events: auto;
+}
+
+.nsMenuItem:hover > .nsMenu {
+  -webkit-transition-delay: 100ms;
+  transition-delay: 300ms;
+}
+
+.nsHeader
+{
+	background-color: blue;
+	pointer-events: none;
+	list-style-type: none;
+	white-space: nowrap;
+	border-radius: 3px;
+	padding: 5px 7px;
+}
+
+.nsMenuItem.nsHeader .nsMenuButton 
+{ 
+	color: white;
+	cursor: default; 
+	font-weight: bold;
+}
+
+.nsSubMenuContainer::before
+{
+	content: "";
+	border: 4px solid #fefefe;
+	border-color: transparent #1e4691 transparent transparent;
+	position: absolute;
+	top: 12px;
+	left: -9px;
+}
+.nsSubMenuContainer::after
+{
+	content: "";
+	border: 4px solid #fefefe;
+	border-color: transparent #fefefe transparent transparent;
+	position: absolute;
+	top: 12px;
+	left: -8px;
+}
+
+.nsPaginationContainer
+{
+  padding: 0;
+  margin: 0 0 10px 25px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin-left: 0;
+  margin-bottom: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.nsPaginationContainer > li 
+{
+  display: inline;
+}
+.nsPaginationContainer> li > a,
+.nsPaginationContainer > li > span 
+{
+  float: left;
+  padding: 4px 12px;
+  line-height: 20px;
+  text-decoration: none;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-left-width: 0;
+}
+.nsPaginationContainer > li > a:hover,
+.nsPaginationContainer > li > a:focus,
+.nsPaginationContainer > .nsPageActive > a,
+.nsPaginationContainer > .nsPageActive > span 
+{
+  background-color: #f5f5f5;
+}
+.nsPaginationContainer > .nsPageActive > a,
+.nsPaginationContainer > .nsPageActive > span 
+{
+  color: #999999;
+  cursor: default;
+}
+.nsPaginationContainer > .nsPageDisabled > span,
+.nsPaginationContainer > .nsPageDisabled > a,
+.nsPaginationContainer > .nsPageDisabled > a:hover,
+.nsPaginationContainer > .nsPageDisabled > a:focus 
+{
+  color: #999999;
+  background-color: transparent;
+  cursor: default;
+}
+.nsPaginationContainer > li:first-child > a,
+.nsPaginationContainer > li:first-child > span 
+{
+  border-left-width: 1px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  border-top-left-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  border-bottom-left-radius: 4px;
+}
+.nsPaginationContainer > li:last-child > a,
+.nsPaginationContainer > li:last-child > span 
+{
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  border-bottom-right-radius: 4px;
+}
+.nsPaginationContainer > li > a:hover,
+.nsPaginationContainer > li> a:focus 
+{
+	color: #005580;
+	text-decoration: none;
+}
+.nsPaginationContainer > li > a 
+{
+	color: #0088cc;
+	text-decoration: none;
+}.nsVirtualScrollElement
+{
+	display: block;
+    position: relative;
+    overflow: auto;
+    transform: translateZ(0);
+}
+
+.nsVirtualScrollContent
+{
+	outline: 0;
+}
+
+.nsVirtualScrollContentHorizontal
+{
+	position: absolute;
+    top: 0;
+    left: 0;
+}
+.nsVirtualScrollContent .nsVirtualExtraItemVertical
+{
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.nsVirtualScrollContent .nsVirtualExtraItemHorizontal
+{
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.nsVirtualScrollLoader
+{
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   -webkit-overflow-scrolling: touch;
+   z-index: 1060;
+   background-color: rgba(0, 0, 0, .01);
+   outline: 0;
+}
+.nsVirtualScrollLoader .nsVirtualScrollLoaderTextCon
+{
+  	position: absolute;
+    left: calc(50% - 75px);
+    top: calc(50% - 25px);
+    padding-left: 37px;
+    padding-top: 15px;
+    display: block;
+    width: 150px;
+    height: 50px;
+    color: #CA2420;
+    background-color: #D5D5D5;
+    border: 1px solid #737373;
+    border-radius: 10px;
+}
+.nsVirtualScrollLoader .nsVirtualScrollLoaderText
+{
+   margin: 0;
+   line-height: 1.42857143;
+}.nsListOuterContainer
+{
+    position: relative;   
+    overflow-y: auto;
+    width:inherit;
+    height:inherit;
+}
+
+.nsListOuterContainer .nsListParentContainer
+{
+	position: absolute; 
+	height: 100%; 
+	width: 99%; 
+	margin: 0px; 
+	padding: 0px;
+	background-color: #FFFFFF;
+	color: #333;
+}
+
+.nsListOuterContainer .nsListContainer
+{
+	min-height: 42px;
+    padding-left: 0px;
+    
+	display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+    margin:0px;
+}
+.nsListOuterContainer .nsListItem
+{
+	background-color: #fff;
+    border: 1px solid #f4f4f4;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    display: block;
+    margin-bottom: -1px;
+}
+.nsListOuterContainer.nsListOuterContainerHierarchical .nsListItem
+{
+	/*for Virtual Scrolling in Hierarchical List*/
+	min-height:25px;
+}
+.nsListItemHover 
+{  
+  background-color: #3875d7;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #3875d7), color-stop(90%, #2a62bc));
+  background-image: linear-gradient(#3875d7 20%, #2a62bc 90%);
+  color: #fff;
+} 
+.nsListItemAnimated .nsListChild
+{
+	width: 100%; 
+	position: relative; 
+  	z-index: 2;
+  	text-decoration: none;
+  	box-sizing: border-box;  
+  	-moz-box-sizing: border-box;  
+  	-webkit-box-sizing: border-box; 
+}
+.nsListItemAnimated:hover .nsListChild
+{
+	color: #FFFFFF;
+}
+.nsListItemAnimated .nsListChild:after
+{
+  content: "";
+  height: 100%; 
+  left: 0; 
+  top: 0; 
+  width: 0px;  
+  position: absolute; 
+  transition: all 0.2s ease 0s; 
+  -webkit-transition: all 0.2s ease 0s; 
+  z-index: -1;
+}
+.nsListItemAnimated .nsListChild:hover:after
+{ 
+	width: 100%; 
+}
+.nsListItemAnimated .nsListChild:after
+{ 
+	background: #3498db; 
+}
+.nsListOuterContainer .nsListItemSelected 
+{
+	background-color: #CED2CC;
+    color: #000;
+}
+.nsListOuterContainer .nsListNoRecordsFound 
+{
+    text-align: center;
+}
+.nsListContainerDroppable
+{
+	border: 1px solid #a0a0a0;
+}
+.nsListEmpty
+{
+	margin: 0px;
+	padding: 5px;
+}
+.nsListEmptyChild
+{
+	border: 1px dashed #a0a0a0;
+	border-radius: 3px;
+	padding: 3px;
+	cursor: pointer;
+	font-size: 10px;
+	background-color: white;
+}
+.nsListOuterContainer .nsListGroupCell 
+{
+  	position: relative;
+  	overflow: hidden;
+  	min-height: 19px;
+}
+.nsListOuterContainer .nsListGroupCell > * 
+{
+   display: inline-block;
+   padding: 3px;
+}
+.nsListOuterContainer .nsListGroupCellText
+{
+	padding-left: 1.5em;
+}
+.nsListOuterContainer .nsListArrowParent
+{
+	position: absolute;
+    top: 0px;
+    left:0px;
+}
+.nsListOuterContainer .nsListArrow
+{
+	height:15px;
+}
+.nsListOuterContainer .nsListArrowFill 
+{
+	width:16px;
+	height:16px;
+    fill:#000000;
+	/*stroke:#000000;
+	stroke-width:0.5;*/
+} 
+
+.nsListTruncateToFit,.nsListTruncateToFit *
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.nsListDottedRow 
+{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: none; 
+}
+/* line 25, /Users/jonasvonandrian/jquery-sortable/source/css/jquery-sortable.css.sass */
+.nsListDottedRow:before 
+{
+  	position: absolute;
+  	content: "";
+  	width: 0;
+  	height: 0;
+  	margin-top: -5px;
+  	left: -5px;
+  	top: -4px;
+  	border: 5px solid transparent;
+  	border-left-color: red;
+  	border-right: none; 
+}

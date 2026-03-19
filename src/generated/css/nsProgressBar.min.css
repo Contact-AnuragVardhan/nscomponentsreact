@@ -1,0 +1,85 @@
+.nsModalPopUp
+{
+    left: 25%; /* positions the div half way horizontally */
+    top: 35%; /* positions the div half way vertically */
+    border: 2px solid black;
+    background-color: #FFFFFF;
+    width: 50%;
+    height: 20%;
+}
+
+.nsModalTitleBar
+{
+	background: #7d7e7d; /* Old browsers */
+	background: -moz-linear-gradient(top,  #7d7e7d 0%, #0e0e0e 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(100%,#0e0e0e)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #7d7e7d 0%,#0e0e0e 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
+
+	color : #FFFFFF;
+	font-weight: bold;
+	padding-left: 5px;
+}
+
+.nsModalCloseButton
+{
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: small; 
+	font-weight: bold;
+	color : #FFFFFF;
+}
+
+.nsModalCloseButton:hover
+{
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: small; 
+	font-weight: bold;
+	color : #FC1D00;
+}
+	
+
+
+
+
+
+.nsProgressBarLoader
+{
+	width:100%;
+	height:15px;
+	border:1px solid #000;
+	overflow:hidden;
+	text-align: center;
+}
+.nsProgressBarLoaderBar
+{
+	width:0%;
+	height:15px;
+	border-right: 1px solid #000000;
+	
+	background: #cedce7; /* Old browsers */
+	background: -moz-linear-gradient(top, #cedce7 0%, #596a72 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cedce7), color-stop(100%,#596a72)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #cedce7 0%,#596a72 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #cedce7 0%,#596a72 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #cedce7 0%,#596a72 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #cedce7 0%,#596a72 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=0 ); /* IE6-9 */
+}
+.nsProgressBarLoaderText 
+{
+	color: #000000;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: bold;
+    left: 25px;
+    position: relative;
+    top: -16px;
+}
+
+
+
+
+

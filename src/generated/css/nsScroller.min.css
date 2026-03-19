@@ -1,0 +1,279 @@
+.nsScrollerElement
+{
+	 overflow:hidden;
+	 position: relative;
+}
+.nsScrollerVerticalContainer 
+{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0px;
+    z-index: 3;
+    width: 16px;
+    overflow: hidden;
+    background-color: #eaeaea;
+    border: 1px solid rgb(171, 171, 171);
+}
+.nsScrollerVerticalBar 
+{
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    width: 14px;
+    cursor: default;
+    -webkit-transition: width .2s ease-out;
+    -moz-transition: width .2s ease-out;
+    -ms-transition: width .2s ease-out;
+    -o-transition: width .2s ease-out;
+    transition: width .2s ease-out;
+    line-height: 14px;
+    border-style: solid;
+    border-color: #ababab;
+    background: white;
+    border-radius: 0px;
+    border-width: 1px;
+}
+
+.nsScrollerVerticalBar:hover {
+    border-style: solid;
+    border-color: #ababab;
+    background: #f0f0f0;
+}
+
+.nsScrollerHorizontalContainer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right:16px;
+    width: 100%;
+    height: 16px;
+    z-index: 2;
+    background-color: #eaeaea;
+    border: 1px solid rgb(171, 171, 171);
+}
+.nsScrollerHorizontalBar {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    width: 10px;
+    height: 14px;
+    -webkit-transition: height .2s ease-out;
+    -moz-transition: height .2s ease-out;
+    -ms-transition: height .2s ease-out;
+    -o-transition: height .2s ease-out;
+    transition: height .2s ease-out;
+    border-style: solid;
+    border-color: #ababab;
+    background: white;
+    border-radius: 0px;
+    border-width: 1px;
+}
+.nsScrollerHorizontalBar:hover {
+    border-style: solid;
+    border-color: #ababab;
+    background: #f0f0f0;
+}
+
+.nsScrollerHidden 
+{
+  display: none;
+}
+
+.nsScrollerScrollable {
+    
+    -ms-overflow-style: none;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.nsScrollerScrollable-v {
+	overflow-y: scroll;
+	width: -webkit-calc(100% - 17px);
+	width: -moz-calc(100% - 17px);
+	width: -o-calc(100% - 17px);
+	width: calc(100% - 17px);
+}
+
+.nsScrollerScrollable-h {
+	overflow-x: scroll;
+	height: -webkit-calc(100% - 17px);
+	height: -moz-calc(100% - 17px);
+	height: -o-calc(100% - 17px);
+	height: calc(100% - 17px);
+}
+
+.nsScrollerScrollable::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.nsScrollerButtonUp, .nsScrollerButtonDown {
+    position: absolute;
+    z-index: 1;
+    width: 15px;
+    height: 16px;
+    box-sizing: border-box;
+}
+
+.nsScrollerButtonLeft, .nsScrollerButtonRight {
+    position: absolute;
+    z-index: 1;
+    width: 16px;
+    height: 15px;
+    box-sizing: border-box;
+}
+
+.nsScrollerButtonUp {
+    top: 0;
+}
+
+.nsScrollerButtonDown {
+    bottom: 0;
+}
+
+.nsScrollerButtonLeft {
+    left: 0;
+}
+
+.nsScrollerButtonRight {
+    right: 0;
+}
+
+.nsScrollerControl-v {
+    width: 100%;
+    height: 16px;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: white;
+    border-style: solid;
+    border-color: #ababab;
+    border-width: 1px;
+    background-image: none;
+    border-radius: 0;
+}
+
+.nsScrollerControl-v:hover{
+	border-style: solid;
+    border-color: #777777;
+    background: white;
+}
+
+.nsScrollerControlBtnUp {
+	background-position: center;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjExR/NCNwAAAClJREFUKFNjGEmgvLz8P5RJHABpgGGoEH6ArIEojdg0wDBUyShAAAYGAHSXJkH1wN/VAAAAAElFTkSuQmCC);
+	display: block;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.nsScrollerControlBtnDown {
+	background-position: center;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjExR/NCNwAAACRJREFUKFNjGAVYQHl5+X9cGKoEOyBZAwyQrAEGSNYwpAEDAwBvhSZBmzrLGgAAAABJRU5ErkJggg==);
+	display: block;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.nsScrollerControl-h {
+	width: 16px;
+    height: 100%;
+	cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: white;
+    border-style: solid;
+    border-color: #ababab;
+    border-width: 1px;
+    background-image: none;
+    border-radius: 0;
+}
+
+.nsScrollerControl-h:hover{
+	border-style: solid;
+    border-color: #777777;
+    background: white;
+}
+
+.nsScrollerControlBtnLeft {
+	background-position: center;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjExR/NCNwAAADBJREFUKFNjGMKgvLz8P5RJHABpIEkTTAPRmpA1EK0JBMjSBAJkaQIBsjQNNGBgAABe7iZBxoz5vwAAAABJRU5ErkJggg==);
+	display: block;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.nsScrollerControlBtnRight {
+	background-position: center;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjExR/NCNwAAAC5JREFUKFNjGIKgvLz8P5RJPABpIlkjTBNJGpE1Ea2RZA0gQLIGECBZw2ACDAwAhS4mQZAuqGcAAAAASUVORK5CYII=);
+	display: block;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.nsScrollerBarParent-v 
+{
+    position: absolute;
+    top: 16px;
+    bottom: 16px;
+    right: 0;
+    width: 100%;
+}
+
+.nsScrollerBarParent-h 
+{
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: 0;
+    height: 100%;
+}
+
+.nsScrollerVerticalContainer-both
+{
+	bottom: 16px;
+}
+
+.nsScrollerBarParent-h-both
+{
+	right: 32px;
+}
+
+.nsScrollerButtonRight-both
+{
+	right: 16px;
+}
+
+.nsScrollBarCorner
+{
+	background-color: #f7f7f7;
+   position:absolute;
+   bottom: 0;
+   right: 0;
+   width: 16px;
+   height: 16px;
+   z-index: 2;
+   box-shadow: 1px 1px 0 rgba(0,0,0,0.2) inset;
+}
