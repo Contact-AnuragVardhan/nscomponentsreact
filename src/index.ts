@@ -144,6 +144,9 @@ interface IJSType {
     [propName: string]: any;
 }
 
+// Initialize the legacy generated modules before loading any of them.
+const nsCompUtil: IJSType = require('./generated/js/nsUtil.min.js');
+
 const nsCompAjax: IJSType = require('./generated/js/nsAjax.min.js');
 export const NSAjax = nsCompAjax.NSAjax;
 export type NSAjaxType = ReturnType<typeof nsCompAjax.NSAjax>;
@@ -263,7 +266,6 @@ const nsCompTouchToMouse = require('./generated/js/nsTouchToMouse.min.js');
 export const NSTouchToMouse = nsCompTouchToMouse.NSTouchToMouse;
 export type NSTouchToMouseType = ReturnType<typeof nsCompTouchToMouse.NSTouchToMouse>;
 
-const nsCompUtil = require('./generated/js/nsUtil.min.js');
 export const NSUtil = nsCompUtil.NSUtil;
 export type NSUtilType = ReturnType<typeof nsCompUtil.NSUtil>;
 
@@ -278,7 +280,6 @@ export type NSXlsxExportType = ReturnType<typeof nsCompXlsxExport.NSXlsxExport>;
 const nsCompExpressionEvaluator = require('./generated/js/nsExpressionEvaluator.min.js');
 export const NSExpressionEvaluator = nsCompExpressionEvaluator.NSExpressionEvaluator;
 export type NSExpressionEvaluatorType = ReturnType<typeof nsCompExpressionEvaluator.NSExpressionEvaluator>;
-
 
 
 
