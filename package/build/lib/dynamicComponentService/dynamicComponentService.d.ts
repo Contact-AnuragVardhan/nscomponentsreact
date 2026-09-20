@@ -1,0 +1,34 @@
+export declare class DynamicComponentService {
+    private component;
+    private parent;
+    private container;
+    private componentRef;
+    private statelessComponent;
+    private memoHookComponent;
+    private portal;
+    private oldPortal;
+    private __nsUtil;
+    private staticMarkup;
+    private staticRenderTime;
+    private portalRefs;
+    constructor(component: any, parent?: any);
+    init(params: any, compName: string): Promise<void>;
+    rendered(): any;
+    isNullRender(): boolean;
+    isStatelessComponent(): boolean;
+    isMemoHookComponent(): boolean;
+    getReactComponentName(): string;
+    getComponentInstance(): any;
+    getElement(): HTMLElement;
+    statelessComponentRendered(): boolean;
+    destroy(): void;
+    refreshComponent(params: any): void;
+    private createPortal;
+    private createComponent;
+    private removeStaticMarkup;
+    private renderStaticMarkup;
+    private static hasSymbol;
+    private static isStateless;
+    private static isMemoHook;
+    static addDefaultMethods(instance: any, componentName: string, waitForInstanceCallback: Function, batchUpdateCallback: Function): void;
+}

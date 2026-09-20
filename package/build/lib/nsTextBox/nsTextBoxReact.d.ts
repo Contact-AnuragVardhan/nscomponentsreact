@@ -1,0 +1,58 @@
+import * as React from 'react';
+import '../../generated/css/nsTextBox.min.css';
+import NSBaseReactComponent from '../base/nsBaseReactComponent';
+import { INSTextBoxSetting } from "./interfaces";
+export interface INSTextBoxReactSetting extends INSTextBoxSetting {
+    setting?: INSTextBoxSetting;
+    containerStyle?: any;
+    [propName: string]: any;
+}
+export declare class NSTextBoxReact extends NSBaseReactComponent<INSTextBoxReactSetting, any> {
+    props: INSTextBoxReactSetting;
+    state: any;
+    static readonly TYPE_AUTOTEXT: any;
+    static readonly TYPE_AUTOCOMPLETE: any;
+    static readonly TYPE_EMAIL: any;
+    static readonly TYPE_NUMBER: any;
+    static readonly TYPE_PASSWORD: any;
+    static readonly TYPE_URL: any;
+    static readonly DROPDOWN_TYPE_LIST: any;
+    static readonly DROPDOWN_TYPE_GRID: any;
+    static readonly FILTER_TYPE_EXACT = "exact";
+    static readonly FILTER_TYPE_STARTS_WITH = "startsWith";
+    static readonly FILTER_TYPE_ENDS_WITH = "endsWith";
+    static readonly FILTER_TYPE_CONTAINS = "contains";
+    private __nsTextBox;
+    private __dataSource;
+    private __container;
+    private __nsUtil;
+    private __arrEvents;
+    private __setting;
+    private __hasInitialized;
+    private __hasDestroyed;
+    constructor(props: INSTextBoxReactSetting, state: any);
+    componentDidMount(): void;
+    shouldComponentUpdate(nextProps: any, nextState: any): boolean;
+    componentWillUnmount(): void;
+    render(): React.ReactElement<any, string | React.JSXElementConstructor<any>>;
+    getElement(): any;
+    create(): void;
+    dataSource(source?: any[]): any[];
+    getTextBox(): any;
+    setText(text: string): void;
+    getText(): string;
+    setSelectedItems(arrItems: any[]): void;
+    setSelectedItem(item: any): void;
+    setSelectedIndexes(arrSelectedIndex: number[]): void;
+    setSelectedIndex(selectedIndex: number): void;
+    unSelectItems(arrItems: any[]): void;
+    unSelectItem(item: any): void;
+    unSelectIndexes(arrSelectedIndex: number[]): void;
+    unSelectIndex(selectedIndex: number): void;
+    unSelectAll(fireEvent?: boolean): void;
+    getSelectedItem(): any;
+    getSelectedItems(): any[];
+    private __getStyleForContainer;
+    private __addEvents;
+    private __eventListener;
+}
